@@ -5,8 +5,8 @@
 data/
 cache/
 arguments/
-#arguments/_arguments.py
-#arguments/_arguments.sh
+arguments/_arguments.py
+arguments/_arguments.sh
 .gitignore
 
 
