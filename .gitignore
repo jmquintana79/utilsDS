@@ -2,11 +2,12 @@
 .DS_Store
 
 # ml
-#data/
-#cache/
-#arguments/
-#arguments/arguments.py
-#arguments/arguments.sh
+data/
+cache/
+arguments/
+arguments/arguments.py
+arguments/arguments.sh
+.gitignore
 
 
 # Byte-compiled / optimized / DLL files
