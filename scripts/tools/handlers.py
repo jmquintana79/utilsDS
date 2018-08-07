@@ -2,7 +2,9 @@
 # @Author: Juan Quintana
 # @Date:   2018-08-06 16:47:54
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-08-06 17:04:14
+# @Last Modified time: 2018-08-07 11:30:45
+
+import pandas as pd
 
 
 # READER
@@ -20,7 +22,7 @@ def reader(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=
     """
     try:
         # read data
-        dfdata = pd.read_csv(path_input, sep=sep)
+        dfdata = pd.read_csv(path, sep=sep)
         lcol = list(dfdata.columns)
         # if there are a datetime column
         if len(ddt) > 0:
@@ -67,7 +69,6 @@ def reader(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=
 # MAIN
 if __name__ == '__main__':
     import os
-    import pandas as pd
     import sys
     sys.path.append('../../arguments/')
     from _arguments import *
