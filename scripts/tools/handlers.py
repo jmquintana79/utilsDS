@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-08-06 16:47:54
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-08-07 11:30:45
+# @Last Modified time: 2018-08-07 14:22:38
 
 import pandas as pd
 
@@ -23,6 +23,11 @@ def reader(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=
     try:
         # read data
         dfdata = pd.read_csv(path, sep=sep)
+        # if there are a target
+        if len(starget) > 0:
+            dfdata.rename(columns={starget: 'y'}, inplace=True)
+            starget = 'y'
+        # collect column name list
         lcol = list(dfdata.columns)
         # if there are a datetime column
         if len(ddt) > 0:
@@ -35,11 +40,6 @@ def reader(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=
             dfdata = dfdata.set_index(lindex)
             for isindex in lindex:
                 lcol.remove(isindex)
-        # if there are a target
-        if len(starget) > 0:
-            dfdata.rename(columns={starget: 'y'}, inplace=True)
-            lcol.remove(starget)
-            starget = 'y'
 
         # list of columns per type
         lcol_float = list(dfdata[lcol].select_dtypes(
@@ -52,10 +52,10 @@ def reader(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=
         # store column names
         dfcolname = {
             'ly': [starget],
-            'lx': lcol,
-            'lx_float': lcol_float,
-            'lx_int': lcol_int,
-            'lx_cat': lcol_cat
+            'lx': [icol for icol in lcol if not icol is starget],
+            'lc_float': lcol_float,
+            'lc_int': lcol_int,
+            'lc_cat': lcol_cat
         }
     except Exception as e:
         print('[error] there are any problem reading the input file "%s"' % path)
