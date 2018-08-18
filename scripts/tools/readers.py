@@ -2,15 +2,15 @@
 # @Author: Juan Quintana
 # @Date:   2018-08-06 16:47:54
 # @Last Modified by:   juan
-# @Last Modified time: 2018-08-19 03:22:26
+# @Last Modified time: 2018-08-19 03:30:00
 
 import pandas as pd
 
 
-# READER
+# READER: csv file to dataframe
 def csv2df(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=dict())->tuple:
     """
-    Reader of csv files.
+    Reader of csv files and store into a dataframe.
     path -- path of input file.
     sep -- separator (default ',').
     lindex -- list of column to be indexed (default []).
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     sys.path.append('../../arguments/')
     from _arguments import *
 
-    # read
+    # read: csv to df
     path_input = os.path.join(folder_data_raw, 'load_iris.csv')
     dfdata, dcolumns = csv2df(path_input)
     print('\ndata:\n', dfdata.head())
