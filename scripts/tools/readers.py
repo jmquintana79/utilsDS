@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-08-06 16:47:54
-# @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-08-07 14:22:38
+# @Last Modified by:   juan
+# @Last Modified time: 2018-08-19 03:22:26
 
 import pandas as pd
 
 
 # READER
-def reader(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=dict())->tuple:
+def csv2df(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=dict())->tuple:
     """
     Reader of csv files.
     path -- path of input file.
@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
     # read
     path_input = os.path.join(folder_data_raw, 'load_iris.csv')
-    dfdata, dcolumns = reader(path_input)
+    dfdata, dcolumns = csv2df(path_input)
     print('\ndata:\n', dfdata.head())
     print('\ncolumns:\n', dcolumns)
 
