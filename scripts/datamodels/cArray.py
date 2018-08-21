@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-08-21 17:59:25
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-08-21 18:04:33
+# @Last Modified time: 2018-08-21 18:11:14
 
 import numpy as np
 
@@ -56,10 +56,10 @@ class Data:
 
     # custom display
     def __repr__(self):
-        return "<Custom Array nrow:%s ncol:%s>" % (self.nrow, self.ncol)
+        return "<cArray.Data nrow:%s ncol:%s>" % (self.nrow, self.ncol)
 
     def __str__(self):
-        return "Custom Array: nrow=%s ncol=%s" % (self.nrow, self.ncol)
+        return "cArray.Data: nrow=%s ncol=%s" % (self.nrow, self.ncol)
 
 
 if __name__ == '__main__':
