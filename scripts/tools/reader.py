@@ -1,28 +1,35 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-08-06 16:47:54
-# @Last Modified by:   juan
-# @Last Modified time: 2018-08-19 03:30:00
+# @Last Modified by:   Juan Quintana
+# @Last Modified time: 2018-08-27 13:52:32
 
-import pandas as pd
+from pandas import read_csv, to_datetime, DataFrame
 
 
 # READER: csv file to dataframe
-def csv2df(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=dict())->tuple:
+def csv2df(path: str, lindex: list=[], starget: str="", ddt: dict=dict(), **kwargs)->tuple:
     """
     Reader of csv files and store into a dataframe.
     path -- path of input file.
-    sep -- separator (default ',').
     lindex -- list of column to be indexed (default []).
     starget -- column name of the target variable (default '').
     ddt -- dictionary to format datetime columns. ( format ddt ={
                                                                 'lcol':[LIST OF COLUMNS],
                                                                 'sformat:"DATETIME FORMAT STRING"} )
+    **kwargs -- dict other arguments: sep, usecols
     return (df data, dictionary with columns information ('ly','lx','lx_float','lx_int','lx_cat'))
     """
+
+    # usecols
+    if not 'usecols' in kwargs:
+        kwargs['usecols'] = None
+    if not 'sep' in kwargs:
+        kwargs['sep'] = ','
+
     try:
         # read data
-        dfdata = pd.read_csv(path, sep=sep)
+        dfdata = read_csv(path, sep=kwargs['sep'], usecols=kwargs['usecols'])
         # if there are a target
         if len(starget) > 0:
             dfdata.rename(columns={starget: 'y'}, inplace=True)
@@ -32,9 +39,8 @@ def csv2df(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=
         # if there are a datetime column
         if len(ddt) > 0:
             for isdt in ddt['lcol']:
-                dfdata[isdt] = pd.to_datetime(
+                dfdata[isdt] = to_datetime(
                     dfdata[isdt], format=ddt['sformat'])
-                lcol.remove(isdt)
         # if there are an index
         if len(lindex) > 0:
             dfdata = dfdata.set_index(lindex)
@@ -60,7 +66,7 @@ def csv2df(path: str, sep: str=",", lindex: list=[], starget: str="", ddt: dict=
     except Exception as e:
         print('[error] there are any problem reading the input file "%s"' % path)
         print(str(e))
-        return (pd.DataFrame(), dict())
+        return (DataFrame(), dict())
 
     # return
     return (dfdata, dfcolname)
