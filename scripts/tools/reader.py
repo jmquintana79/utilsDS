@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-08-06 16:47:54
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-08-28 11:36:42
+# @Last Modified time: 2018-08-28 11:52:38
 
 from pandas import read_csv, to_datetime, DataFrame
 
@@ -17,7 +17,7 @@ def get_dcol(dfdata: 'df', ltarget: list=list())->dict:
     lcol_int = list(dfdata[lcol].select_dtypes(
         include=['int64']).columns.values)
     lcol_cat = list(dfdata[lcol].select_dtypes(
-        include=['object']).columns.values)
+        include=['object', 'category']).columns.values)
 
     # store column names
     dfcolname = {
