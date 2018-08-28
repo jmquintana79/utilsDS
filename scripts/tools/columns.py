@@ -2,7 +2,7 @@
 # @Author: juan
 # @Date:   2018-08-27 23:05:18
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-08-28 10:02:53
+# @Last Modified time: 2018-08-28 10:15:25
 
 from pandas import cut, isnull
 
@@ -43,10 +43,10 @@ def miss2median(df: 'df', scol: str, scolref: str)->'df':
     # collect df indexes of rows with missing values in the target variable
     lindex = df[isnull(df[scol])].index.tolist()
     # inpute calculated values
-    ni = datax[[scol]].isnull().sum().values[0]
+    ni = df[[scol]].isnull().sum().values[0]
     for i, ii in enumerate(lindex):
         df.set_value(ii, scol, linputed[i])
-    nf = datax[[scol]].isnull().sum().values[0]
+    nf = df[[scol]].isnull().sum().values[0]
     print('[info] it was inputed %s values of the "%s" column.' % (ni-nf, scol))
     # return
     return df
