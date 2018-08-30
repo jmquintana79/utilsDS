@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-08-30 16:10:29
 # @Last Modified by:   jmquintana79
-# @Last Modified time: 2018-08-30 22:28:39
+# @Last Modified time: 2018-08-31 02:09:22
 
 """
 Min-Max scaler based on 'sklearn.preprocessing.MinMaxScaler' with extra save/load functionality.
@@ -125,19 +125,17 @@ class Scaler():
         from os.path import split
 
         try:
-            if self.isfitted:
-                # validate path
-                if path[-3:] != '.sav':
-                    path = '%s.sav' % path
-                # load
-                self.scaler = pickle.load(open(path, 'rb'))
-                print('[info] the scaler "%s" was loaded.' % split(path)[-1])
-            else:
-                print('[warning] it is not possible save the scaler because it was not fitted yet.')
+            # validate path
+            if path[-3:] != '.sav':
+                path = '%s.sav' % path
+            # load
+            self.scaler = pickle.load(open(path, 'rb'))
+            self.isfitted = True
+            print('[info] the scaler "%s" was loaded.' % split(path)[-1])
         except Exception as e:
-            print('[error] there are any problem in the inverse transformation.')
-            print(str(e))
-            return None
+                print('[error] there are any problem in the inverse transformation.')
+                print(str(e))
+                return None
 
 
 if __name__ == '__main__':
@@ -181,7 +179,12 @@ if __name__ == '__main__':
     path = join(home, 'Desktop', 'borrar')
     scaler.save(path)
     # load scaler
-    scaler.load(path)
+    scaler3 = Scaler()
+    scaler3.load(path)
+    print('[info] the loaded scaler is fitted: %s' % scaler3.isfitted)
+    data_scaled3 = scaler3.transform(data)
+    print('\tdata shape: min = %.3f  max = %.3f' % (np.min(data[0, :]), np.max(data[0, :])))
+    print('\tscaled data shape: min = %.3f  max = %.3f' % (np.min(data_scaled3[0, :]), np.max(data_scaled3[0, :])))
 
     # parameters
     print('[info] parameters:')
