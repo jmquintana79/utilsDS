@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-08-30 16:10:29
-# @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-08-30 17:47:08
+# @Last Modified by:   jmquintana79
+# @Last Modified time: 2018-08-30 22:28:39
 
 """
 Min-Max scaler based on 'sklearn.preprocessing.MinMaxScaler' with extra save/load functionality.
@@ -20,6 +20,7 @@ class Scaler():
         """
         self.scaler = MinMaxScaler(feature_range=feature_range, copy=copy)
         self.isfitted = False
+        self.parameters = dict()
 
     def fit(self, data: 'array'):
         """
@@ -27,8 +28,13 @@ class Scaler():
         data -- array of data.
         """
         try:
+            # fit
             self.scaler.fit(data)
             self.isfitted = True
+            # fill parameters
+            self.parameters['data_min'] = self.scaler.data_min_
+            self.parameters['data_max'] = self.scaler.data_max_
+            self.parameters['scale'] = self.scaler.scale_
         except Exception as e:
             print('[error] it was not possible fit the scaler.')
             print(str(e))
@@ -60,6 +66,10 @@ class Scaler():
             # fit
             self.scaler.fit(data)
             self.isfitted = True
+            # fill parameters
+            self.parameters['data_min'] = self.scaler.data_min_
+            self.parameters['data_max'] = self.scaler.data_max_
+            self.parameters['scale'] = self.scaler.scale_
             # transform
             return self.scaler.transform(data)
         except Exception as e:
@@ -119,7 +129,7 @@ class Scaler():
                 # validate path
                 if path[-3:] != '.sav':
                     path = '%s.sav' % path
-                # save
+                # load
                 self.scaler = pickle.load(open(path, 'rb'))
                 print('[info] the scaler "%s" was loaded.' % split(path)[-1])
             else:
@@ -172,3 +182,11 @@ if __name__ == '__main__':
     scaler.save(path)
     # load scaler
     scaler.load(path)
+
+    # parameters
+    print('[info] parameters:')
+    for k,v in scaler.parameters.items():
+        print('\t-> "%s":'%k,v)
+
+
+
