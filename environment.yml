@@ -1,5 +1,6 @@
 name: mltools
 dependencies:
+  - python==3.6.0
   - jupyter
   - scipy
   - pandas
