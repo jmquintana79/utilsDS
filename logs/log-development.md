@@ -11,3 +11,7 @@
 - It was included the "timer" script into the module tools. This script allows to include time marks to calculate the time spent on some code block.
 - It was included the "saver" script into the module tools with 'df2csv_submition' function. This one allows save a df into a csv file giving the possibility of storing as gzip file and naming with the current date.
 - It was included the "datamodels" module with a first class "cArray". This one allows use a basic numpy ndarray with a column selector funcionality.
+
+### [2018-08-31]:
+- include a model module to add extra / custom funcionality to scikit-learns tools.
+- **scalers.minmaxscaler**: include decorator "@valida" and methods "get_params" and "set_params".
