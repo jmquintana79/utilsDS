@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-08-30 16:10:29
-# @Last Modified by:   jmquintana79
-# @Last Modified time: 2018-08-31 02:09:22
+# @Last Modified by:   Juan Quintana
+# @Last Modified time: 2018-08-31 18:17:17
 
 """
 Min-Max scaler based on 'sklearn.preprocessing.MinMaxScaler' with extra save/load functionality.
 """
-
+import sys
+sys.path.append('../../')
+from backend.decorators import valida
 from sklearn.preprocessing import MinMaxScaler
 
 
@@ -22,100 +24,81 @@ class Scaler():
         self.isfitted = False
         self.parameters = dict()
 
+    @valida
     def fit(self, data: 'array'):
         """
         Fit the scaler.
         data -- array of data.
         """
-        try:
-            # fit
-            self.scaler.fit(data)
-            self.isfitted = True
-            # fill parameters
-            self.parameters['data_min'] = self.scaler.data_min_
-            self.parameters['data_max'] = self.scaler.data_max_
-            self.parameters['scale'] = self.scaler.scale_
-        except Exception as e:
-            print('[error] it was not possible fit the scaler.')
-            print(str(e))
+        # fit
+        self.scaler.fit(data)
+        self.isfitted = True
+        # fill parameters
+        self.parameters['data_min'] = self.scaler.data_min_
+        self.parameters['data_max'] = self.scaler.data_max_
+        self.parameters['scale'] = self.scaler.scale_
 
+    @valida
     def transform(self, data: 'array') -> 'array':
         """
         Transform.
         data -- array of data.
         return -- scaled data array.
         """
-        try:
-            if self.isfitted:
-                return self.scaler.transform(data)
-            else:
-                print('[warning] the scaler was not fitted yet.')
-                return None
-        except Exception as e:
-            print('[error] the data could not be scaled.')
-            print(str(e))
+        if self.isfitted:
+            return self.scaler.transform(data)
+        else:
+            print('[warning] the scaler was not fitted yet.')
             return None
 
+    @valida
     def fit_transform(self, data: 'array') -> 'array':
         """
         Fit and ransform.
         data -- data array.
         return -- scaled data array.
         """
-        try:
-            # fit
-            self.scaler.fit(data)
-            self.isfitted = True
-            # fill parameters
-            self.parameters['data_min'] = self.scaler.data_min_
-            self.parameters['data_max'] = self.scaler.data_max_
-            self.parameters['scale'] = self.scaler.scale_
-            # transform
-            return self.scaler.transform(data)
-        except Exception as e:
-            print('[error] the data could not be fitted or scaled.')
-            print(str(e))
-            return None
+        # fit
+        self.scaler.fit(data)
+        self.isfitted = True
+        # fill parameters
+        self.parameters['data_min'] = self.scaler.data_min_
+        self.parameters['data_max'] = self.scaler.data_max_
+        self.parameters['scale'] = self.scaler.scale_
+        # transform
+        return self.scaler.transform(data)
 
+    @valida
     def inverse_transform(self, data: 'array') -> 'array':
         """
         Inverse transformation.
         data -- scaled data array.
         return -- inverted data array.
         """
-        try:
-            if self.isfitted:
-                return self.scaler.inverse_transform(data)
-            else:
-                print('[warning] the scaler was not fitted yet.')
-                return None
-        except Exception as e:
-            print('[error] there are any problem in the inverse transformation.')
-            print(str(e))
+        if self.isfitted:
+            return self.scaler.inverse_transform(data)
+        else:
+            print('[warning] the scaler was not fitted yet.')
             return None
 
+    @valida
     def save(self, path: str):
         """
         Save a scaler.
         path -- path of the output file.
         """
         import pickle
+        if self.isfitted:
+            # validate path
+            if path[-3:] != '.sav':
+                path = '%s.sav' % path
+            # save
+            pickle.dump(self.scaler, open(path, 'wb'))
+            print('[info] the scaler was saved in "%s".' % path)
+        else:
+            print('[warning] it is not possible save the scaler because it was not fitted yet.')
 
-        try:
-            if self.isfitted:
-                # validate path
-                if path[-3:] != '.sav':
-                    path = '%s.sav' % path
-                # save
-                pickle.dump(self.scaler, open(path, 'wb'))
-                print('[info] the scaler was saved in "%s".' % path)
-            else:
-                print('[warning] it is not possible save the scaler because it was not fitted yet.')
-        except Exception as e:
-            print('[error] there are any problem in the inverse transformation.')
-            print(str(e))
-            return None
-
+    @valida
     def load(self, path: str):
         """
         Load a scaler.
@@ -123,27 +106,19 @@ class Scaler():
         """
         import pickle
         from os.path import split
-
-        try:
-            # validate path
-            if path[-3:] != '.sav':
-                path = '%s.sav' % path
-            # load
-            self.scaler = pickle.load(open(path, 'rb'))
-            self.isfitted = True
-            print('[info] the scaler "%s" was loaded.' % split(path)[-1])
-        except Exception as e:
-                print('[error] there are any problem in the inverse transformation.')
-                print(str(e))
-                return None
+        # validate path
+        if path[-3:] != '.sav':
+            path = '%s.sav' % path
+        # load
+        self.scaler = pickle.load(open(path, 'rb'))
+        self.isfitted = True
+        print('[info] the scaler "%s" was loaded.' % split(path)[-1])
 
 
 if __name__ == '__main__':
-    import sys
     import numpy as np
 
     # load dataset
-    sys.path.append('../../')
     from tools.datasets import *
     dataset = Data()
     dfdata, dcol = dataset.load('boston')
@@ -188,8 +163,5 @@ if __name__ == '__main__':
 
     # parameters
     print('[info] parameters:')
-    for k,v in scaler.parameters.items():
-        print('\t-> "%s":'%k,v)
-
-
-
+    for k, v in scaler.parameters.items():
+        print('\t-> "%s":' % k, v)
