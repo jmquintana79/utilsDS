@@ -8,3 +8,6 @@
 
 ### Model Worflow:
 - **scalers.minmaxscaler**: include decorator "valida" and methods "get_params" and "set_params".
+- **models.base**:
+    - include "Validation Curve" and "Validation Curve".
+    - include non-exhaustive tuning tools.
