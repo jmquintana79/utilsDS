@@ -2,13 +2,16 @@
 # @Author: Juan Quintana
 # @Date:   2018-09-03 16:58:42
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-03 17:13:51
+# @Last Modified time: 2018-09-04 10:49:06
 
 """
 MODEL SCRIPT.
 """
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
+import sys
+sys.path.append('../')
+from models.base import Regressor
 
 
 def launcher(data, alpha, l1_ratio):
@@ -26,10 +29,11 @@ def launcher(data, alpha, l1_ratio):
 
     # # model
 
-    # Run ElasticNet
+    # regressor
     lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
-    lr.fit(train_x, train_y)
-    test_yhat = lr.predict(test_x)
+    clf = Regressor(lr)
+    clf.fit(train_x, train_y)
+    test_yhat = clf.predict(test_x)
 
     # return
     return (test_y, test_yhat, test_x.shape[1])
