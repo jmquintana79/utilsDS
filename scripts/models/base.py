@@ -2,7 +2,7 @@
 # @Author: jmquintana79
 # @Date:   2018-08-30 23:54:47
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-08-31 17:17:45
+# @Last Modified time: 2018-09-04 10:55:22
 
 """
 Regression and Classification frameworks based on scikit-learn models with extra funcionalities.
@@ -18,7 +18,7 @@ from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
 from sklearn.model_selection import cross_val_predict, cross_val_score
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
-from metrics import metrics_regression
+from models.metrics import metrics_regression
 
 
 class Base():
@@ -137,7 +137,7 @@ class Base():
         return {'train': dmetrics_train, 'cv': dmetrics_cv}
 
     def fit_exhaustive_tuning(self, X: 'array', y: 'array', dparam_grid: dict, cv: int=5, njobs: int=-1):
-         """
+        """
         Fit an estimator with exhaustive tuning.
         X -- features data of whole dataset.
         y -- target data of whole dataset.
@@ -162,7 +162,7 @@ class Base():
         # set best estimator
         self.clf = gs.best_estimator_
 
-    def scores_cv_exhaustive_tuning(self, X:'array', y:'array', dparam_grid:dict, cv:int=5, njobs:int=-1, scoring:str=''):
+    def scores_cv_exhaustive_tuning(self, X: 'array', y: 'array', dparam_grid: dict, cv: int=5, njobs: int=-1, scoring: str=''):
         """
         Calculate the tuned model score to evaluate model performance.
         X -- features data of whole dataset.
@@ -189,8 +189,8 @@ class Base():
         print('[info] cv scores(%s): %.3f +/- %.3f ' % (scoring, np.mean(scores), np.std(scores)))
 
     # GridSearchCV fitting
-    def _fit_gridsearchcv(self, X:'array', y:'array', dparam_grid:dict, cv:int=2, njobs:int=-1)->'object':
-         """
+    def _fit_gridsearchcv(self, X: 'array', y: 'array', dparam_grid: dict, cv: int=2, njobs: int=-1)->'object':
+        """
         GridSearchCV fitting.
         X -- features data of whole dataset.
         y -- target data of whole dataset.
@@ -211,7 +211,7 @@ class Base():
         # return fitted gridsearchcv object
         return gs
 
-    def get_params(self, deep:bool=True):
+    def get_params(self, deep: bool=True):
         """
         Return parameters of the estimator.
         """
@@ -231,7 +231,7 @@ class Regressor(Base):
     Model class with especific funcionalities for regressors.
     """
 
-    def metrics(self, y:'array', y_hat:'array', msg:str='')->dict:
+    def metrics(self, y: 'array', y_hat: 'array', msg: str='')->dict:
         """
         Calculate basic metrics for regressors.
         y -- real data.
@@ -243,7 +243,7 @@ class Regressor(Base):
         print('[info] Metrics(%s): bias = %.3f  mae = %.3f   r2 = %.3f' % (msg, dmetrics['bias'], dmetrics['mae'], dmetrics['r2']))
         return dmetrics
 
-    def metric_cv(self, scoring:str='neg_mean_absolute_error')->str:
+    def metric_cv(self, scoring: str='neg_mean_absolute_error')->str:
         """
         Select the scikit-learn score to be used for regressors.
         scoring -- scikit-learn score to be used for regressors (default 'neg_mean_absolute_error').
@@ -256,7 +256,8 @@ class Classificator(Base):
     """
     Model class with especific funcionalities for classificators.
     """
-    def metrics(self, y:'array', y_hat:'array', msg:str='')->dict:
+
+    def metrics(self, y: 'array', y_hat: 'array', msg: str='')->dict:
         """
         Calculate basic metrics for regressors.
         y -- real data.
@@ -266,7 +267,7 @@ class Classificator(Base):
         """
         return None
 
-    def metric_cv(self, scoring:str='accuracy'):
+    def metric_cv(self, scoring: str='accuracy'):
         """
         Select the scikit-learn score to be used for classificator.
         scoring -- scikit-learn score to be used for classificator (default 'neg_mean_absolute_error').
