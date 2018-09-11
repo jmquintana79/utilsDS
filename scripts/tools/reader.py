@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-08-06 16:47:54
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-08-28 11:52:38
+# @Last Modified time: 2018-09-11 11:23:36
 
 from pandas import read_csv, to_datetime, DataFrame
 
@@ -18,6 +18,8 @@ def get_dcol(dfdata: 'df', ltarget: list=list())->dict:
         include=['int64']).columns.values)
     lcol_cat = list(dfdata[lcol].select_dtypes(
         include=['object', 'category']).columns.values)
+    lcol_bool = list(dfdata[lcol].select_dtypes(
+        include=['bool']).columns.values)
 
     # store column names
     dfcolname = {
@@ -25,8 +27,8 @@ def get_dcol(dfdata: 'df', ltarget: list=list())->dict:
         'lx': [icol for icol in lcol if not icol in ltarget],
         'lc_float': lcol_float,
         'lc_int': lcol_int,
-        'lc_cat': lcol_cat
-    }
+        'lc_cat': lcol_cat,
+        'lc_bool': lcol_bool}
     # return
     return dfcolname
 
@@ -72,6 +74,16 @@ def csv2df(path: str, lindex: list=[], ltarget: list=list(), ddt: dict=dict(), *
 
         # collect list of columns per type
         dfcolname = get_dcol(dfdata, ltarget)
+
+        # give format to the dataframe
+        for ic in dfcolname['lc_cat']:
+            dfdata[ic] = dfdata[ic].astype('category')
+        for ic in dfcolname['lc_float']:
+            dfdata[ic] = dfdata[ic].astype('float')
+        for ic in dfcolname['lc_int']:
+            dfdata[ic] = dfdata[ic].astype('int')
+        for ic in dfcolname['lc_bool']:
+            dfdata[ic] = dfdata[ic].astype('bool')
 
     except Exception as e:
         print('[error] there are any problem reading the input file "%s"' % path)
