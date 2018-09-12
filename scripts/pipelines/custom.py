@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-09-11 13:15:43
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-11 13:54:10
+# @Last Modified time: 2018-09-12 11:56:25
 
 """
 Custom classes for scikit-learn pipelines.
@@ -48,6 +48,26 @@ class StringIndexer(BaseEstimator, TransformerMixin):
         return X.apply(lambda s: s.cat.codes.replace(
             {-1: len(s.cat.categories)}
         ))
+
+
+class MyOneHotEncoder(BaseEstimator, TransformerMixin):
+    """
+    Custom OneHotEncoder where is used pandas.get_dummies function. For this reason it is
+    not necessary a previous StringIndexer.
+    dummy_na -- add a column to indicate NaNs, if False NaNs are ignored (default False).
+    drop_first -- whether to get k-1 dummies out of k categorical levels by removing the first level (default True).
+    """
+
+    def __init__(self, dummy_na=False, drop_first=True):
+        self.dummy_na = dummy_na
+        self.drop_first = drop_first
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+        assert isinstance(X, pd.DataFrame)
+        return pd.get_dummies(X, dummy_na=self.dummy_na, drop_first=self.drop_first).values
 
 
 class ColumnSelector(object):

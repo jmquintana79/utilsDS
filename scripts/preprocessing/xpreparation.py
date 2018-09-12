@@ -2,18 +2,18 @@
 # @Author: Juan Quintana
 # @Date:   2018-09-11 13:09:47
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-11 14:29:28
+# @Last Modified time: 2018-09-12 12:00:26
 
 """
 Data transfromation of X data just before to use a ML algorithm.
 """
 import sys
 sys.path.append('../')
-from pipelines import transformer
+from pipelines import xpipes as transformer
 import click
 
 
-def launch_types(df: 'dataframe')->'array':
+def full(df: 'dataframe')->'array':
     """
     Launch a pre-processing Pipeline with numerical and categorical variables.
     df -- data to be transformed.
@@ -25,10 +25,10 @@ def launch_types(df: 'dataframe')->'array':
         quit('Aborted!')
 
     # fit, transform and return
-    return transformer.pipe_types.fit_transform(df).toarray()
+    return transformer.full_pipeline.fit_transform(df)
 
 
-def launch_numerical(df: 'dataframe')->'array':
+def numerical(df: 'dataframe')->'array':
     """
     Launch a pre-processing Pipeline with only numerical variables.
     df -- data to be transformed.
@@ -40,7 +40,7 @@ def launch_numerical(df: 'dataframe')->'array':
         quit('Aborted!')
 
     # fit, transform and return
-    return transformer.pipe_numerical.fit_transform(df)
+    return transformer.num_pipeline.fit_transform(df)
 
 
 if __name__ == '__main__':
@@ -50,5 +50,5 @@ if __name__ == '__main__':
     # get a sample
     dfX = data[dcol['lc_float'][:1] + dcol['lc_cat'][:1]]
     # transformation
-    X = launch_types(dfX.dropna().head())
-    print(X)
+    X = full(dfX.dropna().head())
+    print(X[:, :5])
