@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-09-11 13:15:43
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-12 11:56:25
+# @Last Modified time: 2018-09-18 13:34:48
 
 """
 Custom classes for scikit-learn pipelines.
@@ -84,3 +84,56 @@ class ColumnSelector(object):
 
     def fit(self, X, y=None):
         return self
+
+
+class SKTransform(BaseEstimator, TransformerMixin):
+    """Sklearn Custom Transformer Decorator"""
+
+    def __init__(self, f):
+        self.transform_func = f
+
+    def __call__(self, X):
+        return self.transform_func(X)
+
+    def __iter__(self):
+        return (i for i in [self.transform_func.__name__, self])
+
+    def __getitem__(self, i):
+        return [self.transform_func.__name__, self][i]
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+        if isinstance(X, pd.DataFrame):
+            return self.transform_func(X.values)
+        return self.transform_func(X)
+
+
+if __name__ == '__main__':
+    import sys
+    sys.path.append('../')
+    from datasets import boston
+    from sklearn.pipeline import Pipeline
+
+    """ CUSTOM TRANSFORMER WITH DECORATOR """
+
+    # load boston dataset
+    data, dcol = boston.load()
+    X = data[dcol['lx']].values
+    print('Original data:\n', X[:5, :])
+    # custom transformer: selector
+
+    @SKTransform
+    def selector(x):
+        return x[:, :2]
+    # custom transformer: power 2
+
+    @SKTransform
+    def power2(x):
+        return x**2
+
+    # final pipeline
+    ppl = Pipeline([selector, power2])
+    X_transformed = ppl.transform(X)
+    print('Transformed data:\n', X_transformed[:5, :])
