@@ -1,0 +1,248 @@
+
+###
+date: 2018-09-18
+input: dataset.wine.csv
+output: summary-dataset.wine.txt
+###
+
+--> Number of rows (included header):
+179 dataset.wine.csv
+
+--> Columns:
+  1: Alcohol
+  2: Malic acid
+  3: Ash
+  4: Alcalinity of ash
+  5: Magnesium
+  6: Total phenols
+  7: Flavanoids
+  8: Nonflavanoid phenols
+  9: Proanthocyanins
+ 10: Color intensity
+ 11: Hue
+ 12: OD280/OD315 of diluted wines
+ 13: Proline
+
+--> Summary:
+  1. Alcohol
+	<class 'int'>
+	Nulls: False
+	Values: 1, 2, 3
+  2. Malic acid
+	<class 'float'>
+	Nulls: False
+	Min: 11.03
+	Max: 14.83
+	Sum: 2314.109999999999
+	Mean: 13.000617977528085
+	Median: 13.05
+	Standard Deviation: 0.8095429145285169
+	Unique values: 126
+	5 most frequent values:
+		12.37:	6
+		13.05:	6
+		12.08:	5
+		12.29:	4
+		12.42:	3
+  3. Ash
+	<class 'float'>
+	Nulls: False
+	Min: 0.74
+	Max: 5.8
+	Sum: 415.87000000000023
+	Mean: 2.336348314606743
+	Median: 1.8650000000000002
+	Standard Deviation: 1.1140036269797893
+	Unique values: 133
+	5 most frequent values:
+		1.73:	7
+		1.81:	4
+		1.67:	4
+		1.9:	3
+		1.51:	3
+  4. Alcalinity of ash
+	<class 'float'>
+	Nulls: False
+	Min: 1.36
+	Max: 3.23
+	Sum: 421.2400000000001
+	Mean: 2.366516853932585
+	Median: 2.36
+	Standard Deviation: 0.27357229442643255
+	Unique values: 79
+	5 most frequent values:
+		2.3:	7
+		2.28:	7
+		2.32:	6
+		2.7:	6
+		2.36:	6
+  5. Magnesium
+	<class 'float'>
+	Nulls: False
+	Min: 10.6
+	Max: 30.0
+	Sum: 3470.1
+	Mean: 19.49494382022472
+	Median: 19.5
+	Standard Deviation: 3.3301697576582128
+	Unique values: 63
+	5 most frequent values:
+		20.0:	15
+		16.0:	11
+		21.0:	11
+		18.0:	10
+		19.0:	9
+  6. Total phenols
+	<class 'int'>
+	Nulls: False
+	Min: 70
+	Max: 162
+	Sum: 17754
+	Mean: 99.74157303370787
+	Median: 98.0
+	Standard Deviation: 14.242307673359802
+	Unique values: 53
+	5 most frequent values:
+		88:	13
+		86:	11
+		98:	9
+		101:	9
+		96:	8
+  7. Flavanoids
+	<class 'float'>
+	Nulls: False
+	Min: 0.98
+	Max: 3.88
+	Sum: 408.5299999999999
+	Mean: 2.2951123595505614
+	Median: 2.355
+	Standard Deviation: 0.6240905641965366
+	Unique values: 97
+	5 most frequent values:
+		2.2:	8
+		2.6:	6
+		2.8:	6
+		3.0:	6
+		2.0:	5
+  8. Nonflavanoid phenols
+	<class 'float'>
+	Nulls: False
+	Min: 0.34
+	Max: 5.08
+	Sum: 361.21000000000004
+	Mean: 2.0292696629213487
+	Median: 2.135
+	Standard Deviation: 0.9960489503792331
+	Unique values: 132
+	5 most frequent values:
+		2.65:	4
+		1.25:	3
+		0.6:	3
+		0.58:	3
+		2.03:	3
+  9. Proanthocyanins
+	<class 'float'>
+	Nulls: False
+	Min: 0.13
+	Max: 0.66
+	Sum: 64.41000000000001
+	Mean: 0.36185393258426973
+	Median: 0.34
+	Standard Deviation: 0.12410325988364791
+	Unique values: 39
+	5 most frequent values:
+		0.26:	11
+		0.43:	11
+		0.29:	10
+		0.32:	9
+		0.37:	8
+ 10. Color intensity
+	<class 'float'>
+	Nulls: False
+	Min: 0.41
+	Max: 3.58
+	Sum: 283.17999999999995
+	Mean: 1.590898876404494
+	Median: 1.5550000000000002
+	Standard Deviation: 0.5707488486199378
+	Unique values: 101
+	5 most frequent values:
+		1.35:	9
+		1.46:	7
+		1.87:	6
+		1.25:	5
+		1.56:	4
+ 11. Hue
+	<class 'float'>
+	Nulls: False
+	Min: 1.28
+	Max: 13.0
+	Sum: 900.339999
+	Mean: 5.058089882022472
+	Median: 4.6899999999999995
+	Standard Deviation: 2.311764660952557
+	Unique values: 132
+	5 most frequent values:
+		2.6:	4
+		4.6:	4
+		3.8:	4
+		3.05:	3
+		5.4:	3
+ 12. OD280/OD315 of diluted wines
+	<class 'float'>
+	Nulls: False
+	Min: 0.48
+	Max: 1.71
+	Sum: 170.42599999999996
+	Mean: 0.9574494382022469
+	Median: 0.965
+	Standard Deviation: 0.22792860656507247
+	Unique values: 78
+	5 most frequent values:
+		1.04:	8
+		1.23:	7
+		1.12:	6
+		0.57:	5
+		0.89:	5
+ 13. Proline
+	<class 'float'>
+	Nulls: False
+	Min: 1.27
+	Max: 4.0
+	Sum: 464.88
+	Mean: 2.6116853932584267
+	Median: 2.78
+	Standard Deviation: 0.7079932646716005
+	Unique values: 122
+	5 most frequent values:
+		2.87:	5
+		2.78:	4
+		1.82:	4
+		3.0:	4
+		1.75:	3
+
+Row count: 178
+
+--> Head:
+|----------+------------+------+-------------------+-----------+---------------+------------+----------------------+-----------------+-----------------+----------+------------------------------+---------+-------|
+|  Alcohol | Malic acid | Ash  | Alcalinity of ash | Magnesium | Total phenols | Flavanoids | Nonflavanoid phenols | Proanthocyanins | Color intensity | Hue      | OD280/OD315 of diluted wines | Proline  |
+|----------+------------+------+-------------------+-----------+---------------+------------+----------------------+-----------------+-----------------+----------+------------------------------+---------+-------|
+|  1       | 14.23      | 1.71 | 2.43              | 15.6      | 127           | 2.8        | 3.06                 | .28             | 2.29            | 5.64     | 1.04                         | 3.92    | 1065  |
+|  1       | 13.2       | 1.78 | 2.14              | 11.2      | 100           | 2.65       | 2.76                 | .26             | 1.28            | 4.38     | 1.05                         | 3.4     | 1050  |
+|  1       | 13.16      | 2.36 | 2.67              | 18.6      | 101           | 2.8        | 3.24                 | .3              | 2.81            | 5.68     | 1.03                         | 3.17    | 1185  |
+|  1       | 14.37      | 1.95 | 2.5               | 16.8      | 113           | 3.85       | 3.49                 | .24             | 2.18            | 7.8      | .86                          | 3.45    | 1480  |
+|  1       | 13.24      | 2.59 | 2.87              | 21        | 118           | 2.8        | 2.69                 | .39             | 1.82            | 4.32     | 1.04                         | 2.93    | 735   |
+|  1       | 14.2       | 1.76 | 2.45              | 15.2      | 112           | 3.27       | 3.39                 | .34             | 1.97            | 6.75     | 1.05                         | 2.85    | 1450  |
+|  1       | 14.39      | 1.87 | 2.45              | 14.6      | 96            | 2.5        | 2.52                 | .3              | 1.98            | 5.25     | 1.02                         | 3.58    | 1290  |
+
+--> Tail:
+|  3       | 13.4       | 4.6  | 2.86              | 25        | 112           | 1.98       | .96                  | .27             | 1.11            | 8.5      | .67                          | 1.92    | 630   |
+|  3       | 12.2       | 3.03 | 2.32              | 19        | 96            | 1.25       | .49                  | .4              | .73             | 5.5      | .66                          | 1.83    | 510   |
+|  3       | 12.77      | 2.39 | 2.28              | 19.5      | 86            | 1.39       | .51                  | .48             | .64             | 9.899999 | .57                          | 1.63    | 470   |
+|  3       | 14.16      | 2.51 | 2.48              | 20        | 91            | 1.68       | .7                   | .44             | 1.24            | 9.7      | .62                          | 1.71    | 660   |
+|  3       | 13.71      | 5.65 | 2.45              | 20.5      | 95            | 1.68       | .61                  | .52             | 1.06            | 7.7      | .64                          | 1.74    | 740   |
+|  3       | 13.4       | 3.91 | 2.48              | 23        | 102           | 1.8        | .75                  | .43             | 1.41            | 7.3      | .7                           | 1.56    | 750   |
+|  3       | 13.27      | 4.28 | 2.26              | 20        | 120           | 1.59       | .69                  | .43             | 1.35            | 10.2     | .59                          | 1.56    | 835   |
+|  3       | 13.17      | 2.59 | 2.37              | 20        | 120           | 1.65       | .68                  | .53             | 1.46            | 9.3      | .6                           | 1.62    | 840   |
+|  3       | 14.13      | 4.1  | 2.74              | 24.5      | 96            | 2.05       | .76                  | .56             | 1.35            | 9.2      | .61                          | 1.6     | 560   |
+|----------+------------+------+-------------------+-----------+---------------+------------+----------------------+-----------------+-----------------+----------+------------------------------+---------+-------|

@@ -1,0 +1,163 @@
+
+###
+date: 2018-09-18
+input: test.csv
+output: summary-test.txt
+###
+
+--> Number of rows (included header):
+419 test.csv
+
+--> Columns:
+  1: PassengerId
+  2: Pclass
+  3: Name
+  4: Sex
+  5: Age
+  6: SibSp
+  7: Parch
+  8: Ticket
+  9: Fare
+ 10: Cabin
+ 11: Embarked
+
+--> Summary:
+  1. PassengerId
+	<class 'int'>
+	Nulls: False
+	Min: 892
+	Max: 1309
+	Sum: 460009
+	Mean: 1100.5
+	Median: 1100.5
+	Standard Deviation: 120.66586095495279
+	Unique values: 418
+  2. Pclass
+	<class 'int'>
+	Nulls: False
+	Values: 1, 2, 3
+  3. Name
+	<class 'str'>
+	Nulls: False
+	Unique values: 418
+	Max length: 63
+  4. Sex
+	<class 'str'>
+	Nulls: False
+	Values: female, male
+  5. Age
+	<class 'float'>
+	Nulls: True
+	Min: 0.17
+	Max: 76.0
+	Sum: 10050.5
+	Mean: 30.272590361445783
+	Median: 27.0
+	Standard Deviation: 14.15983588627256
+	Unique values: 79
+	5 most frequent values:
+		21.0:	17
+		24.0:	17
+		22.0:	16
+		30.0:	15
+		18.0:	13
+  6. SibSp
+	<class 'int'>
+	Nulls: False
+	Min: 0
+	Max: 8
+	Sum: 187
+	Mean: 0.4473684210526316
+	Median: 0.0
+	Standard Deviation: 0.8956862398979252
+	Unique values: 7
+	5 most frequent values:
+		0:	283
+		1:	110
+		2:	14
+		3:	4
+		4:	4
+  7. Parch
+	<class 'int'>
+	Nulls: False
+	Min: 0
+	Max: 9
+	Sum: 164
+	Mean: 0.3923444976076555
+	Median: 0.0
+	Standard Deviation: 0.9802542175793806
+	Unique values: 8
+	5 most frequent values:
+		0:	324
+		1:	52
+		2:	33
+		3:	3
+		9:	2
+  8. Ticket
+	<class 'str'>
+	Nulls: False
+	Unique values: 363
+	5 most frequent values:
+		PC 17608:	5
+		CA. 2343:	4
+		113503:	4
+		347077:	3
+		16966:	3
+	Max length: 18
+  9. Fare
+	<class 'float'>
+	Nulls: True
+	Min: 0.0
+	Max: 512.3292
+	Sum: 14856.537599999998
+	Mean: 35.62718848920863
+	Median: 14.4542
+	Standard Deviation: 55.840500479541035
+	Unique values: 169
+	5 most frequent values:
+		7.75:	21
+		26.0:	19
+		13.0:	17
+		8.05:	17
+		10.5:	11
+ 10. Cabin
+	<class 'str'>
+	Nulls: True
+	Unique values: 76
+	5 most frequent values:
+		B57 B59 B63 B66:	3
+		C31:	2
+		C78:	2
+		C55 C57:	2
+		A34:	2
+	Max length: 15
+ 11. Embarked
+	<class 'str'>
+	Nulls: False
+	Values: C, S, Q
+
+Row count: 418
+
+--> Head:
+|--------------+--------+-----------------------------------------------------------------+--------+------+-------+-------+--------------------+----------+-----------------+-----------|
+|  PassengerId | Pclass | Name                                                            | Sex    | Age  | SibSp | Parch | Ticket             | Fare     | Cabin           | Embarked  |
+|--------------+--------+-----------------------------------------------------------------+--------+------+-------+-------+--------------------+----------+-----------------+-----------|
+|  892         | 3      | Kelly, Mr. James                                                | male   | 34.5 | 0     | 0     | 330911             | 7.8292   |                 | Q         |
+|  893         | 3      | Wilkes, Mrs. James (Ellen Needs)                                | female | 47   | 1     | 0     | 363272             | 7        |                 | S         |
+|  894         | 2      | Myles, Mr. Thomas Francis                                       | male   | 62   | 0     | 0     | 240276             | 9.6875   |                 | Q         |
+|  895         | 3      | Wirz, Mr. Albert                                                | male   | 27   | 0     | 0     | 315154             | 8.6625   |                 | S         |
+|  896         | 3      | Hirvonen, Mrs. Alexander (Helga E Lindqvist)                    | female | 22   | 1     | 1     | 3101298            | 12.2875  |                 | S         |
+|  897         | 3      | Svensson, Mr. Johan Cervin                                      | male   | 14   | 0     | 0     | 7538               | 9.225    |                 | S         |
+|  898         | 3      | Connolly, Miss. Kate                                            | female | 30   | 0     | 0     | 330972             | 7.6292   |                 | Q         |
+
+--> Tail:
+|  1301        | 3      | Peacock, Miss. Treasteall                                       | female | 3    | 1     | 1     | SOTON/O.Q. 3101315 | 13.775   |                 | S         |
+|  1302        | 3      | Naughton, Miss. Hannah                                          | female |      | 0     | 0     | 365237             | 7.75     |                 | Q         |
+|  1303        | 1      | Minahan, Mrs. William Edward (Lillian E Thorpe)                 | female | 37   | 1     | 0     | 19928              | 90       | C78             | Q         |
+|  1304        | 3      | Henriksson, Miss. Jenny Lovisa                                  | female | 28   | 0     | 0     | 347086             | 7.775    |                 | S         |
+|  1305        | 3      | Spector, Mr. Woolf                                              | male   |      | 0     | 0     | A.5. 3236          | 8.05     |                 | S         |
+|  1306        | 1      | Oliva y Ocana, Dona. Fermina                                    | female | 39   | 0     | 0     | PC 17758           | 108.9    | C105            | C         |
+|  1307        | 3      | Saether, Mr. Simon Sivertsen                                    | male   | 38.5 | 0     | 0     | SOTON/O.Q. 3101262 | 7.25     |                 | S         |
+|  1308        | 3      | Ware, Mr. Frederick                                             | male   |      | 0     | 0     | 359309             | 8.05     |                 | S         |
+|  1309        | 3      | Peter, Master. Michael J                                        | male   |      | 1     | 1     | 2668               | 22.3583  |                 | C         |
+|--------------+--------+-----------------------------------------------------------------+--------+------+-------+-------+--------------------+----------+-----------------+-----------|

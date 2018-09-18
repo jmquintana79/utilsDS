@@ -1,0 +1,112 @@
+
+###
+date: 2018-09-18
+input: dataset.iris.csv
+output: summary-dataset.iris.csv
+###
+
+--> Number of rows (included header):
+151 dataset.iris.csv
+
+--> Columns:
+  1: sepal length (cm)
+  2: sepal width (cm)
+  3: petal length (cm)
+  4: petal width (cm)
+  5: y
+
+--> Summary:
+  1. sepal length (cm)
+	<class 'float'>
+	Nulls: False
+	Min: 4.3
+	Max: 7.9
+	Sum: 876.5000000000002
+	Mean: 5.843333333333335
+	Median: 5.8
+	Standard Deviation: 0.8253012917851412
+	Unique values: 35
+	5 most frequent values:
+		5.0:	10
+		5.1:	9
+		6.3:	9
+		5.7:	8
+		6.7:	8
+  2. sepal width (cm)
+	<class 'float'>
+	Nulls: False
+	Min: 2.0
+	Max: 4.4
+	Sum: 458.09999999999974
+	Mean: 3.053999999999998
+	Median: 3.0
+	Standard Deviation: 0.4321465800705436
+	Unique values: 23
+	5 most frequent values:
+		3.0:	26
+		2.8:	14
+		3.2:	13
+		3.4:	12
+		3.1:	12
+  3. petal length (cm)
+	<class 'float'>
+	Nulls: False
+	Min: 1.0
+	Max: 6.9
+	Sum: 563.8000000000002
+	Mean: 3.758666666666668
+	Median: 4.35
+	Standard Deviation: 1.7585291834055201
+	Unique values: 43
+	5 most frequent values:
+		1.5:	14
+		1.4:	12
+		5.1:	8
+		4.5:	8
+		1.3:	7
+  4. petal width (cm)
+	<class 'float'>
+	Nulls: False
+	Min: 0.1
+	Max: 2.5
+	Sum: 179.79999999999998
+	Mean: 1.1986666666666665
+	Median: 1.3
+	Standard Deviation: 0.7606126185881712
+	Unique values: 22
+	5 most frequent values:
+		0.2:	28
+		1.3:	13
+		1.8:	12
+		1.5:	12
+		1.4:	8
+  5. y
+	<class 'float'>
+	Nulls: False
+	Values: 0.0, 1.0, 2.0
+
+Row count: 150
+
+--> Head:
+|--------------------+------------------+-------------------+------------------+------|
+|  sepal length (cm) | sepal width (cm) | petal length (cm) | petal width (cm) | y    |
+|--------------------+------------------+-------------------+------------------+------|
+|  5.1               | 3.5              | 1.4               | 0.2              | 0.0  |
+|  4.9               | 3.0              | 1.4               | 0.2              | 0.0  |
+|  4.7               | 3.2              | 1.3               | 0.2              | 0.0  |
+|  4.6               | 3.1              | 1.5               | 0.2              | 0.0  |
+|  5.0               | 3.6              | 1.4               | 0.2              | 0.0  |
+|  5.4               | 3.9              | 1.7               | 0.4              | 0.0  |
+|  4.6               | 3.4              | 1.4               | 0.3              | 0.0  |
+
+--> Tail:
+|  6.9               | 3.1              | 5.1               | 2.3              | 2.0  |
+|  5.8               | 2.7              | 5.1               | 1.9              | 2.0  |
+|  6.8               | 3.2              | 5.9               | 2.3              | 2.0  |
+|  6.7               | 3.3              | 5.7               | 2.5              | 2.0  |
+|  6.7               | 3.0              | 5.2               | 2.3              | 2.0  |
+|  6.3               | 2.5              | 5.0               | 1.9              | 2.0  |
+|  6.5               | 3.0              | 5.2               | 2.0              | 2.0  |
+|  6.2               | 3.4              | 5.4               | 2.3              | 2.0  |
+|  5.9               | 3.0              | 5.1               | 1.8              | 2.0  |
+|--------------------+------------------+-------------------+------------------+------|

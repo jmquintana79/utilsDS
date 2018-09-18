@@ -1,0 +1,168 @@
+
+###
+date: 2018-09-18
+input: train.csv
+output: summary-train.csv
+###
+
+--> Number of rows (included header):
+892 train.csv
+
+--> Columns:
+  1: PassengerId
+  2: Survived
+  3: Pclass
+  4: Name
+  5: Sex
+  6: Age
+  7: SibSp
+  8: Parch
+  9: Ticket
+ 10: Fare
+ 11: Cabin
+ 12: Embarked
+
+--> Summary:
+  1. PassengerId
+	<class 'int'>
+	Nulls: False
+	Min: 1
+	Max: 891
+	Sum: 397386
+	Mean: 446.0
+	Median: 446
+	Standard Deviation: 257.20938292890224
+	Unique values: 891
+  2. Survived
+	<class 'int'>
+	Nulls: False
+	Values: 0, 1
+  3. Pclass
+	<class 'int'>
+	Nulls: False
+	Values: 1, 2, 3
+  4. Name
+	<class 'str'>
+	Nulls: False
+	Unique values: 891
+	Max length: 82
+  5. Sex
+	<class 'str'>
+	Nulls: False
+	Values: male, female
+  6. Age
+	<class 'float'>
+	Nulls: True
+	Min: 0.42
+	Max: 80.0
+	Sum: 21205.17
+	Mean: 29.69911764705882
+	Median: 28.0
+	Standard Deviation: 14.51632115081731
+	Unique values: 88
+	5 most frequent values:
+		24.0:	30
+		22.0:	27
+		18.0:	26
+		19.0:	25
+		30.0:	25
+  7. SibSp
+	<class 'int'>
+	Nulls: False
+	Min: 0
+	Max: 8
+	Sum: 466
+	Mean: 0.5230078563411896
+	Median: 0
+	Standard Deviation: 1.1021244350892883
+	Unique values: 7
+	5 most frequent values:
+		0:	608
+		1:	209
+		2:	28
+		4:	18
+		3:	16
+  8. Parch
+	<class 'int'>
+	Nulls: False
+	Min: 0
+	Max: 6
+	Sum: 340
+	Mean: 0.38159371492704824
+	Median: 0
+	Standard Deviation: 0.8056047612452211
+	Unique values: 7
+	5 most frequent values:
+		0:	678
+		1:	118
+		2:	80
+		5:	5
+		3:	5
+  9. Ticket
+	<class 'str'>
+	Nulls: False
+	Unique values: 681
+	5 most frequent values:
+		1601:	7
+		CA. 2343:	7
+		347082:	7
+		3101295:	6
+		CA 2144:	6
+	Max length: 18
+ 10. Fare
+	<class 'float'>
+	Nulls: False
+	Min: 0.0
+	Max: 512.3292
+	Sum: 28693.949300000015
+	Mean: 32.20420796857465
+	Median: 14.4542
+	Standard Deviation: 49.66553444477409
+	Unique values: 248
+	5 most frequent values:
+		8.05:	43
+		13.0:	42
+		7.8958:	38
+		7.75:	34
+		26.0:	31
+ 11. Cabin
+	<class 'str'>
+	Nulls: True
+	Unique values: 147
+	5 most frequent values:
+		G6:	4
+		B96 B98:	4
+		C23 C25 C27:	4
+		E101:	3
+		F33:	3
+	Max length: 15
+ 12. Embarked
+	<class 'str'>
+	Nulls: True
+	Values: C, S, Q
+
+Row count: 891
+
+--> Head:
+|--------------+----------+--------+------------------------------------------------------------------------------------+--------+------+-------+-------+--------------------+----------+-----------------+-----------|
+|  PassengerId | Survived | Pclass | Name                                                                               | Sex    | Age  | SibSp | Parch | Ticket             | Fare     | Cabin           | Embarked  |
+|--------------+----------+--------+------------------------------------------------------------------------------------+--------+------+-------+-------+--------------------+----------+-----------------+-----------|
+|  1           | 0        | 3      | Braund, Mr. Owen Harris                                                            | male   | 22   | 1     | 0     | A/5 21171          | 7.25     |                 | S         |
+|  2           | 1        | 1      | Cumings, Mrs. John Bradley (Florence Briggs Thayer)                                | female | 38   | 1     | 0     | PC 17599           | 71.2833  | C85             | C         |
+|  3           | 1        | 3      | Heikkinen, Miss. Laina                                                             | female | 26   | 0     | 0     | STON/O2. 3101282   | 7.925    |                 | S         |
+|  4           | 1        | 1      | Futrelle, Mrs. Jacques Heath (Lily May Peel)                                       | female | 35   | 1     | 0     | 113803             | 53.1     | C123            | S         |
+|  5           | 0        | 3      | Allen, Mr. William Henry                                                           | male   | 35   | 0     | 0     | 373450             | 8.05     |                 | S         |
+|  6           | 0        | 3      | Moran, Mr. James                                                                   | male   |      | 0     | 0     | 330877             | 8.4583   |                 | Q         |
+|  7           | 0        | 1      | McCarthy, Mr. Timothy J                                                            | male   | 54   | 0     | 0     | 17463              | 51.8625  | E46             | S         |
+
+--> Tail:
+|  883         | 0        | 3      | Dahlberg, Miss. Gerda Ulrika                                                       | female | 22   | 0     | 0     | 7552               | 10.5167  |                 | S         |
+|  884         | 0        | 2      | Banfield, Mr. Frederick James                                                      | male   | 28   | 0     | 0     | C.A./SOTON 34068   | 10.5     |                 | S         |
+|  885         | 0        | 3      | Sutehall, Mr. Henry Jr                                                             | male   | 25   | 0     | 0     | SOTON/OQ 392076    | 7.05     |                 | S         |
+|  886         | 0        | 3      | Rice, Mrs. William (Margaret Norton)                                               | female | 39   | 0     | 5     | 382652             | 29.125   |                 | Q         |
+|  887         | 0        | 2      | Montvila, Rev. Juozas                                                              | male   | 27   | 0     | 0     | 211536             | 13       |                 | S         |
+|  888         | 1        | 1      | Graham, Miss. Margaret Edith                                                       | female | 19   | 0     | 0     | 112053             | 30       | B42             | S         |
+|  889         | 0        | 3      | Johnston, Miss. Catherine Helen "Carrie"                                           | female |      | 1     | 2     | W./C. 6607         | 23.45    |                 | S         |
+|  890         | 1        | 1      | Behr, Mr. Karl Howell                                                              | male   | 26   | 0     | 0     | 111369             | 30       | C148            | C         |
+|  891         | 0        | 3      | Dooley, Mr. Patrick                                                                | male   | 32   | 0     | 0     | 370376             | 7.75     |                 | Q         |
+|--------------+----------+--------+------------------------------------------------------------------------------------+--------+------+-------+-------+--------------------+----------+-----------------+-----------|
