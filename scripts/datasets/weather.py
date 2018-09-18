@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-09-18 09:24:26
-# @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-18 11:50:17
+# @Last Modified by:   jmquintana79
+# @Last Modified time: 2018-09-18 20:03:24
 
 
 """
@@ -13,8 +13,11 @@ import sys
 sys.path.append('../')
 from tools.reader import csv2df
 import click
+import os
 
+this_dir, this_filename = os.path.split(__file__)
 FILE = 'data/dataset.weather.csv.gz'
+PATH = os.path.join(this_dir, FILE)
 
 
 def load()->tuple:
@@ -26,7 +29,7 @@ def load()->tuple:
     click.secho('Load data..', fg='green')
     # read data
     ddt = {'lcol': ['datetime'], 'sformat': '%Y-%m-%d %H:%M:%S'}
-    df, dcol = csv2df(FILE, lindex=['datetime'], ddt=ddt)
+    df, dcol = csv2df(PATH, lindex=['datetime'], ddt=ddt)
     # return
     return (df, dcol)
 

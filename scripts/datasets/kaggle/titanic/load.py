@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-09-18 09:24:26
-# @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-18 11:29:23
+# @Last Modified by:   jmquintana79
+# @Last Modified time: 2018-09-18 20:11:30
 
 
 """
@@ -13,9 +13,13 @@ import sys
 sys.path.append('../../../')
 from tools.reader import get_dcol, csv2df
 import click
+import os
 
 FILE_TRAIN = 'train.csv.gz'
 FILE_TEST = 'test.csv.gz'
+this_dir, this_filename = os.path.split(__file__)
+PATH_TRAIN = os.path.join(this_dir, FILE_TRAIN)
+PATH_TEST = os.path.join(this_dir, FILE_TEST)
 
 
 def train()->tuple:
@@ -26,7 +30,7 @@ def train()->tuple:
     # header
     click.secho('Load data..', fg='green')
     # read data
-    df, dcol = csv2df(FILE_TRAIN, ltarget=['Survived'], lindex=['PassengerId'])
+    df, dcol = csv2df(PATH_TRAIN, ltarget=['Survived'], lindex=['PassengerId'])
     # return
     return (df, dcol)
 
@@ -39,7 +43,7 @@ def test()->tuple:
     # header
     click.secho('Load data..', fg='green')
     # read data
-    df, dcol = csv2df(FILE_TEST, ltarget=[], lindex=['PassengerId'])
+    df, dcol = csv2df(PATH_TEST, ltarget=[], lindex=['PassengerId'])
     # return
     return (df, dcol)
 
