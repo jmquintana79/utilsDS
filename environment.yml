@@ -8,6 +8,9 @@ dependencies:
   - seaborn
   - scikit-learn
   - click
+  - nose
   - pip:
     - mlflow
     - xgboost
+    - scikit-sparse
+    - pygam
