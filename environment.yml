@@ -7,10 +7,9 @@ dependencies:
   - matplotlib
   - seaborn
   - scikit-learn
+  - statsmodels
   - click
-  - nose
   - pip:
     - mlflow
     - xgboost
-    - scikit-sparse
     - pygam

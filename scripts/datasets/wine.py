@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-09-18 09:24:26
-# @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-18 11:49:59
+# @Last Modified by:   jmquintana79
+# @Last Modified time: 2018-09-18 20:04:14
 
 
 """
@@ -13,8 +13,11 @@ import sys
 sys.path.append('../')
 from tools.reader import get_dcol, csv2df
 import click
+import os
 
+this_dir, this_filename = os.path.split(__file__)
 FILE = 'data/dataset.wine.csv.gz'
+PATH = os.path.join(this_dir, FILE)
 
 
 def load()->tuple:
@@ -25,7 +28,7 @@ def load()->tuple:
     # header
     click.secho('Load data..', fg='green')
     # read data
-    df, dcol = csv2df(FILE)
+    df, dcol = csv2df(PATH)
     # format
     df.Proline = df.Proline.astype(float)
     df.Magnesium = df.Magnesium.astype(float)
