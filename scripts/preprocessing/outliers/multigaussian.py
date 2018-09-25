@@ -2,11 +2,12 @@
 # @Author: Juan Quintana
 # @Date:   2018-09-12 16:41:39
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-12 17:33:25
+# @Last Modified time: 2018-09-25 17:39:34
 
 import numpy as np
 from pandas import read_csv
 from scipy.stats import multivariate_normal
+from sklearn.preprocessing import MinMaxScaler
 
 
 def estimateGaussian(dataset):
@@ -19,10 +20,9 @@ def multivariateGaussian(dataset, mu, sigma):
     p = multivariate_normal(mean=mu, cov=sigma)
     return p.pdf(dataset)
 
-# outliers detection using a Multi-Gaussian method
 
-
-def outliers_multigaussian(data: 'df', threshold: float, snamex: str, snamey: str, isdeep: bool=False)->tuple:
+# outliers detection using a Multi-Gaussian method for dataframe data
+def launch_df(data: 'df', threshold: float, snamex: str, snamey: str, isdeep: bool=False)->tuple:
     """
     Outliers detection using a Multi-Gaussian method.
     data -- dataframe with the columns to be checked.
@@ -41,8 +41,9 @@ def outliers_multigaussian(data: 'df', threshold: float, snamex: str, snamey: st
         print('[error] "%s" column do not exists into the dataframe.' % snamey)
         return None
 
-    # df to array
-    tr_data = data[[snamex, snamey]].as_matrix()
+    #  min max scaler
+    scaler = MinMaxScaler()
+    tr_data = scaler.fit_transform(data[[snamex, snamey]].as_matrix())
 
     # dimessions
     n_samples = tr_data.shape[0]
@@ -86,3 +87,59 @@ def outliers_multigaussian(data: 'df', threshold: float, snamex: str, snamey: st
         plt.plot()
     # return
     return (data, dinfo)
+
+
+# outliers detection using a Multi-Gaussian method for array data
+def launch_array(data: 'array', threshold: float, isdeep: bool=False)->tuple:
+    """
+    Outliers detection using a Multi-Gaussian method.
+    data -- array with the columns to be checked.
+    threshold -- threshold to be used to select the anomalous data.
+    isdeep -- display or not information and draw a plot (default False)
+    return -- tuple(array with a new column 'isoutlier' where is labeled outliers / non outliers., basic info into a dict)
+    """
+
+    #  min max scaler
+    scaler = MinMaxScaler()
+    tr_data = scaler.fit_transform(data)
+
+    # dimessions
+    n_samples = tr_data.shape[0]
+    n_dim = tr_data.shape[1]
+    if isdeep:
+        print('[info] Number of datapoints: %d' % n_samples)
+        print('[info] Number of dimensions/features: %d' % n_dim)
+
+    # calculate multivariable gaussian distribution
+    mu, sigma = estimateGaussian(tr_data)
+    p = multivariateGaussian(tr_data, mu, sigma)
+
+    # selecting outlier datapoints
+    outliers = np.asarray(np.where(p < threshold))
+
+    # display
+    if isdeep:
+        print('[info] Threshold = %s' % threshold)
+        print('[info] Number of Outliers = %s (%.3f%s)' % (len(outliers[0]), len(outliers[0])*100./n_samples, '%'))
+    # store information
+    dinfo = {'threshold': threshold, 'num_outliers': len(outliers[0]), 'percent_outliers': len(outliers[0])*100./n_samples}
+
+    # set label of is outlier or not
+    isoutlier = np.ones(n_samples) * False
+    isoutlier[outliers[0]] = np.ones(len(outliers[0])) * True
+
+    # store final chart
+    if isdeep:
+        import matplotlib.pyplot as plt
+        fig, ax = plt.subplots(figsize=(5, 5))
+        plt.xlabel('v1')
+        plt.ylabel('v2')
+        plt.plot(tr_data[:, 0], tr_data[:, 1], 'bx')
+        plt.plot(tr_data[outliers, 0], tr_data[outliers, 1], 'ro')
+        plt.title('Number of Outliers = %s (%.3f%s)\nThreshold = %s' %
+                  (len(outliers[0]), len(outliers[0])*100./n_samples, '%', threshold), fontsize=14)
+        ax.set_xlim([0., 1.])
+        ax.set_ylim([0., 1.])
+        plt.plot()
+    # return
+    return (np.c_[data, isoutlier], dinfo)
