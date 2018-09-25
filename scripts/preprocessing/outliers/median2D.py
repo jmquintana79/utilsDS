@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-09-25 17:03:26
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-25 17:43:14
+# @Last Modified time: 2018-09-25 18:07:37
 
 """
 Outilers identifier for 2D data based on Median Absolute Deviation of RESIDUES.
@@ -49,7 +49,6 @@ def launch(x1: 'array', x2: 'array', percent: float = 20., isplot: bool = False)
     isplot -- plor or not results (default False)
     return -- isoutlier mask array with True/False values.
     """
-
     # prepare data
     X = np.c_[x1, x2]
     #  min max scaler
@@ -65,14 +64,14 @@ def launch(x1: 'array', x2: 'array', percent: float = 20., isplot: bool = False)
         p = len(ilout)*100/len(signal)
         vr2 = r2_score(X_t[ilin, 0], X_t[ilin, 1])
         if p < percent:
-            print('[info] threshold = %s / num. outliers(total) = %s(%s) / percent of filtered data: %.3f %s / r2 score = %.3f' %
+            print('[info] outliers detection: threshold = %s / num. outliers(total) = %s(%s) / percent of filtered data: %.3f %s / r2 score = %.3f' %
                   (ith, len(ilout), len(signal), p, '%', vr2))
             break
     # validation
     if len(ilin) <= 50.:
-        print('[warning] the set of filtered data is too small: len(x) = %s .' % (len(ilin)))
+        print('[warning] outliers detection: the set of filtered data is too small: len(x) = %s .' % (len(ilin)))
     if vr2 < 0.5:
-        print('[warning] the set of filtered data has got a poor correlation: r2 score = %.3f .' % (vr2))
+        print('[warning] outliers detection: the set of filtered data has got a poor correlation: r2 score = %.3f .' % (vr2))
 
     # plot
     if isplot:
