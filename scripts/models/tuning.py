@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: jmquintana79
 # @Date:   2018-09-22 11:58:53
-# @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-25 18:02:16
+# @Last Modified by:   jmquintana79
+# @Last Modified time: 2018-09-25 23:05:23
 
 
 if __name__ == '__main__':
@@ -59,7 +59,9 @@ if __name__ == '__main__':
     print('Prepared data: X_train: %s  y_train: %s' % (X_train.shape, y_train.shape))
     print('Prepared data: X_test: %s  y_test: %s' % (X_test.shape, y_test.shape))
 
-    # estimator withou tuning
+
+
+    ## ESTIMATOR WITHOUT TUNING ##
     t.add('no_tuning')
     clf = XGBRegressor(nthreads=-1)
     clf.fit(X_train, y_train)
@@ -68,7 +70,9 @@ if __name__ == '__main__':
     tf = t.since('no_tuning')
     print('Without tuning:     bias = %.3f  mae = %.3f  r2 = %.3f (time: %s)' % (dscores['bias'], dscores['mae'], dscores['r2'], format_duration(tf)))
 
-    # extimator with random tuning
+
+    """
+    ## ESTIMATOR WITH RANDOM TUNING ##
     t.add('random_tuning')
     clf = XGBRegressor(nthreads=-1)
     one_to_left = st.beta(10, 1)
@@ -90,7 +94,9 @@ if __name__ == '__main__':
     tf = t.since('random_tuning')
     print('Random tuning:      bias = %.3f  mae = %.3f  r2 = %.3f (time: %s)' % (dscores['bias'], dscores['mae'], dscores['r2'], format_duration(tf)))
 
-    # extimator with exhaustive tuning
+
+
+    ## ESTIMATOR WITH EXHAUSTIVE TUNING ##
     t.add('exhaustive_tuning')
     clf = XGBRegressor(nthreads=-1)
     dparams = {
@@ -105,3 +111,6 @@ if __name__ == '__main__':
     dscores = metrics_regression(y_test, y_hat, X.shape[1])
     tf = t.since('exhaustive_tuning')
     print('Exhaustive tuning:  bias = %.3f  mae = %.3f  r2 = %.3f (time: %s)' % (dscores['bias'], dscores['mae'], dscores['r2'], format_duration(tf)))
+    """
+
+
