@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-09-25 17:03:26
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-25 17:25:22
+# @Last Modified time: 2018-09-25 17:43:14
 
 """
 Outilers identifier for 2D data based on Median Absolute Deviation of RESIDUES.
@@ -55,6 +55,7 @@ def launch(x1: 'array', x2: 'array', percent: float = 20., isplot: bool = False)
     #  min max scaler
     scaler = MinMaxScaler()
     X_t = scaler.fit_transform(X)
+    # calculate the residues signal
     signal = np.abs(X_t[:, 0] - X_t[:, 1])
     # looking for outliers
     for ith in np.arange(0., 5., 0.1):
