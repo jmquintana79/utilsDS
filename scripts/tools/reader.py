@@ -1,36 +1,55 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-08-06 16:47:54
-# @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-11 11:23:36
+# @Last Modified by:   jmquintana79
+# @Last Modified time: 2018-09-28 23:08:41
 
 from pandas import read_csv, to_datetime, DataFrame
 
 
-# get dictionary of columns by type
-def get_dcol(dfdata: 'df', ltarget: list=list())->dict:
-    # columns
-    lcol = dfdata.columns.tolist()
-    # list of columns per type
-    lcol_float = list(dfdata[lcol].select_dtypes(
-        include=['float64']).columns.values)
-    lcol_int = list(dfdata[lcol].select_dtypes(
-        include=['int64']).columns.values)
-    lcol_cat = list(dfdata[lcol].select_dtypes(
-        include=['object', 'category']).columns.values)
-    lcol_bool = list(dfdata[lcol].select_dtypes(
-        include=['bool']).columns.values)
+class columns():
+    """
+    Dataframe column names container.
+    """
+    def __init__(self):
+        self.all = list()
+        self.x = list()
+        self.y = list()
+        self.float = list()
+        self.int = list()
+        self.cat = list()
+        self.bool = list()
+        self.index = dict()
 
-    # store column names
-    dfcolname = {
-        'ly': ltarget,
-        'lx': [icol for icol in lcol if not icol in ltarget],
-        'lc_float': lcol_float,
-        'lc_int': lcol_int,
-        'lc_cat': lcol_cat,
-        'lc_bool': lcol_bool}
-    # return
-    return dfcolname
+    def get(self, dfdata:'df', target:list()=list()):
+        """
+        Collect and store column names of df. Furthermore, column names are
+        classify per type.
+        dfdata -- dataframe.
+        target -- list of column names to be considered as target variables (default []).
+        """
+       # columns
+        self.all = dfdata.columns.tolist()
+        # collect and store column names
+        self.y = target
+        self.x = [icol for icol in self.all if not icol in target]
+        self.float =  list(dfdata[self.all].select_dtypes(include=['float64']).columns.values)
+        self.int = list(dfdata[self.all].select_dtypes(include=['int64']).columns.values)
+        self.cat = list(dfdata[self.all].select_dtypes(include=['object', 'category']).columns.values)
+        self.bool = list(dfdata[self.all].select_dtypes(include=['bool']).columns.values)
+        # collect index
+        class Index():
+            def __init__(self):
+                pass
+        self.index = Index()
+        for ii, icol in enumerate(self.all):
+            setattr( self.index, icol, ii )
+
+    def __str__(self):
+        return "\ncolumns.x: %s\ncolumns.y: %s\ncolumns.float: %s\ncolumns.int: %s\ncolumns.cat: %s\ncolumns.bool: %s\n"%(self.x, self.y, self.float, self.int, self.cat, self.bool)
+
+
+
 
 
 # READER: csv file to dataframe
@@ -44,7 +63,7 @@ def csv2df(path: str, lindex: list=[], ltarget: list=list(), ddt: dict=dict(), *
                                                                 'lcol':[LIST OF COLUMNS],
                                                                 'sformat:"DATETIME FORMAT STRING"} )
     **kwargs -- dict other arguments: sep, usecols
-    return (df data, dictionary with columns information ('ly','lx','lx_float','lx_int','lx_cat'))
+    return (df data, instance with columns information ('y','x','float','int','cat', 'bool', 'index'))
     """
 
     # usecols
@@ -73,16 +92,17 @@ def csv2df(path: str, lindex: list=[], ltarget: list=list(), ddt: dict=dict(), *
             dfdata = dfdata.set_index(lindex)
 
         # collect list of columns per type
-        dfcolname = get_dcol(dfdata, ltarget)
+        col = columns()
+        col.get(dfdata, ltarget)
 
         # give format to the dataframe
-        for ic in dfcolname['lc_cat']:
+        for ic in col.cat:
             dfdata[ic] = dfdata[ic].astype('category')
-        for ic in dfcolname['lc_float']:
+        for ic in col.float:
             dfdata[ic] = dfdata[ic].astype('float')
-        for ic in dfcolname['lc_int']:
+        for ic in col.int:
             dfdata[ic] = dfdata[ic].astype('int')
-        for ic in dfcolname['lc_bool']:
+        for ic in col.bool:
             dfdata[ic] = dfdata[ic].astype('bool')
 
     except Exception as e:
@@ -91,17 +111,19 @@ def csv2df(path: str, lindex: list=[], ltarget: list=list(), ddt: dict=dict(), *
         return (DataFrame(), dict())
 
     # return
-    return (dfdata, dfcolname)
+    return (dfdata, col)
 
 
 # MAIN
 if __name__ == '__main__':
     import os
+
     # read: csv to df
-    path_input = os.path.join('../../datasets/', 'dataset.weather.csv')
-    dfdata, dcolumns = csv2df(path_input)
+    path_input = os.path.join('../datasets/kaggle/titanic', 'train.csv.gz')
+    dfdata, columns = csv2df(path_input)
     print('\ndata:\n', dfdata.head())
-    print('\ncolumns:\n', dcolumns)
+    print('\ncolumns:\n', columns)
+    print('\nselect a column by index:\n', dfdata.values[:,columns.index.Cabin][:5])
 
     # end
     quit('\ndone!')
