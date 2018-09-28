@@ -1,31 +1,33 @@
 # -*- coding: utf-8 -*-
 # @Author: jmquintana79
 # @Date:   2018-09-22 11:58:53
-# @Last Modified by:   jmquintana79
-# @Last Modified time: 2018-09-25 23:05:23
+# @Last Modified by:   Juan Quintana
+# @Last Modified time: 2018-09-26 16:12:20
+
+import warnings
+warnings.filterwarnings('ignore')
+import numpy as np
+import sys
+sys.path.append('../')
+from datasets import solar
+from tools.reader import get_dcol
+from tools.timer import *
+from preprocessing.scalers.normalization import Scaler
+from models.metrics import metrics_regression
+# from xgboost.sklearn import XGBClassifier
+from xgboost.sklearn import XGBRegressor
+from sklearn.model_selection import cross_val_score, train_test_split
+import scipy.stats as st
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import accuracy_score
 
 
-if __name__ == '__main__':
-    import warnings
-    warnings.filterwarnings('ignore')
-    import numpy as np
-    import sys
-    sys.path.append('../')
-    from datasets import solar
-    from tools.reader import get_dcol
-    from tools.timer import *
-    from preprocessing.scalers.normalization import Scaler
-    from models.metrics import metrics_regression
-    #from xgboost.sklearn import XGBClassifier
-    from xgboost.sklearn import XGBRegressor
-    from sklearn.model_selection import cross_val_score, train_test_split
-    import scipy.stats as st
-    from sklearn.model_selection import RandomizedSearchCV
-    from sklearn.model_selection import GridSearchCV
-    from sklearn.metrics import accuracy_score
-
+def main():
     # init timer
     t = Timer()
+
+    """ DATA PREPARATION """
 
     # load data
     data, dcol = solar.load()
@@ -33,7 +35,7 @@ if __name__ == '__main__':
     ly = ['y']
     lx = ['doy', 'hour', 'LCDC267', 'MCDC267', 'HCDC267', 'TCDC267', 'logAPCP267', 'RH267', 'TMP267', 'DSWRF267']
     data = data[lx + ly]
-    fdcol = get_dcol(data, ltarget=ly)
+    dcol = get_dcol(data, ltarget=ly)
     # select one hour data
     hour = 11
     idata = data[data.hour == hour]
@@ -59,9 +61,8 @@ if __name__ == '__main__':
     print('Prepared data: X_train: %s  y_train: %s' % (X_train.shape, y_train.shape))
     print('Prepared data: X_test: %s  y_test: %s' % (X_test.shape, y_test.shape))
 
+    """ ESTIMATOR WITHOUT TUNING """
 
-
-    ## ESTIMATOR WITHOUT TUNING ##
     t.add('no_tuning')
     clf = XGBRegressor(nthreads=-1)
     clf.fit(X_train, y_train)
@@ -70,9 +71,8 @@ if __name__ == '__main__':
     tf = t.since('no_tuning')
     print('Without tuning:     bias = %.3f  mae = %.3f  r2 = %.3f (time: %s)' % (dscores['bias'], dscores['mae'], dscores['r2'], format_duration(tf)))
 
+    """ ESTIMATOR WITH RANDOM TUNING """
 
-    """
-    ## ESTIMATOR WITH RANDOM TUNING ##
     t.add('random_tuning')
     clf = XGBRegressor(nthreads=-1)
     one_to_left = st.beta(10, 1)
@@ -94,9 +94,8 @@ if __name__ == '__main__':
     tf = t.since('random_tuning')
     print('Random tuning:      bias = %.3f  mae = %.3f  r2 = %.3f (time: %s)' % (dscores['bias'], dscores['mae'], dscores['r2'], format_duration(tf)))
 
+    """ ESTIMATOR WITH EXHAUSTIVE TUNING """
 
-
-    ## ESTIMATOR WITH EXHAUSTIVE TUNING ##
     t.add('exhaustive_tuning')
     clf = XGBRegressor(nthreads=-1)
     dparams = {
@@ -111,6 +110,27 @@ if __name__ == '__main__':
     dscores = metrics_regression(y_test, y_hat, X.shape[1])
     tf = t.since('exhaustive_tuning')
     print('Exhaustive tuning:  bias = %.3f  mae = %.3f  r2 = %.3f (time: %s)' % (dscores['bias'], dscores['mae'], dscores['r2'], format_duration(tf)))
-    """
+
+    """ ESTIMATOR WITH BAYESIAN TUNING """
+
+    from hpsklearn import HyperoptEstimator, xgboost_regression
+    from hyperopt import tpe
+    import os
+    os.environ['OMP_NUM_THREADS'] = str(2)
+    t.add('bayesian_tuning')
+    # Instantiate a HyperoptEstimator with the search space and number of evaluations
+    clf = HyperoptEstimator(regressor=xgboost_regression('my_clf'),
+                            preprocessing=[],
+                            algo=tpe.suggest,
+                            max_evals=250,
+                            trial_timeout=300)
+
+    clf.fit(X_train, y_train)
+    y_hat = clf.predict(X_test)
+    dscores = metrics_regression(y_test, y_hat, X.shape[1])
+    tf = t.since('bayesian_tuning')
+    print('Bayesian tuning:  bias = %.3f  mae = %.3f  r2 = %.3f (time: %s)' % (dscores['bias'], dscores['mae'], dscores['r2'], format_duration(tf)))
 
 
+if __name__ == '__main__':
+    main()
