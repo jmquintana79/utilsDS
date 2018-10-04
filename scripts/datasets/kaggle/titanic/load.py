@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-09-18 09:24:26
-# @Last Modified by:   jmquintana79
-# @Last Modified time: 2018-09-18 20:11:30
+# @Last Modified by:   Juan Quintana
+# @Last Modified time: 2018-10-04 15:44:51
 
 
 """
@@ -11,7 +11,7 @@ DATASET Kaggle Titanic.
 import numpy as np
 import sys
 sys.path.append('../../../')
-from tools.reader import get_dcol, csv2df
+from tools.reader import columns, csv2df
 import click
 import os
 
@@ -30,9 +30,9 @@ def train()->tuple:
     # header
     click.secho('Load data..', fg='green')
     # read data
-    df, dcol = csv2df(PATH_TRAIN, ltarget=['Survived'], lindex=['PassengerId'])
+    df, col = csv2df(PATH_TRAIN, ltarget=['Survived'], lindex=['PassengerId'])
     # return
-    return (df, dcol)
+    return (df, col)
 
 
 def test()->tuple:
@@ -43,17 +43,17 @@ def test()->tuple:
     # header
     click.secho('Load data..', fg='green')
     # read data
-    df, dcol = csv2df(PATH_TEST, ltarget=[], lindex=['PassengerId'])
+    df, col = csv2df(PATH_TEST, ltarget=[], lindex=['PassengerId'])
     # return
-    return (df, dcol)
+    return (df, col)
 
 
 if __name__ == '__main__':
     # load training data
-    dftrain, dcol_train = train()
+    dftrain, col_train = train()
     print('Training data:')
-    print(dcol_train)
+    print(col_train.all)
     # load test data
-    dftest, dcol_test = test()
+    dftest, col_test = test()
     print('Test data:')
-    print(dcol_test)
+    print(col_test.all)

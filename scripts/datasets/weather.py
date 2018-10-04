@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-09-18 09:24:26
-# @Last Modified by:   jmquintana79
-# @Last Modified time: 2018-09-18 20:03:24
+# @Last Modified by:   Juan Quintana
+# @Last Modified time: 2018-10-04 15:43:13
 
 
 """
@@ -29,9 +29,9 @@ def load()->tuple:
     click.secho('Load data..', fg='green')
     # read data
     ddt = {'lcol': ['datetime'], 'sformat': '%Y-%m-%d %H:%M:%S'}
-    df, dcol = csv2df(PATH, lindex=['datetime'], ddt=ddt)
+    df, col = csv2df(PATH, lindex=['datetime'], ddt=ddt)
     # return
-    return (df, dcol)
+    return (df, col)
 
 
 def save(path: str):
@@ -52,6 +52,7 @@ def save(path: str):
 
 if __name__ == '__main__':
     # load data
-    data, dcol = load()
+    data, col = load()
+    # print(col.all)
     # save data
     # save('dataset.weather.csv')

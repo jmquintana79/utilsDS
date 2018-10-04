@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-09-18 09:24:26
-# @Last Modified by:   jmquintana79
-# @Last Modified time: 2018-09-18 20:04:14
+# @Last Modified by:   Juan Quintana
+# @Last Modified time: 2018-10-04 15:43:58
 
 
 """
@@ -11,7 +11,7 @@ DATASET wine without target variable.
 import numpy as np
 import sys
 sys.path.append('../')
-from tools.reader import get_dcol, csv2df
+from tools.reader import columns, csv2df
 import click
 import os
 
@@ -34,9 +34,10 @@ def load()->tuple:
     df.Magnesium = df.Magnesium.astype(float)
     df.Alcohol = df.Alcohol.astype(int)
     # update dcol
-    dcol = get_dcol(df)
+    col = columns()
+    col.get(df)
     # return
-    return (df, dcol)
+    return (df, col)
 
 
 def save(path: str):
@@ -57,6 +58,7 @@ def save(path: str):
 
 if __name__ == '__main__':
     # load data
-    data, dcol = load()
+    data, col = load()
+    # print(col.all)
     # save data
     # save('dataset.wine.csv')

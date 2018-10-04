@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-09-18 09:24:26
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-09-18 10:30:16
+# @Last Modified time: 2018-10-04 15:42:04
 
 
 """
@@ -11,8 +11,8 @@ DATASET Scikit-Learn Iris.
 import numpy as np
 from pandas import DataFrame
 import sys
-sys.path.append('../scripts/')
-from tools.reader import get_dcol
+sys.path.append('../')
+from tools.reader import columns
 from sklearn.datasets import load_iris
 import click
 
@@ -31,9 +31,10 @@ def load()->tuple:
     # format
     df.y = df.y.astype('category')
     # get dcol
-    dcol = get_dcol(df, ltarget=['y'])
+    col = columns()
+    col.get(df, ['y'])
     # return
-    return (df, dcol)
+    return (df, col)
 
 
 def save(path: str):
@@ -57,6 +58,7 @@ def save(path: str):
 
 if __name__ == '__main__':
     # load data
-    data, dcol = load()
+    data, col = load()
+    print(col.all)
     # save data
     # save('dataset.iris.csv')

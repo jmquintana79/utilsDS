@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Juan Quintana
 # @Date:   2018-09-18 09:24:26
-# @Last Modified by:   jmquintana79
-# @Last Modified time: 2018-09-18 20:02:17
+# @Last Modified by:   Juan Quintana
+# @Last Modified time: 2018-10-04 15:35:20
 
 
 """
@@ -11,14 +11,13 @@ DATASET solar.
 import numpy as np
 import sys
 sys.path.append('../')
-from tools.reader import get_dcol, csv2df
+from tools.reader import columns, csv2df
 import click
 import os
 
 this_dir, this_filename = os.path.split(__file__)
 FILE = 'data/dataset.solar.csv.gz'
 PATH = os.path.join(this_dir, FILE)
-
 
 
 def load()->tuple:
@@ -34,9 +33,11 @@ def load()->tuple:
     # format
     df.cy = df.cy.astype(int)
     # update dcol
-    dcol = get_dcol(df, ltarget=['y', 'cy'])
+    col = columns()
+    col.get(df, ['y', 'cy'])
+
     # return
-    return (df, dcol)
+    return (df, col)
 
 
 def save(path: str):
@@ -57,6 +58,6 @@ def save(path: str):
 
 if __name__ == '__main__':
     # load data
-    data, dcol = load()
+    data, col = load()
     # save data
     # save('dataset.solar.csv')
