@@ -16,3 +16,4 @@ dependencies:
     - hyperopt
     - hpsklearn
     - dtw # Dynamic Time Warping distance (similarity distance for time series)
+    - featexp # features analysis
