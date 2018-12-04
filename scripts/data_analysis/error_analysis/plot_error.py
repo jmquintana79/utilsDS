@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2018-12-03 16:57:06
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-12-03 17:28:57
+# @Last Modified time: 2018-12-04 11:59:56
 
 # ERROR ANALYSIS
 from tools.columns import num2cal
@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 
 # ## PLOT: Total Metrics
 
-def total_metrics(data: 'df', sobservation: str, sprediction: str, nX=None):
+def total_metrics(df: 'df', sobservation: str, sprediction: str, nX=None):
     """
     Plot an error analysis overview for whole data.
     data -- df where is included the data to be validated.
@@ -25,7 +25,8 @@ def total_metrics(data: 'df', sobservation: str, sprediction: str, nX=None):
     sprediction -- column name of predicted data.
     nX -- number of features used to calculate the prediction (default None).
     """
-
+    # copy data
+    data = df[[sobservation, sprediction]].dropna()
     # calculate total metrics
     dmetrics = metrics_regression(data[sobservation].values, data[sprediction].values, k=nX)
     bias, mae, r2 = dmetrics['bias'], dmetrics['mae'], dmetrics['r2']
@@ -95,6 +96,13 @@ def total_metrics(data: 'df', sobservation: str, sprediction: str, nX=None):
     ax5.set_xlabel('Theoretical Quantiles', fontsize=14)
     ax5.set_ylabel('Ordered Values', fontsize=14)
 
+    # kde: DISTRIBUTION (real vs predictioni)
+    ax6 = plt.subplot2grid((2, 3), (1, 2))
+    data.rename(columns={sobservation: 'real', sprediction: 'prediction'}).plot(kind='kde', ax=ax6, style=['b--', 'r--'], linewidth=2.)
+    ax6.set_title("KDE: real vs prediction", fontsize=18)
+    ax6.set_xlabel('Values', fontsize=14)
+    ax6.set_ylabel('Density', fontsize=14)
+
     # display
     plt.subplots_adjust(wspace=0.5)
     plt.show()
@@ -157,9 +165,9 @@ def per_reference_metrics(data: 'df', sobservation: str, sprediction: str, srefe
     ax1 = plt.subplot2grid((5, 1), (0, 0))
     ax1.plot(resfolk.index.tolist(), resfolk.bias.tolist(), linestyle='--', color='blue', linewidth=3)
     ax1.scatter(resfolk.index.tolist(), resfolk.bias.tolist(), color='blue')
-    for i, v in enumerate(resfolk.bias.values):
-        if not np.isnan(v):
-            ax1.annotate('%.3f' % v, (i, v), fontsize=14, rotation=45, color='grey')
+    # for i, v in enumerate(resfolk.bias.values):
+    #    if not np.isnan(v):
+    #        ax1.annotate('%.3f' % v, (i, v), fontsize=14, rotation=45, color='grey')
     ax1.set_title('BIAS', fontsize=18)
     ax1.set_xticks(resfolk.index.tolist())
     ax1.set_xticklabels(resfolk.index.tolist(), fontsize=14)
@@ -168,9 +176,9 @@ def per_reference_metrics(data: 'df', sobservation: str, sprediction: str, srefe
     ax2 = plt.subplot2grid((5, 1), (1, 0))
     ax2.plot(resfolk.index.tolist(), resfolk.mae.tolist(), linestyle='--', color='orange', linewidth=3)
     ax2.scatter(resfolk.index.tolist(), resfolk.mae.tolist(), color='orange')
-    for i, v in enumerate(resfolk.mae.values):
-        if not np.isnan(v):
-            ax2.annotate('%.3f' % v, (i, v), fontsize=14, rotation=45, color='grey')
+    # for i, v in enumerate(resfolk.mae.values):
+    #    if not np.isnan(v):
+    #        ax2.annotate('%.3f' % v, (i, v), fontsize=14, rotation=45, color='grey')
     ax2.set_title('MAE', fontsize=18)
     ax2.set_xticks(resfolk.index.tolist())
     ax2.set_xticklabels(resfolk.index.tolist(), fontsize=14)
@@ -179,9 +187,9 @@ def per_reference_metrics(data: 'df', sobservation: str, sprediction: str, srefe
     ax3 = plt.subplot2grid((5, 1), (2, 0))
     ax3.plot(resfolk.index.tolist(), resfolk.r2.tolist(), linestyle='--', color='green', linewidth=3)
     ax3.scatter(resfolk.index.tolist(), resfolk.r2.tolist(), color='green')
-    for i, v in enumerate(resfolk.r2.values):
-        if not np.isnan(v):
-            ax3.annotate('%.3f' % v, (i, v), fontsize=14, rotation=45, color='grey')
+    # for i, v in enumerate(resfolk.r2.values):
+    #    if not np.isnan(v):
+    #        ax3.annotate('%.3f' % v, (i, v), fontsize=14, rotation=45, color='grey')
     ax3.set_title('R2', fontsize=18)
     ax3.set_xticks(resfolk.index.tolist())
     ax3.set_xticklabels(resfolk.index.tolist(), fontsize=14)
@@ -191,9 +199,9 @@ def per_reference_metrics(data: 'df', sobservation: str, sprediction: str, srefe
     ax4 = plt.subplot2grid((5, 1), (3, 0))
     ax4.plot(resfolk.index.tolist(), resfolk.res_avg.tolist(), linestyle='--', color='red', linewidth=3)
     ax4.scatter(resfolk.index.tolist(), resfolk.res_avg.tolist(), color='red')
-    for i, v in enumerate(resfolk.res_avg.values):
-        if not np.isnan(v):
-            ax4.annotate('%.3f' % v, (i, v), fontsize=14, rotation=45, color='grey')
+    # for i, v in enumerate(resfolk.res_avg.values):
+    #    if not np.isnan(v):
+    #        ax4.annotate('%.3f' % v, (i, v), fontsize=14, rotation=45, color='grey')
     ax4.set_title('RESIDUES (avg)', fontsize=18)
     ax4.set_xticks(resfolk.index.tolist())
     ax4.set_xticklabels(resfolk.index.tolist(), fontsize=14)
@@ -202,9 +210,9 @@ def per_reference_metrics(data: 'df', sobservation: str, sprediction: str, srefe
     ax5 = plt.subplot2grid((5, 1), (4, 0))
     ax5.plot(resfolk.index.tolist(), resfolk.res_std.tolist(), linestyle='--', color='red', linewidth=3)
     ax5.scatter(resfolk.index.tolist(), resfolk.res_std.tolist(), color='red')
-    for i, v in enumerate(resfolk.res_std.values):
-        if not np.isnan(v):
-            ax5.annotate('%.3f' % v, (i, v), fontsize=14, rotation=45, color='grey')
+    # for i, v in enumerate(resfolk.res_std.values):
+    #    if not np.isnan(v):
+    #        ax5.annotate('%.3f' % v, (i, v), fontsize=14, rotation=45, color='grey')
     ax5.set_title('RESIDUES (std)', fontsize=18)
     ax5.set_xlabel(sreference, fontsize=14)
     ax5.set_xticks(resfolk.index.tolist())
@@ -213,3 +221,6 @@ def per_reference_metrics(data: 'df', sobservation: str, sprediction: str, srefe
     # display
     plt.subplots_adjust(hspace=0.6)
     plt.show()
+
+    # return
+    return resfolk
