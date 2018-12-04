@@ -2,16 +2,17 @@
 # @Author: Juan Quintana
 # @Date:   2018-12-03 16:57:06
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2018-12-04 11:59:56
+# @Last Modified time: 2018-12-04 15:36:09
 
-# ERROR ANALYSIS
+"""
+ERROR ANALYSIS for numeric predictions (regression problems).
+"""
+
 from tools.columns import num2cal
 import warnings
 from models.metrics import metrics_regression
 import pandas as pd
 import numpy as np
-import sys
-sys.path.append('../../')
 warnings.filterwarnings('ignore')
 
 
@@ -20,7 +21,7 @@ warnings.filterwarnings('ignore')
 def total_metrics(df: 'df', sobservation: str, sprediction: str, nX=None):
     """
     Plot an error analysis overview for whole data.
-    data -- df where is included the data to be validated.
+    df -- df where is included the data to be validated.
     sobservation -- column name of real data.
     sprediction -- column name of predicted data.
     nX -- number of features used to calculate the prediction (default None).
@@ -118,6 +119,7 @@ def per_reference_metrics(data: 'df', sobservation: str, sprediction: str, srefe
     sprediction -- column name of predicted data.
     sreference -- column name of the reference variable.
     nX -- number of features used to calculate the prediction (default None).
+    return -- dataframe with scores per values of the reference variable.
     """
 
     # METRICS CALCULATION
