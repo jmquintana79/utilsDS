@@ -17,4 +17,5 @@ dependencies:
     - hpsklearn
     - dtw # Dynamic Time Warping distance (similarity distance for time series)
     - featexp # features analysis
-    - dtw # DTW (Dynamic Time Warping) python module 
+    - dtw # DTW (Dynamic Time Warping) 
+    - fastdtw # fast DTW (Dynamic Time Warping) 
