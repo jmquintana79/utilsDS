@@ -17,8 +17,9 @@ These tools have been written into Python programming languages. The necessary l
   - [Features Selection.](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/feature_engineering/selection)
 - [Pipelines](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/pipelines).
 - Pre-processing:
-  - Outliers:
-    - [Outliers detection in 2D datasets.](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/preprocessing/outliers/notebook-outliers_detection-2D.ipynb)
+  - Anomalies:
+    - [Outliers detection in 2D datasets.](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/preprocessing/anomalies/notebook-outliers_detection-2D.ipynb)
+    - [Steps detector in univariate timeseries.](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/preprocessing/anomalies/notebook-steps_detection.ipynb)
 - Similarity Measures (Distances):
   - [Dynamic Time Warping (DTW).](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/similarity/notebook-similarity_distance-Dynamic_Time_Warping-check.ipynb)
 
