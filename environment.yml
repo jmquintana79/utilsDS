@@ -18,4 +18,5 @@ dependencies:
     - featexp # features analysis
     #- dtw # DTW (Dynamic Time Warping)
     #- fastdtw # fast DTW (Dynamic Time Warping)
+    - plotly 
     
