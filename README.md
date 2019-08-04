@@ -1,4 +1,4 @@
-# Tools for a Machine Learning Project
+# Tools for a Data Science projects
 
 This repository is a compendium of notebooks and scripts to be used in my daily work for Data Science projects.
 
