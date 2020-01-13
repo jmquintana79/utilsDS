@@ -12,7 +12,10 @@ These tools have been written into Python programming languages. The necessary l
   - [Exploratory Data Analysis (EDA).](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/EDA)
   - [Errors Analysis.](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/errors)
   - [Fourier Analysis.](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/fourier)
-- Datasets: [sklearn2csv](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/datasets/notebook-dataset-sklearn2csv.ipynb)
+- Datasets: 
+  - [sklearn2csv](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/datasets/notebook-dataset-sklearn2csv.ipynb)
+  - [Dataset from Scikit-Learn](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets/datasets-scikit_learn.ipynb)
+  - [Dataset from Seaborn](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets/datasets-seaborn.ipynb)
 - Features Engineering:
   - [Features Selection.](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/feature_engineering/selection)
 - [Pipelines](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/pipelines).
