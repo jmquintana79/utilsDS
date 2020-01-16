@@ -13,6 +13,7 @@ These tools have been written into Python programming languages. The necessary l
   - [Errors Analysis](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/errors)
   - [Fourier Analysis](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/fourier)
   - [Kernel Density Estimation (KDE)](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/KDE)
+  - [Scatter plots](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/scatter_plots)
 - Datasets: 
   - [sklearn2csv](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/datasets/notebook-dataset-sklearn2csv.ipynb)
   - [Dataset from Scikit-Learn](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets/datasets-scikit_learn.ipynb)
