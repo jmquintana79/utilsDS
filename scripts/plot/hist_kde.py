@@ -26,8 +26,15 @@ from scipy.signal import argrelextrema
 
 ## functions ##
 
-## estimate
+## estimate local maximumns for the gaussian density
 def local_maximums_kde_gaussian(data:'array', threshold_freq:'float')->'array':
+    """
+    Estimate local maximumns for the gaussian density.
+    data -- 1D array.
+    threshold_freq -- frequency (probability) limit to discard or not a spike as a local maximum.
+    return -- list of values where there are local maximums.
+    """
+
     ## histogram density estimation with kde 
     noise = data[~np.isnan(data)]
     density = stats.gaussian_kde(noise)
@@ -44,14 +51,30 @@ def local_maximums_kde_gaussian(data:'array', threshold_freq:'float')->'array':
 
 ## float to int truncating for possitive and negative values
 def truncate(x:float)->int:
+    """
+    Float to int truncating for possitive and negative values.
+    x - float to be truncated.
+    return truncated int.
+    """
     return math.floor(x) if x<0 else math.ceil(x)
 
 
 ## main function ##
 
-## plot histogram with KDE using different kernels
-def plot(X, threshold_freq = 0.0001, nbins = None, figsize = (15,8), supply:bool = False)->tuple:
+## plot histogram with densities estimated by KDE using different kernels
+def plot(X:'array', threshold_freq:float = 0.0001, nbins:int = None, figsize:tuple = (15,8), supply:bool = False)->tuple:
+    """
+    Plot histogram with densities estimated by KDE using different kernels.
+    X -- 1D array of data.
+    threshold_freq -- frequency (probability) limit to discard or not a spike as a local maximum  (default 0.0001).
+    nbins -- number of bins to be set (default None). In case of not to being included it will be estimated (optimal case).
+    figsize -- figure size (default (15, 8)).
+    supply -- return or not ax object. (default False).
+    return -- ((x/y values of histogram), (x/y values of density for gaussian kernel), list of values where there are local maximums)
     
+    NOTE - if supply = True, furthermore it will be returned the axis object ax.
+    """
+
     # estimate x limits
     add = truncate(np.ptp(X)) * 0.5 / 10.
     xmin = truncate(np.min(X)) - add if truncate(np.min(X)) < 0 else truncate(np.min(X)) + add

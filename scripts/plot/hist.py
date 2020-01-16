@@ -18,6 +18,11 @@ Plot histogram from the column of a dataframe.
 
 ## float to int truncating for possitive and negative values
 def truncate(x:float)->int:
+	"""
+	Float to int truncating for possitive and negative values.
+	x - float to be truncated.
+	return truncated int.
+	"""
     return math.floor(x) if x<0 else math.ceil(x)
 
 
@@ -25,6 +30,16 @@ def truncate(x:float)->int:
 
 ## plot histogram from df
 def plot_from_df(df:'dataframe', colname:str, nbins:int = None, title:str = '', cumulative:bool = False, figsize:tuple = (8,4)):
+	"""
+	Plot histogram from df.
+	df -- data.
+	colname -- column name to be plotted.
+	nbins -- number of bins to be set (default None). In case of not to being included it will be estimated (optimal case).
+	title -- title to be included (default '').
+	cumulative -- bool to choose or not a basic histogram or cumulative (default False).
+	figsize -- figure size (default (8, 4)).
+	"""
+
 	# number of bins
 	if nbins is None:
 		X = df[colname].values
