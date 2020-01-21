@@ -1,7 +1,7 @@
 # @Author: juan
-# @Date:   2019-01-16T08:49:20+01:00
+# @Date:   2020-01-16T08:49:20+01:00
 # @Last modified by:   juan
-# @Last modified time: 2019-01-16T08:49:20+01:00
+# @Last modified time: 2020-01-16T08:49:20+01:00
 
 """
 Plot histogram includen estimated density function results for three different
