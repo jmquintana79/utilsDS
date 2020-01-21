@@ -14,10 +14,12 @@ These tools have been written into Python programming languages. The necessary l
   - [Fourier Analysis](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/fourier)
   - [Kernel Density Estimation (KDE)](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/KDE)
   - [Scatter plots](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/scatter_plots)
+  - [Missing values](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/missing)
 - Datasets: 
   - [sklearn2csv](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/datasets/notebook-dataset-sklearn2csv.ipynb)
   - [Dataset from Scikit-Learn](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets/datasets-scikit_learn.ipynb)
   - [Dataset from Seaborn](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets/datasets-seaborn.ipynb)
+  - [Artificial dataframes creation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets/datasets-artificial_dataframes.ipynb)
 - Features Engineering:
   - [Features Selection](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/feature_engineering/selection)
 - [Pipelines](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/pipelines).
