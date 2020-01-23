@@ -15,6 +15,7 @@ These tools have been written into Python programming languages. The necessary l
   - [Kernel Density Estimation (KDE)](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/KDE)
   - [Scatter plots](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/scatter_plots)
   - [Missing values](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/missing)
+  - [Data profiling](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/profiling)
 - Datasets: 
   - [sklearn2csv](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/datasets/notebook-dataset-sklearn2csv.ipynb)
   - [Dataset from Scikit-Learn](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets/datasets-scikit_learn.ipynb)
