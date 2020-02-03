@@ -12,10 +12,11 @@ These tools have been written into Python programming languages. The necessary l
   - [Exploratory Data Analysis (EDA)](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/EDA)
   - [Errors Analysis](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/errors)
   - [Fourier Analysis](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/fourier)
-  - [Kernel Density Estimation (KDE)](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/KDE)
-  - [Scatter plots](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/scatter_plots)
+  - [Histogram plots with Kernel Density Estimation (KDE)](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/KDE/1D_Kernel_Density_Estimation.ipynb)
+  - [Scatter plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/scatter_plots/scatter_plot_from_df.ipynb)
   - [Missing values](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/missing)
   - [Data profiling](https://github.com/jmquintana79/utilsDS/tree/master/notebooks/analysis/profiling)
+  - [Bar plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/bar_plots/bar_plot_from_df.ipynb)
 - Datasets: 
   - [sklearn2csv](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/datasets/notebook-dataset-sklearn2csv.ipynb)
   - [Dataset from Scikit-Learn](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets/datasets-scikit_learn.ipynb)
