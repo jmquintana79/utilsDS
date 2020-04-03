@@ -8,6 +8,8 @@ These tools have been written into Python programming languages. The necessary l
 
 ### Notebooks
 
+- Statistics
+  - [Calculation of sample size - Two Proportion Z test]() 
 - Analysis
   - [Exploratory Data Analysis (EDA)](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/EDA)
   - [Errors Analysis](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/errors)
