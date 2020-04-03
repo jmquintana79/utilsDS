@@ -9,7 +9,7 @@ These tools have been written into Python programming languages. The necessary l
 ### Notebooks
 
 - Statistics
-  - [Calculation of sample size - Two Proportion Z test]() 
+  - [Calculation of sample size - Two Proportion Z test](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/sampling/sample_size_calculation-Two_Proportion_Z_test.ipynb) 
 - Analysis
   - [Exploratory Data Analysis (EDA)](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/EDA)
   - [Errors Analysis](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/errors)
