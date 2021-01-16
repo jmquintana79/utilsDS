@@ -14,6 +14,7 @@ These tools have been written into Python programming languages. The necessary l
       - [Sample size calculation: Cochran’s Formula](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/sampling/sample_size_calculation-Cochran_Formula.ipynb)
 - Analysis
   - [Exploratory Data Analysis (EDA)](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/EDA)
+      - [EDA with DataPrepa.EDA](http://localhost:8888/notebooks/notebooks/analysis/EDA/notebook-EDA_with_dataprep_eda.ipynb#missing-values)
   - [Errors Analysis](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/errors)
   - [Fourier Analysis](https://github.com/jmquintana79/tools_mlproj/tree/master/notebooks/analysis/fourier)
   - [Histogram plots with Kernel Density Estimation (KDE)](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/KDE/1D_Kernel_Density_Estimation.ipynb)
