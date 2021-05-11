@@ -1,0 +1,26 @@
+{
+    "columns": [
+        "sepal length (cm)",
+        "sepal width (cm)",
+        "petal length (cm)"
+    ],
+    "rows": 112,
+    "cols": 3,
+    "target_is_numeric": false,
+    "columns_info": {
+        "sepal length (cm)": [
+            "scale"
+        ],
+        "sepal width (cm)": [
+            "scale"
+        ],
+        "petal length (cm)": [
+            "scale"
+        ]
+    },
+    "target_info": [],
+    "n_features": 3,
+    "is_sample_weighted": false,
+    "n_classes": 3,
+    "num_class": 3
+}
