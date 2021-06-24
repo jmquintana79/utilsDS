@@ -1,12 +1,12 @@
 {
-    "uid": "a1f75e35-3899-4449-9f00-2ca8b0c58f04",
+    "uid": "61b7ebfb-14af-4d5a-aa76-2d138dc649d1",
     "name": "6_Default_RandomForest",
     "preprocessing": [
         {
             "categorical_y": {
-                "setosa": 0,
-                "versicolor": 1,
-                "virginica": 2
+                "0": 0,
+                "1": 1,
+                "2": 2
             },
             "ml_task": "multiclass_classification",
             "params": {
@@ -24,7 +24,7 @@
             "library_version": "0.23.2",
             "algorithm_name": "Random Forest",
             "algorithm_short_name": "Random Forest",
-            "uid": "da6d38ee-1027-47d5-a90c-f85f8c5ac0af",
+            "uid": "9b319dcd-9920-4114-8b5a-cf6c8224ad68",
             "params": {
                 "model_type": "Random Forest",
                 "ml_task": "multiclass_classification",
@@ -89,7 +89,7 @@
     ],
     "predictions_fname": "AutoML_1/6_Default_RandomForest/predictions_validation.csv",
     "metric_name": "logloss",
-    "final_loss": 0.30809374376212606,
-    "train_time": 5.447909116744995,
+    "final_loss": 0.17210451392718773,
+    "train_time": 3.7993457317352295,
     "is_stacked": false
 }

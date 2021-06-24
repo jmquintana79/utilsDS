@@ -18,23 +18,23 @@ logloss
 
 ## Training time
 
-4.5 seconds
+4.7 seconds
 
 ### Metric details
-|           |   setosa |   versicolor |   virginica |   accuracy |   macro avg |   weighted avg |   logloss |
-|:----------|---------:|-------------:|------------:|-----------:|------------:|---------------:|----------:|
-| precision |        1 |          0.9 |    0.888889 |   0.928571 |     0.92963 |       0.928571 |  0.273527 |
-| recall    |        1 |          0.9 |    0.888889 |   0.928571 |     0.92963 |       0.928571 |  0.273527 |
-| f1-score  |        1 |          0.9 |    0.888889 |   0.928571 |     0.92963 |       0.928571 |  0.273527 |
-| support   |        9 |         10   |    9        |   0.928571 |    28       |      28        |  0.273527 |
+|           |         0 |         1 |         2 |   accuracy |   macro avg |   weighted avg |   logloss |
+|:----------|----------:|----------:|----------:|-----------:|------------:|---------------:|----------:|
+| precision |  1        |  0.857143 |  0.923077 |   0.921053 |    0.92674  |       0.924812 |  0.243391 |
+| recall    |  0.916667 |  0.923077 |  0.923077 |   0.921053 |    0.92094  |       0.921053 |  0.243391 |
+| f1-score  |  0.956522 |  0.888889 |  0.923077 |   0.921053 |    0.922829 |       0.921943 |  0.243391 |
+| support   | 12        | 13        | 13        |   0.921053 |   38        |      38        |  0.243391 |
 
 
 ## Confusion matrix
-|                       |   Predicted as setosa |   Predicted as versicolor |   Predicted as virginica |
-|:----------------------|----------------------:|--------------------------:|-------------------------:|
-| Labeled as setosa     |                     9 |                         0 |                        0 |
-| Labeled as versicolor |                     0 |                         9 |                        1 |
-| Labeled as virginica  |                     0 |                         1 |                        8 |
+|              |   Predicted as 0 |   Predicted as 1 |   Predicted as 2 |
+|:-------------|-----------------:|-----------------:|-----------------:|
+| Labeled as 0 |               11 |                1 |                0 |
+| Labeled as 1 |                0 |               12 |                1 |
+| Labeled as 2 |                0 |                1 |               12 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)
@@ -42,12 +42,12 @@ logloss
 ## Coefficients
 
 ### Coefficients learner #1
-|                   |    setosa |   versicolor |   virginica |
-|:------------------|----------:|-------------:|------------:|
-| intercept         | -0.686118 |     1.30842  |   -0.622299 |
-| sepal length (cm) | -1.22792  |     0.738491 |    0.489425 |
-| sepal width (cm)  |  0.955292 |    -0.618426 |   -0.336866 |
-| petal length (cm) | -2.06336  |    -0.796942 |    2.86031  |
+|                   |         0 |         1 |         2 |
+|:------------------|----------:|----------:|----------:|
+| intercept         | -0.293546 |  1.39251  | -1.09896  |
+| sepal length (cm) | -1.28144  |  0.7849   |  0.496538 |
+| sepal width (cm)  |  1.23788  | -0.682515 | -0.555364 |
+| petal length (cm) | -2.24628  | -0.957171 |  3.20345  |
 
 
 ## Permutation-based Importance
@@ -58,12 +58,12 @@ logloss
 
 ## SHAP Dependence plots
 
-### Dependence setosa (Fold 1)
-![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_setosa.png)
-### Dependence versicolor (Fold 1)
-![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_versicolor.png)
-### Dependence virginica (Fold 1)
-![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_virginica.png)
+### Dependence 0 (Fold 1)
+![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_0.png)
+### Dependence 1 (Fold 1)
+![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_1.png)
+### Dependence 2 (Fold 1)
+![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_2.png)
 
 ## SHAP Decision plots
 

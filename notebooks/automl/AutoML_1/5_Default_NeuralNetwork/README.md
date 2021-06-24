@@ -24,20 +24,20 @@ logloss
 1.7 seconds
 
 ### Metric details
-|           |   setosa |   versicolor |   virginica |   accuracy |   macro avg |   weighted avg |   logloss |
-|:----------|---------:|-------------:|------------:|-----------:|------------:|---------------:|----------:|
-| precision | 0.9      |     1        |    0.642857 |   0.785714 |    0.847619 |       0.853061 |  0.870568 |
-| recall    | 1        |     0.4      |    1        |   0.785714 |    0.8      |       0.785714 |  0.870568 |
-| f1-score  | 0.947368 |     0.571429 |    0.782609 |   0.785714 |    0.767135 |       0.760146 |  0.870568 |
-| support   | 9        |    10        |    9        |   0.785714 |   28        |      28        |  0.870568 |
+|           |         0 |         1 |         2 |   accuracy |   macro avg |   weighted avg |   logloss |
+|:----------|----------:|----------:|----------:|-----------:|------------:|---------------:|----------:|
+| precision |  1        |  0.909091 |  0.8125   |   0.894737 |    0.907197 |       0.904755 |   0.29232 |
+| recall    |  0.916667 |  0.769231 |  1        |   0.894737 |    0.895299 |       0.894737 |   0.29232 |
+| f1-score  |  0.956522 |  0.833333 |  0.896552 |   0.894737 |    0.895469 |       0.893862 |   0.29232 |
+| support   | 12        | 13        | 13        |   0.894737 |   38        |      38        |   0.29232 |
 
 
 ## Confusion matrix
-|                       |   Predicted as setosa |   Predicted as versicolor |   Predicted as virginica |
-|:----------------------|----------------------:|--------------------------:|-------------------------:|
-| Labeled as setosa     |                     9 |                         0 |                        0 |
-| Labeled as versicolor |                     1 |                         4 |                        5 |
-| Labeled as virginica  |                     0 |                         0 |                        9 |
+|              |   Predicted as 0 |   Predicted as 1 |   Predicted as 2 |
+|:-------------|-----------------:|-----------------:|-----------------:|
+| Labeled as 0 |               11 |                1 |                0 |
+| Labeled as 1 |                0 |               10 |                3 |
+| Labeled as 2 |                0 |                0 |               13 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)

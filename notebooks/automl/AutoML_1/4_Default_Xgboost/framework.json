@@ -1,12 +1,12 @@
 {
-    "uid": "a76ba216-edc3-4090-b924-80a0dc7ef834",
+    "uid": "39ffbe2a-1012-4749-bbec-17ea31aa21e5",
     "name": "4_Default_Xgboost",
     "preprocessing": [
         {
             "categorical_y": {
-                "setosa": 0,
-                "versicolor": 1,
-                "virginica": 2
+                "0": 0,
+                "1": 1,
+                "2": 2
             },
             "ml_task": "multiclass_classification",
             "params": {
@@ -24,7 +24,7 @@
             "library_version": "1.2.0",
             "algorithm_name": "Extreme Gradient Boosting",
             "algorithm_short_name": "Xgboost",
-            "uid": "c90cd7a9-dd87-422a-9665-30cba23a11ec",
+            "uid": "062022bc-406d-4148-86ef-9bb04f099718",
             "params": {
                 "model_type": "Xgboost",
                 "ml_task": "multiclass_classification",
@@ -39,7 +39,7 @@
                 "num_class": 3,
                 "explain_level": 2
             },
-            "best_ntree_limit": 43
+            "best_ntree_limit": 69
         }
     ],
     "params": {
@@ -93,7 +93,7 @@
     ],
     "predictions_fname": "AutoML_1/4_Default_Xgboost/predictions_validation.csv",
     "metric_name": "logloss",
-    "final_loss": 0.30738297450755325,
-    "train_time": 4.084766864776611,
+    "final_loss": 0.14548380141097464,
+    "train_time": 4.110244989395142,
     "is_stacked": false
 }

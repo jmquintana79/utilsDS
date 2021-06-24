@@ -5,16 +5,16 @@
     "selected_models": [
         {
             "model": "2_DecisionTree",
-            "repeat": 3.0
+            "repeat": 2.0
         },
         {
-            "model": "3_Linear",
-            "repeat": 1.0
+            "model": "4_Default_Xgboost",
+            "repeat": 3.0
         }
     ],
     "predictions_fname": "AutoML_1/Ensemble/predictions_ensemble.csv",
     "metric_name": "logloss",
-    "final_loss": 0.19327162864082073,
-    "train_time": 0.11934423446655273,
+    "final_loss": 0.1277139739449054,
+    "train_time": 0.12012004852294922,
     "is_stacked": false
 }

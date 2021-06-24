@@ -28,20 +28,20 @@ logloss
 4.1 seconds
 
 ### Metric details
-|           |   setosa |   versicolor |   virginica |   accuracy |   macro avg |   weighted avg |   logloss |
-|:----------|---------:|-------------:|------------:|-----------:|------------:|---------------:|----------:|
-| precision |        1 |          0.9 |    0.888889 |   0.928571 |     0.92963 |       0.928571 |  0.307383 |
-| recall    |        1 |          0.9 |    0.888889 |   0.928571 |     0.92963 |       0.928571 |  0.307383 |
-| f1-score  |        1 |          0.9 |    0.888889 |   0.928571 |     0.92963 |       0.928571 |  0.307383 |
-| support   |        9 |         10   |    9        |   0.928571 |    28       |      28        |  0.307383 |
+|           |   0 |         1 |         2 |   accuracy |   macro avg |   weighted avg |   logloss |
+|:----------|----:|----------:|----------:|-----------:|------------:|---------------:|----------:|
+| precision |   1 |  1        |  0.866667 |   0.947368 |    0.955556 |       0.954386 |  0.145484 |
+| recall    |   1 |  0.846154 |  1        |   0.947368 |    0.948718 |       0.947368 |  0.145484 |
+| f1-score  |   1 |  0.916667 |  0.928571 |   0.947368 |    0.948413 |       0.947055 |  0.145484 |
+| support   |  12 | 13        | 13        |   0.947368 |   38        |      38        |  0.145484 |
 
 
 ## Confusion matrix
-|                       |   Predicted as setosa |   Predicted as versicolor |   Predicted as virginica |
-|:----------------------|----------------------:|--------------------------:|-------------------------:|
-| Labeled as setosa     |                     9 |                         0 |                        0 |
-| Labeled as versicolor |                     0 |                         9 |                        1 |
-| Labeled as virginica  |                     0 |                         1 |                        8 |
+|              |   Predicted as 0 |   Predicted as 1 |   Predicted as 2 |
+|:-------------|-----------------:|-----------------:|-----------------:|
+| Labeled as 0 |               12 |                0 |                0 |
+| Labeled as 1 |                0 |               11 |                2 |
+| Labeled as 2 |                0 |                0 |               13 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)
@@ -54,12 +54,12 @@ logloss
 
 ## SHAP Dependence plots
 
-### Dependence setosa (Fold 1)
-![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_setosa.png)
-### Dependence versicolor (Fold 1)
-![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_versicolor.png)
-### Dependence virginica (Fold 1)
-![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_virginica.png)
+### Dependence 0 (Fold 1)
+![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_0.png)
+### Dependence 1 (Fold 1)
+![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_1.png)
+### Dependence 2 (Fold 1)
+![SHAP Dependence from fold 1](learner_fold_0_shap_dependence_class_2.png)
 
 ## SHAP Decision plots
 

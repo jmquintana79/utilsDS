@@ -1,12 +1,12 @@
 {
-    "uid": "3201658f-2652-43c7-9936-78c8afef81c5",
+    "uid": "0a33c0bd-e5d0-4237-a76e-71dabc05f51c",
     "name": "1_Baseline",
     "preprocessing": [
         {
             "categorical_y": {
-                "setosa": 0,
-                "versicolor": 1,
-                "virginica": 2
+                "0": 0,
+                "1": 1,
+                "2": 2
             },
             "ml_task": "multiclass_classification",
             "params": {
@@ -24,7 +24,7 @@
             "library_version": "0.23.2",
             "algorithm_name": "Baseline Classifier",
             "algorithm_short_name": "Baseline",
-            "uid": "eded0b8c-0657-4b4e-9e85-776cbdbe5c2e",
+            "uid": "fad11bfa-20e3-4a65-be89-f3b8ca198c67",
             "params": {
                 "model_type": "Baseline",
                 "ml_task": "multiclass_classification",
@@ -77,7 +77,7 @@
     ],
     "predictions_fname": "AutoML_1/1_Baseline/predictions_validation.csv",
     "metric_name": "logloss",
-    "final_loss": 1.0986207412741584,
-    "train_time": 0.03172898292541504,
+    "final_loss": 1.099159406940714,
+    "train_time": 0.04923295974731445,
     "is_stacked": false
 }

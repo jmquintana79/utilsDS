@@ -8,38 +8,52 @@ digraph G {
     node [margin="0.03" penwidth="0.5" width=.1, height=.1];
     edge [arrowsize=.4 penwidth="0.3"]
 
-    node4 [margin="0" shape=none label=<<table border="0">
+    node3 [margin="0" shape=none label=<<table border="0">
             
             <tr>
-                    <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/node4_2996.svg"/></td>
+                    <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/node3_4413.svg"/></td>
+            </tr>
+            </table>>]
+	node6 [margin="0" shape=none label=<<table border="0">
+            
+            <tr>
+                    <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/node6_4413.svg"/></td>
             </tr>
             </table>>]
 	node2 [margin="0" shape=none label=<<table border="0">
             
             <tr>
-                    <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/node2_2996.svg"/></td>
+                    <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/node2_4413.svg"/></td>
             </tr>
             </table>>]
 	node0 [margin="0" shape=none label=<<table border="0">
             
             <tr>
-                    <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/node0_2996.svg"/></td>
+                    <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/node0_4413.svg"/></td>
             </tr>
             </table>>]
-    node4 -> leaf5 [penwidth=0.3 color="#444443" label=<>]
-	node4 -> leaf6 [penwidth=0.3 color="#444443" label=<>]
+    node3 -> leaf4 [penwidth=0.3 color="#444443" label=<>]
+	node3 -> leaf5 [penwidth=0.3 color="#444443" label=<>]
 	
             {
                 rank=same;
-                leaf5 -> leaf6 [style=invis]
+                leaf4 -> leaf5 [style=invis]
             }
             
-	node2 -> leaf3 [penwidth=0.3 color="#444443" label=<>]
-	node2 -> node4 [penwidth=0.3 color="#444443" label=<>]
+	node6 -> leaf7 [penwidth=0.3 color="#444443" label=<>]
+	node6 -> leaf8 [penwidth=0.3 color="#444443" label=<>]
 	
             {
                 rank=same;
-                leaf3 -> node4 [style=invis]
+                leaf7 -> leaf8 [style=invis]
+            }
+            
+	node2 -> node3 [penwidth=0.3 color="#444443" label=<>]
+	node2 -> node6 [penwidth=0.3 color="#444443" label=<>]
+	
+            {
+                rank=same;
+                node3 -> node6 [style=invis]
             }
             
 	node0 -> leaf1 [penwidth=0.3 color="#444443" label=<&lt;>]
@@ -53,25 +67,31 @@ digraph G {
     leaf1 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/leaf1_2996.svg"/></td>
+                <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/leaf1_4413.svg"/></td>
         </tr>
         </table>>]
-	leaf3 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+	leaf4 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/leaf3_2996.svg"/></td>
+                <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/leaf4_4413.svg"/></td>
         </tr>
         </table>>]
 	leaf5 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/leaf5_2996.svg"/></td>
+                <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/leaf5_4413.svg"/></td>
         </tr>
         </table>>]
-	leaf6 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+	leaf7 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
         
         <tr>
-                <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/leaf6_2996.svg"/></td>
+                <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/leaf7_4413.svg"/></td>
+        </tr>
+        </table>>]
+	leaf8 [margin="0" shape=box penwidth="0" color="#444443" label=<<table border="0" CELLBORDER="0">
+        
+        <tr>
+                <td><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/leaf8_4413.svg"/></td>
         </tr>
         </table>>]
 
@@ -82,7 +102,7 @@ digraph G {
                 
         <table border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td border="0" cellspacing="0" cellpadding="0"><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/legend_2996.svg"/></td>
+                <td border="0" cellspacing="0" cellpadding="0"><img src="/var/folders/vk/s0y7mtzs23vgwd0s7jck3c_80000gn/T/legend_4413.svg"/></td>
             </tr>
         </table>
         

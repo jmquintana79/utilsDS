@@ -1,12 +1,12 @@
 {
-    "uid": "47ba0453-0321-4f0b-839e-d0cb848b5146",
+    "uid": "22cf52db-0099-4529-83d1-4b38401aadc9",
     "name": "2_DecisionTree",
     "preprocessing": [
         {
             "categorical_y": {
-                "setosa": 0,
-                "versicolor": 1,
-                "virginica": 2
+                "0": 0,
+                "1": 1,
+                "2": 2
             },
             "ml_task": "multiclass_classification",
             "params": {
@@ -24,7 +24,7 @@
             "library_version": "0.23.2",
             "algorithm_name": "Decision Tree",
             "algorithm_short_name": "Decision Tree",
-            "uid": "047ad751-ef34-402f-8ffd-a034521a9361",
+            "uid": "b9ec2de0-e408-4d53-948c-99335bc7c607",
             "params": {
                 "model_type": "Decision Tree",
                 "ml_task": "multiclass_classification",
@@ -83,7 +83,7 @@
     ],
     "predictions_fname": "AutoML_1/2_DecisionTree/predictions_validation.csv",
     "metric_name": "logloss",
-    "final_loss": 0.5621882142750024,
-    "train_time": 5.6013429164886475,
+    "final_loss": 0.4522214053305717,
+    "train_time": 5.918467044830322,
     "is_stacked": false
 }

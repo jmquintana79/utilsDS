@@ -1,26 +1,26 @@
 {
-    "uid": "62c20ca9-2fd5-4d70-a435-9163823e3eaf",
+    "uid": "9bead616-e5b4-40fa-b430-531b05bed33d",
     "name": "3_Linear",
     "preprocessing": [
         {
             "scale": [
                 {
                     "scale": [
-                        0.7886408340172127,
-                        0.45281151189664154,
-                        1.7359882042662254
+                        0.8316675527921882,
+                        0.40982434639484167,
+                        1.7619960561933208
                     ],
                     "mean": [
-                        5.8916666666666675,
-                        3.067857142857142,
-                        3.8440476190476187
+                        5.810714285714285,
+                        3.0660714285714286,
+                        3.6964285714285716
                     ],
                     "var": [
-                        0.621954365079365,
-                        0.20503826530612235,
-                        3.0136550453514737
+                        0.6916709183673471,
+                        0.16795599489795915,
+                        3.104630102040816
                     ],
-                    "n_samples_seen": 84,
+                    "n_samples_seen": 112,
                     "n_features_in": 3,
                     "columns": [
                         "sepal length (cm)",
@@ -31,9 +31,9 @@
                 }
             ],
             "categorical_y": {
-                "setosa": 0,
-                "versicolor": 1,
-                "virginica": 2
+                "0": 0,
+                "1": 1,
+                "2": 2
             },
             "ml_task": "multiclass_classification",
             "params": {
@@ -61,7 +61,7 @@
             "library_version": "0.23.2",
             "algorithm_name": "Logistic Regression",
             "algorithm_short_name": "Linear",
-            "uid": "f4f98ae4-e493-469e-a4e2-02f162592dbe",
+            "uid": "80c81397-5bed-401a-9351-1a4089046a59",
             "params": {
                 "model_type": "Linear",
                 "ml_task": "multiclass_classification",
@@ -124,7 +124,7 @@
     ],
     "predictions_fname": "AutoML_1/3_Linear/predictions_validation.csv",
     "metric_name": "logloss",
-    "final_loss": 0.2735273809991221,
-    "train_time": 4.486911058425903,
+    "final_loss": 0.24339063834444244,
+    "train_time": 4.709267854690552,
     "is_stacked": false
 }
