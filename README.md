@@ -37,6 +37,8 @@ These tools have been written into Python programming languages. The necessary l
 - Similarity Measures (Distances):
   - [Dynamic Time Warping (DTW)](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/similarity/notebook-similarity_distance-Dynamic_Time_Warping-check.ipynb)
 - [NLP / Clean texts (es/en)]()
+- Pandas accelerators:
+    - [vaex]()
 
   ### Scripts:
 

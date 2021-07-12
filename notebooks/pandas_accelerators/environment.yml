@@ -1,0 +1,11 @@
+name: vaex
+dependencies:
+  - python==3.7.0
+  - jupyter
+  - click # customized plots
+  - pandas==0.23.4
+  - matplotlib
+  - pip
+  - pip:
+    - vaex
+
