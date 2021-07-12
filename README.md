@@ -38,7 +38,7 @@ These tools have been written into Python programming languages. The necessary l
   - [Dynamic Time Warping (DTW)](https://github.com/jmquintana79/tools_mlproj/blob/master/notebooks/similarity/notebook-similarity_distance-Dynamic_Time_Warping-check.ipynb)
 - [NLP / Clean texts (es/en)]()
 - Pandas accelerators:
-    - [vaex]()
+    - [vaex](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pandas_accelerators/overview-vaex.ipynb)
 
   ### Scripts:
 
