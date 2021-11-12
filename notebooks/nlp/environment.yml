@@ -11,3 +11,4 @@ dependencies:
   - spacy
   - pip:
     - collections-extended 
+    - newspaper3k
