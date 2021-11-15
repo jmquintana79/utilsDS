@@ -12,7 +12,8 @@ import numpy as np
 import itertools
 
 from analysis import sample_size
-from analysis import test_shapiro, test_k2, analysis_normality
+from analysis import analysis_normality
+from analysis import analysis_correlation
 from classes import Columns, Report
 from data import data_simplify, remove_outliers
 from tools import thresholds_according_level_exigence, check_is_enough_data
@@ -198,29 +199,46 @@ for squery in queries[:1]:
 # - https://datascience.stackexchange.com/questions/64260/pearson-vs-spearman-vs-kendall/64261
 
 
-# loop of num-num combinations (JUAN: in this case just the first combination)
-icomb_num_num = comb_num_num[0]
-
 
 
 
 #%% full dataset
 
+# normality test for numerical variables
+dnormality, lreports = analysis_normality(data, list(cols.num), dexigence['significance'])
+# add reports
+if len(lreports) > 0:
+    REPORT.add(lreports)
 
-# get combination of columns
-col_x = list(icomb_num_num)
-# collect data
-temp = data[col_x]
-# validate if there are enough data to analyze this combination
-is_enough = True
-for c in temp.columns:
-    is_enough_var = check_is_enough_data(temp[c].values, n_min_sample_size)
-    if not is_enough_var:
-        is_enough = False
-# JUAN: stop analysis if is_enough is False
+# loop of combinations
+for comb in comb_num_num:
+    # correlation analysis
+    couple_columns = list(comb)
+    corr = analysis_correlation(data, couple_columns, dnormality = dnormality, significance=dexigence['significance'], verbose = False)
+    # chreck if add to report
+    if np.abs(corr) >= dexigence['correlation']:
+        # build report
+        sreport = f'Correlation between "{comb[0]}" and "{comb[1]}" is {corr}'
+        # add report
+        REPORT.add(sreport)
+        
 
 
+"""
 
+# validate if enough data / JUAN: stop analysis if is_enough is False
+is_enough_var1 = check_is_enough_data(v1, n_min_sample_size)
+is_enough_var2 = check_is_enough_data(v2, n_min_sample_size)
+# normality test
+if is_enough_var1:
+    is_normal1, report1 = analysis_normality(v1, dexigence['significance'])
+    if is_normal1:
+        REPORT.add(f'"{col_x[0]}": '+ report1)
+if is_enough_var2:
+    is_normal2, report2 = analysis_normality(v2, dexigence['significance'])
+    if is_normal2:
+        REPORT.add(f'"{col_x[1]}": '+ report2)
+"""
 
 
 
