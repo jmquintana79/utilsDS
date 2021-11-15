@@ -12,10 +12,16 @@ import numpy as np
 import itertools
 
 from analysis import sample_size
+from analysis import test_shapiro, test_k2, analysis_normality
 from classes import Columns, Report
 from data import data_simplify, remove_outliers
+from tools import thresholds_according_level_exigence, check_is_enough_data
 
 
+#%% parameters
+
+# exigence level
+exigence_level = 'normal'
 
 #%% LOAD DATA
 
@@ -39,6 +45,8 @@ REPORT = Report()
 # dataset simplification
 data, dcols_alias_to_name, d_converter_cat_values = data_simplify(raw)
 
+# level of exigence
+dexigence = thresholds_according_level_exigence(exigence_level)
 
 #%% remove outliers in numerical columns
 
@@ -145,7 +153,7 @@ dfqueries['sample_size'] = LIST_SIZES
 
 # estimate minimun size of sample
 population_sz = len(data)
-confidence_level = 95.0
+confidence_level = (1. - dexigence['significance']) * 100.
 confidence_interval = 5.0
 n_min_sample_size = sample_size(population_sz, confidence_level, confidence_interval)
 print("SAMPLE SIZE: %d from %d" %(n_min_sample_size, population_sz))
@@ -194,15 +202,22 @@ for squery in queries[:1]:
 icomb_num_num = comb_num_num[0]
 
 
+
+
 #%% full dataset
+
 
 # get combination of columns
 col_x = list(icomb_num_num)
-# collect data and remove nan values
-temp = data[col_x].dropna()
-# check if there enough data to analyze
-#if len(temp) < n_min_sample_size:
-    # JUAN: stop analysis
+# collect data
+temp = data[col_x]
+# validate if there are enough data to analyze this combination
+is_enough = True
+for c in temp.columns:
+    is_enough_var = check_is_enough_data(temp[c].values, n_min_sample_size)
+    if not is_enough_var:
+        is_enough = False
+# JUAN: stop analysis if is_enough is False
 
 
 
