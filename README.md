@@ -23,7 +23,7 @@
 - [Utils](https://github.com/jmquintana79/utilsDS/blob/master/scripts/utils) *[6]*
 - [Models](https://github.com/jmquintana79/utilsDS/blob/master/scripts/models) *[7]*
   - [Xgboost](https://github.com/jmquintana79/utilsDS/blob/master/scripts/models/xgboost) *[5]*
-  - [GAM](https://github.com/jmquintana79/utilsDS/blob/master/scripts/models/gam) *[1]*
+  - [Gam](https://github.com/jmquintana79/utilsDS/blob/master/scripts/models/gam) *[1]*
 - [Preprocessing](https://github.com/jmquintana79/utilsDS/blob/master/scripts/preprocessing) *[2]*
   - [Scalers](https://github.com/jmquintana79/utilsDS/blob/master/scripts/preprocessing/scalers) *[1]*
   - [Smoothers](https://github.com/jmquintana79/utilsDS/blob/master/scripts/preprocessing/smoothers) *[1]*
@@ -63,4 +63,4 @@
   - [Selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/selection) *[1]*
 - [Preprocessing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing) *[0]*
   - [Anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing/anomalies) *[2]*
-> Updated on 2021-11-20 17:40:33
+> Updated on 2021-11-20 17:42:55
