@@ -35,13 +35,7 @@ def main(file_output:str):
     records.append('# Tools for a Data Science projects')
 
     # introduction
-    s_intro = """
-    This repository is a compendium of notebooks and scripts to be used in my daily work for Data Science projects.
-
-    These tools have been written into Python programming languages. The necessary libraries are included in [environment.yml](https://github.com/jmquintana79/tools_mlproj/blob/master/environment.yml) to be installed using Anaconda.
-    """
-    records.append(s_intro)
-
+    records.append("This repository is a compendium of notebooks and scripts to be used in my daily work for Data Science projects.")
     # add content title
     records.append('## Content')
 

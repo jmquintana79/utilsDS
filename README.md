@@ -1,9 +1,5 @@
 # Tools for a Data Science projects
-
-    This repository is a compendium of notebooks and scripts to be used in my daily work for Data Science projects.
-
-    These tools have been written into Python programming languages. The necessary libraries are included in [environment.yml](https://github.com/jmquintana79/tools_mlproj/blob/master/environment.yml) to be installed using Anaconda.
-    
+This repository is a compendium of notebooks and scripts to be used in my daily work for Data Science projects.
 ## Content
 ### [Tools](https://github.com/jmquintana79/utilsDS/blob/master/tools)
 - [Data understanding](https://github.com/jmquintana79/utilsDS/blob/master/tools/data_understanding) *[0]*
@@ -63,4 +59,4 @@
   - [Selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/selection) *[1]*
 - [Preprocessing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing) *[0]*
   - [Anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing/anomalies) *[2]*
-> Updated on 2021-11-20 17:45:33
+> Updated on 2021-11-20 17:51:05
