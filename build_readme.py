@@ -51,7 +51,7 @@ def main(file_output:str):
         path = root.split(os.sep)
         # build name
         name = os.path.basename(root)
-        if name == 'nlp' or name == 'ADA' or name == 'gam' and name == 'EDA':
+        if name == 'nlp' or name == 'ADA' or name == 'gam' or name == 'EDA' or name == 'KDE':
             s_name = name.upper()
         else:
             s_name = f"{name.replace('_', ' ').capitalize() }"

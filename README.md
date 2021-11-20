@@ -23,7 +23,7 @@
 - [Utils](https://github.com/jmquintana79/utilsDS/blob/master/scripts/utils) *[6]*
 - [Models](https://github.com/jmquintana79/utilsDS/blob/master/scripts/models) *[7]*
   - [Xgboost](https://github.com/jmquintana79/utilsDS/blob/master/scripts/models/xgboost) *[5]*
-  - [Gam](https://github.com/jmquintana79/utilsDS/blob/master/scripts/models/gam) *[1]*
+  - [GAM](https://github.com/jmquintana79/utilsDS/blob/master/scripts/models/gam) *[1]*
 - [Preprocessing](https://github.com/jmquintana79/utilsDS/blob/master/scripts/preprocessing) *[2]*
   - [Scalers](https://github.com/jmquintana79/utilsDS/blob/master/scripts/preprocessing/scalers) *[1]*
   - [Smoothers](https://github.com/jmquintana79/utilsDS/blob/master/scripts/preprocessing/smoothers) *[1]*
@@ -36,10 +36,10 @@
   - [Distributions](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/distributions) *[1]*
 - [Analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis) *[0]*
   - [Scatter plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/scatter_plots) *[1]*
-  - [Eda](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA) *[4]*
+  - [EDA](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA) *[4]*
   - [Fourier](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/fourier) *[2]*
   - [Missing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/missing) *[1]*
-  - [Kde](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/KDE) *[1]*
+  - [KDE](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/KDE) *[1]*
   - [Autoeda](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/autoEDA) *[4]*
   - [Bar plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/bar_plots) *[1]*
   - [Errors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/errors) *[1]*
@@ -52,7 +52,7 @@
   - [Automl 1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1) *[0]*
    - [Ensemble](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/Ensemble) *[0]*
    - [6 default randomforest](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/6_Default_RandomForest) *[0]*
-   - [Eda](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/EDA) *[0]*
+   - [EDA](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/EDA) *[0]*
    - [2 decisiontree](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/2_DecisionTree) *[0]*
    - [3 linear](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/3_Linear) *[0]*
    - [1 baseline](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/1_Baseline) *[0]*
@@ -63,4 +63,4 @@
   - [Selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/selection) *[1]*
 - [Preprocessing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing) *[0]*
   - [Anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing/anomalies) *[2]*
-> Updated on 2021-11-20 17:42:55
+> Updated on 2021-11-20 17:45:33
