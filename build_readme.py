@@ -40,7 +40,7 @@ for root, dirs, files in os.walk("."):
     path = root.split(os.sep)
     # build name
     name = os.path.basename(root)
-    if name == 'nlp':
+    if name == 'nlp' or name == 'ADA' or name == 'gam':
         s_name = name.upper()
     else:
         s_name = f"{name.replace('_', ' ').capitalize() }"
@@ -67,6 +67,7 @@ for root, dirs, files in os.walk("."):
             elif ntabs == 1:
                 records.append(f'- {s_name_url} *[{nfiles}]*')
             else:
+                records.append('')
                 records.append(f'{ntabs*stab}- {s_name_url} {s_nfiles}')
 
 
