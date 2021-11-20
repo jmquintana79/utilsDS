@@ -17,7 +17,7 @@ def count_files(files:list)->int:
 omossions_root = ['.', '.ipynb_checkpoints']
 omossions_in_path = ['.git']
 records = list()
-stab = '\t'
+stab = ' '
 url_root = "https://github.com/jmquintana79/utilsDS/blob/master"
 
 # header
@@ -67,7 +67,7 @@ for root, dirs, files in os.walk("."):
             elif ntabs == 1:
                 records.append(f'- {s_name_url} *[{nfiles}]*')
             else:
-                records.append(f'{ntabs*stab}* {s_name_url} {s_nfiles}')
+                records.append(f'{ntabs*stab}- {s_name_url} {s_nfiles}')
 
 
 # foot
