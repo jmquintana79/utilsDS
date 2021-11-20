@@ -98,4 +98,4 @@ These tools have been written into Python programming languages. The necessary l
 - [Preprocessing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing) *[0]*
 
 		- [Anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing/anomalies) *[2]*
-> Updated on 2021-11-20 17:23:41.445355.
+> Updated on 2021-11-20 17:25:24.433093.

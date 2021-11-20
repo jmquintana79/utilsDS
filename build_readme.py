@@ -67,8 +67,7 @@ for root, dirs, files in os.walk("."):
             elif ntabs == 1:
                 records.append(f'- {s_name_url} *[{nfiles}]*')
             else:
-                records.append('')
-                records.append(f'{ntabs*stab}- {s_name_url} {s_nfiles}')
+                records.append(f'\n{ntabs*stab}- {s_name_url} {s_nfiles}')
 
 
 # foot
