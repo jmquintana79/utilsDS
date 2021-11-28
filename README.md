@@ -29,10 +29,12 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Statistics](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics) *[0]*
   - [Sampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/sampling) *[3]*
   - [Hypotesis testing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/hypotesis_testing) *[1]*
+  - [Multimodal distribution analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/multimodal_distribution_analysis) *[1]*
   - [Distributions](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/distributions) *[1]*
 - [Analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis) *[0]*
   - [Scatter plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/scatter_plots) *[1]*
   - [EDA](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA) *[4]*
+  - [Pie chart](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/pie_chart) *[1]*
   - [Fourier](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/fourier) *[2]*
   - [Missing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/missing) *[1]*
   - [KDE](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/KDE) *[1]*
@@ -59,4 +61,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/selection) *[1]*
 - [Preprocessing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing) *[0]*
   - [Anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing/anomalies) *[2]*
-> Updated on 2021-11-20 17:51:05
+> Updated on 2021-11-28 01:01:13
