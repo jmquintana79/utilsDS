@@ -7,6 +7,8 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 ### [Scripts](https://github.com/jmquintana79/utilsDS/blob/master/scripts)
 - [Analysis](https://github.com/jmquintana79/utilsDS/blob/master/scripts/analysis) *[0]*
   - [ADA](https://github.com/jmquintana79/utilsDS/blob/master/scripts/analysis/ADA) *[5]*
+  - [Decision tree for analysis](https://github.com/jmquintana79/utilsDS/blob/master/scripts/analysis/decision_tree_for_analysis) *[3]*
+   - [Dataset files](https://github.com/jmquintana79/utilsDS/blob/master/scripts/analysis/decision_tree_for_analysis/dataset_files) *[0]*
   - [Errors](https://github.com/jmquintana79/utilsDS/blob/master/scripts/analysis/errors) *[3]*
 - [Plot](https://github.com/jmquintana79/utilsDS/blob/master/scripts/plot) *[4]*
 - [Datasets](https://github.com/jmquintana79/utilsDS/blob/master/scripts/datasets) *[8]*
@@ -27,10 +29,12 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Data](https://github.com/jmquintana79/utilsDS/blob/master/scripts/data) *[2]*
 ### [Notebooks](https://github.com/jmquintana79/utilsDS/blob/master/notebooks)
 - [Statistics](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics) *[0]*
+  - [Probability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/probability) *[2]*
   - [Sampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/sampling) *[3]*
   - [Hypotesis testing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/hypotesis_testing) *[1]*
   - [Multimodal distribution analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/multimodal_distribution_analysis) *[1]*
-  - [Distributions](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/distributions) *[1]*
+  - [Impurity measurements](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements) *[2]*
+   - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements/__pycache__) *[1]*
 - [Analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis) *[0]*
   - [Scatter plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/scatter_plots) *[1]*
   - [EDA](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA) *[4]*
@@ -61,4 +65,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/selection) *[1]*
 - [Preprocessing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing) *[0]*
   - [Anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/preprocessing/anomalies) *[2]*
-> Updated on 2021-11-28 01:01:13
+> Updated on 2021-12-01 11:31:43
