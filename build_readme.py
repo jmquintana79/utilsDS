@@ -54,6 +54,8 @@ def main(file_output:str):
         s_nfiles = f'*[{count_files(files)}]*'
         # number of tabs
         ntabs = len(path)-2
+        if ntabs >= 2:
+            ntabs = 2**(ntabs - 1)
         # build url
         url = os.path.join(url_root, root[2:])
         # build name with url
