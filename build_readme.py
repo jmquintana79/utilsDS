@@ -37,7 +37,7 @@ def main(file_output:str):
     # introduction
     records.append("This repository is a compendium of notebooks and scripts to be used in my daily work for Data Science projects. I will try to use this landscape as reference:")
     # add picture
-    records.append("![DS Landscape](.img/DS_picture.jpg)")
+    records.append("![DS Landscape](.img/DS_picture.jpg#center)")
     # add content title
     records.append('## Content')
 
