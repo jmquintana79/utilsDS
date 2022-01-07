@@ -42,11 +42,12 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Eda-describe](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe) *[2]*
   - [Analysis missing values](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_missing_values) *[1]*
   - [Pie chart](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/pie_chart) *[0]*
+  - [Analysis regression](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_regression) *[1]*
   - [Analysis errors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_errors) *[1]*
   - [Analysis fourier](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_fourier) *[2]*
   - [Autoeda](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/autoEDA) *[0]*
   - [Analysis decision tree](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_decision_tree) *[1]*
-  - [Analysis anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_anomalies) *[3]*
+  - [Analysis anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_anomalies) *[4]*
   - [Plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots) *[0]*
     - [Scatter plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/scatter_plots) *[1]*
     - [Hist kde](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/hist_KDE) *[1]*
@@ -70,4 +71,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [NLP](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/nlp) *[9]*
 - [Feature engineering](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering) *[0]*
   - [Selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/selection) *[1]*
-> Updated on 2021-12-27 19:42:34
+> Updated on 2022-01-07 16:44:04
