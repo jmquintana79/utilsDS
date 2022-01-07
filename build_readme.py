@@ -26,7 +26,7 @@ def write_readme_file(file_output:str, records:list):
 def main(file_output:str):
     # initialize
     omossions_root = ['.', '.ipynb_checkpoints']
-    omossions_in_path = ['.git']
+    omossions_in_path = ['.git', '.img']
     records = list()
     stab = ' '
     url_root = "https://github.com/jmquintana79/utilsDS/blob/master"
@@ -37,7 +37,6 @@ def main(file_output:str):
     # introduction
     records.append("This repository is a compendium of notebooks and scripts to be used in my daily work for Data Science projects. I will try to use this landscape as reference:")
     # add picture
-    #records.append("![DS Landscape](.img/DS_picture.jpg)")
     records.append('<img align="center" width="100%" src=".img/DS_picture.jpg">')
     # add content title
     records.append('## Content')
