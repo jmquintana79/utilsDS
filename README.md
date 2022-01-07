@@ -42,7 +42,6 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Eda-autoeda libraries](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-autoEDA_libraries) *[4]*
     - [Eda-describe](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe) *[2]*
   - [Analysis missing values](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_missing_values) *[1]*
-  - [Pie chart](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/pie_chart) *[0]*
   - [Analysis regression](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_regression) *[1]*
   - [Analysis errors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_errors) *[1]*
   - [Analysis fourier](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_fourier) *[2]*
@@ -72,4 +71,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [NLP](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/nlp) *[9]*
 - [Feature engineering](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering) *[0]*
   - [Selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/selection) *[1]*
-> Updated on 2022-01-07 17:13:32
+> Updated on 2022-01-07 17:15:47
