@@ -1,9 +1,11 @@
 # Tools for a Data Science projects
 This repository is a compendium of notebooks and scripts to be used in my daily work for Data Science projects.
+![DS Landscape](https://github.com/jmquintana79/utilsDS/.img/DS_picture.jpg?raw=true)
 ## Content
 ### [Tools](https://github.com/jmquintana79/utilsDS/blob/master/tools)
 - [Data understanding](https://github.com/jmquintana79/utilsDS/blob/master/tools/data_understanding) *[0]*
 - [Experiments mlflow](https://github.com/jmquintana79/utilsDS/blob/master/tools/experiments_mlflow) *[5]*
+### [.img](https://github.com/jmquintana79/utilsDS/blob/master/.img)
 ### [Scripts](https://github.com/jmquintana79/utilsDS/blob/master/scripts)
 - [Analysis](https://github.com/jmquintana79/utilsDS/blob/master/scripts/analysis) *[0]*
   - [ADA](https://github.com/jmquintana79/utilsDS/blob/master/scripts/analysis/ADA) *[5]*
@@ -71,4 +73,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [NLP](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/nlp) *[9]*
 - [Feature engineering](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering) *[0]*
   - [Selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/selection) *[1]*
-> Updated on 2022-01-07 16:44:04
+> Updated on 2022-01-07 16:50:24
