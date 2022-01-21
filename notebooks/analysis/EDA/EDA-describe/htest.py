@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from minepy import MINE
 from tools import remove_outliers_IQR
 
 
@@ -177,11 +178,16 @@ def test_dip(data:np.array, alpha:float = 0.05, verbose:bool = False)->bool:
 
 
 ## Test if two numerical variables are independents (Pearson's)
-def correlation_pearson(data1:np.array, data2:np.array, alpha:float = 0.05, verbose:bool = False)->bool:
+def correlation_pearson(data1:np.array, 
+                        data2:np.array, 
+                        alpha:float = 0.05, 
+                        return_corr:bool = False, 
+                        verbose:bool = False)->bool:
     """
     Test if two numerical variables are independents (Pearson's).
     data1, date2 -- 1D data to be tested.
     alpha -- Significance level (default, 0.05).
+    return_corr -- If is True, return correlation value and his p-value (default, False).
     verbose -- Display extra information (default, False).
     return -- boolean according test result.
     """
@@ -197,21 +203,32 @@ def correlation_pearson(data1:np.array, data2:np.array, alpha:float = 0.05, verb
         if verbose:
             print('Probably independent')
         # return
-        return True
+        if return_corr:
+            return corr, p
+        else:
+            return True
     else:
         # display
         if verbose:
             print('Probably dependent')
         # return
-        return False 
+        if return_corr:
+            return corr, p
+        else:
+            return False
     
     
 ## Test if two numerical variables are independents (Spearman's)
-def correlation_spearman(data1:np.array, data2:np.array, alpha:float = 0.05, verbose:bool = False)->bool:
+def correlation_spearman(data1:np.array, 
+                         data2:np.array, 
+                         alpha:float = 0.05, 
+                         return_corr:bool = False, 
+                         verbose:bool = False)->bool:
     """
     Test if two numerical variables are independents (Spearman's).
     data1, date2 -- 1D data to be tested.
     alpha -- Significance level (default, 0.05).
+    return_corr -- If is True, return correlation value and his p-value (default, False).
     verbose -- Display extra information (default, False).
     return -- boolean according test result.
     """
@@ -227,20 +244,43 @@ def correlation_spearman(data1:np.array, data2:np.array, alpha:float = 0.05, ver
         if verbose:
             print('Probably independent')
         # return
-        return True
+        if return_corr:
+            return corr, p
+        else:
+            return True
     else:
         # display
         if verbose:
             print('Probably dependent')
         # return
-        return False 
+        if return_corr:
+            return corr, p
+        else:
+            return False
+
+        
+## Maximal Information Score to estimate non-linear correlation
+def correlation_mic(x:np.array, y:np.array)->float:
+    """
+    Maximal Information Score to estimate non-linear correlation.
+    x -- first array to be analyzed.
+    y -- second array to be analyzed.
+    return -- MIC.
     
-# Apply independence test for random subsamples (Pearson's)
+    > DOC: https://minepy.readthedocs.io/en/latest/python.html
+    """
+    mine = MINE(alpha=0.6, c=15, est="mic_approx")
+    mine.compute_score(x, y)
+    return mine.mic()
+
+
+## Apply independence test for random subsamples (Pearson's)
 def correlation_sample(correlation_function:'function',
                         dfsample:pd.DataFrame, 
                         col1:str, col2:str, 
                         is_remove_outliers:bool = False, 
                         alpha:float = 0.05, 
+                        return_corr:bool = True, 
                         verbose:bool = False): 
     """
     Apply independence test for random subsamples (Pearson's).
@@ -249,6 +289,7 @@ def correlation_sample(correlation_function:'function',
     col1, col2 -- numerical variables to be analized.
     is_remove_outliers -- remove or not outliers (default, False)
     alpha -- Significance level (default, 0.05).
+    return_corr -- If is True, return correlation value and his p-value (default, False).
     verbose -- Display extra information (default, False).
     return -- boolean according test result.
     """
@@ -263,7 +304,7 @@ def correlation_sample(correlation_function:'function',
         data1 = remove_outliers_IQR(data1)
         data2 = remove_outliers_IQR(data2)
     # correlation test and return
-    return correlation_function(data1, data2, alpha = alpha, verbose = verbose)
+    return correlation_function(data1, data2, alpha = alpha, return_corr = return_corr, verbose = verbose)
 
 
 ## Test if two categorical variables are independents (Chi-Squared Test)

@@ -217,7 +217,17 @@ def describe_num_num(df:pd.DataFrame,
             # number of times to apply test in subsamples
             num_times = int(nrows / size_max_sample) + 10
             # most frequent result of independece test for random subsamples
-            is_independent_pearson = most_frequent([htest.correlation_sample(htest.correlation_spearman, df.sample(size_max_sample), cnum[0], cnum[1], is_remove_outliers, alpha = alpha, verbose = verbose) for i in range(num_times)])
+            is_independent_spearman = most_frequent([htest.correlation_sample(htest.correlation_spearman, df.sample(size_max_sample), cnum[0], cnum[1], is_remove_outliers=is_remove_outliers, alpha = alpha, return_corr = False, verbose = verbose) for i in range(num_times)])
+            # most frequent result of pearson corr for random subsamples
+            corr_pearson = np.nanmean([htest.correlation_sample(htest.correlation_pearson, df.sample(size_max_sample), cnum[0], cnum[1], is_remove_outliers=is_remove_outliers, alpha = alpha, return_corr = True, verbose = verbose)[0] for i in range(num_times)])            
+            # most frequent result of spearman corr for random subsamples
+            corr_spearman = np.nanmean([htest.correlation_sample(htest.correlation_spearman, df.sample(size_max_sample), cnum[0], cnum[1], is_remove_outliers=is_remove_outliers, alpha = alpha, return_corr = True, verbose = verbose)[0] for i in range(num_times)])
+            # most frequent result of MIC corr for random subsamples
+            def launch_mic(df:pd.DataFrame, var1:str, var2:str, size_max_sample:int):
+                temp = df.sample(size_max_sample)
+                return htest.correlation_mic(temp[var1].values, temp[var2].values)
+            corr_mic = np.nanmean([launch_mic(df, cnum[0], cnum[1], size_max_sample) for i in range(num_times)])            
+            
         else:
             # collect data
             data1 = df[cnum[0]].values.copy()
@@ -227,18 +237,30 @@ def describe_num_num(df:pd.DataFrame,
                 data1 = remove_outliers_IQR(data1)
                 data2 = remove_outliers_IQR(data2)
             # independence test
-            is_independent_pearson = htest.correlation_spearman(data1, data2, alpha = alpha, verbose = verbose)
+            is_independent_spearman = htest.correlation_spearman(data1, data2, alpha = alpha, return_corr = False, verbose = verbose)
+            # correlation pearson
+            corr_pearson = htest.correlation_pearson(data1, data2, alpha = alpha, return_corr = True, verbose = verbose)[0]     
+            # correlation spearman
+            corr_spearman = htest.correlation_spearman(data1, data2, alpha = alpha, return_corr = True, verbose = verbose)[0]
+            # non linear correlation (Maximal Information Score)
+            corr_mic = htest.correlation_mic(data1, data2)
         # append
         if only_dependent:
-            if  not is_independent_pearson:
-                num_num.append([cnum[0], cnum[1], not is_independent_pearson])
+            if  not is_independent_spearman:
+                num_num.append([cnum[0], cnum[1], not is_independent_spearman, corr_pearson, corr_spearman, corr_mic])
             else:
                 pass
         else:
-            num_num.append([cnum[0], cnum[1], not is_independent_pearson])
-    # store in df and return  
-    cols_num_num = ['variable1', 'variable2', 'depend_corr']
-    return pd.DataFrame(num_num, columns = cols_num_num)
+            num_num.append([cnum[0], cnum[1], not is_independent_spearman, corr_pearson, corr_spearman, corr_mic])
+    # store in df  
+    cols_num_num = ['variable1', 'variable2', 'depend_corr', 'corr_pearson', 'corr_spearman', 'corr_mic']
+    dfnn = pd.DataFrame(num_num, columns = cols_num_num)
+    # format
+    dfnn['corr_pearson'] = dfnn['corr_pearson'].values.round(decimals=2) 
+    dfnn['corr_spearman'] = dfnn['corr_spearman'].values.round(decimals=2) 
+    dfnn['corr_mic'] = dfnn['corr_mic'].values.round(decimals=2)
+    # return
+    return dfnn
 
 
 ## Describe relationship between categorical - categorical variables
