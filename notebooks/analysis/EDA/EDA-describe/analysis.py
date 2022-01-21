@@ -292,6 +292,8 @@ def describe_cat_num(df:pd.DataFrame,
     """    
     # get names of categorical columns
     cols_cat = df.select_dtypes(include=['object', 'int64', 'category', 'bool']).columns.values
+    # remove categorical variables with only one class
+    cols_cat = [c for c in cols_cat if len(df[c].unique()) > 1]
     # get names of numeric columns
     cols_num = df.select_dtypes(include=['float64']).columns.values    
     # combinations between categorical and numerical variables
