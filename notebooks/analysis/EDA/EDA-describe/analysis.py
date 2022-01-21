@@ -185,7 +185,7 @@ def describe_datetime(df:pd.DataFrame, decimals:int = 2)->pd.DataFrame:
 
 ## Describe relationship between numerical - numerical variables
 def describe_num_num(df:pd.DataFrame, 
-                     only_dependent:bool = True, 
+                     only_dependent:bool = False, 
                      size_max_sample:int = 500, 
                      is_remove_outliers:bool = False, 
                      alpha:float = 0.05, 
@@ -193,7 +193,7 @@ def describe_num_num(df:pd.DataFrame,
     """
     Describe relationship between numerical - numerical variables.
     df -- data to be analized.
-    only_dependent -- only display relationships with dependeces (default, True).
+    only_dependent -- only display relationships with dependeces (default, False).
     size_max_sample -- maximum sample size to apply analysis with whole sample. If the sample
                        is bigger are used random subsamples (default, 500).
     is_remove_outliers -- Remove or not univariate outliers (default, False).
@@ -217,7 +217,7 @@ def describe_num_num(df:pd.DataFrame,
             # number of times to apply test in subsamples
             num_times = int(nrows / size_max_sample) + 10
             # most frequent result of independece test for random subsamples
-            is_independent_pearson = most_frequent([htest.correlation_pearson_sample(df.sample(size_max_sample), cnum[0], cnum[1], is_remove_outliers, alpha = alpha, verbose = verbose) for i in range(num_times)])
+            is_independent_pearson = most_frequent([htest.correlation_sample(htest.correlation_spearman, df.sample(size_max_sample), cnum[0], cnum[1], is_remove_outliers, alpha = alpha, verbose = verbose) for i in range(num_times)])
         else:
             # collect data
             data1 = df[cnum[0]].values.copy()
@@ -227,7 +227,7 @@ def describe_num_num(df:pd.DataFrame,
                 data1 = remove_outliers_IQR(data1)
                 data2 = remove_outliers_IQR(data2)
             # independence test
-            is_independent_pearson = htest.correlation_pearson(data1, data2, alpha = alpha, verbose = verbose)
+            is_independent_pearson = htest.correlation_spearman(data1, data2, alpha = alpha, verbose = verbose)
         # append
         if only_dependent:
             if  not is_independent_pearson:
@@ -237,19 +237,19 @@ def describe_num_num(df:pd.DataFrame,
         else:
             num_num.append([cnum[0], cnum[1], not is_independent_pearson])
     # store in df and return  
-    cols_num_num = ['variable1', 'variable2', 'depend_pearson']
+    cols_num_num = ['variable1', 'variable2', 'depend_corr']
     return pd.DataFrame(num_num, columns = cols_num_num)
 
 
 ## Describe relationship between categorical - categorical variables
 def describe_cat_cat(df:pd.DataFrame, 
-                     only_dependent:bool = True,
+                     only_dependent:bool = False,
                      alpha:float = 0.05, 
                      verbose:bool = False)->pd.DataFrame:                     
     """
     Describe relationship between categorical - categorical variables.
     df -- data to be analized.
-    only_dependent -- only display relationships with dependeces (default, True).
+    only_dependent -- only display relationships with dependeces (default, False).
     alpha -- Significance level (default, 0.05).
     verbose -- Display extra information (default, False).    
     return -- results in a table.
@@ -271,7 +271,7 @@ def describe_cat_cat(df:pd.DataFrame,
             else:
                 pass
         else:
-            num_num.append([ccat[0], ccat[1], not is_independent_chi2])  
+            cat_cat.append([ccat[0], ccat[1], not is_independent_chi2])  
     # store in df and return 
     cols_cat_cat = ['variable1', 'variable2', 'depend_chi2']
     return pd.DataFrame(cat_cat, columns = cols_cat_cat)
@@ -279,13 +279,13 @@ def describe_cat_cat(df:pd.DataFrame,
 
 ## Describe relationship between categorical - numerical variables
 def describe_cat_num(df:pd.DataFrame, 
-                     only_dependent:bool = True,
+                     only_dependent:bool = False,
                      alpha:float = 0.05, 
                      verbose:bool = False)->pd.DataFrame:
     """
     Describe relationship between categorical - numerical variables.
     df -- data to be analized.
-    only_dependent -- only display relationships with dependeces (default, True).
+    only_dependent -- only display relationships with dependeces (default, False).
     alpha -- Significance level (default, 0.05).
     verbose -- Display extra information (default, False).    
     return -- results in a table.
@@ -324,7 +324,7 @@ def describe_cat_num(df:pd.DataFrame,
 
 ## Describe bivariate relationships
 def describe_bivariate(data:pd.DataFrame, 
-                     only_dependent:bool = True, 
+                     only_dependent:bool = False, 
                      size_max_sample:int = 500, 
                      is_remove_outliers:bool = False,
                      alpha:float = 0.05, 
@@ -332,7 +332,7 @@ def describe_bivariate(data:pd.DataFrame,
     """
     Describe bivariate relationships.
     df -- data to be analized.
-    only_dependent -- only display relationships with dependeces (default, True).
+    only_dependent -- only display relationships with dependeces (default, False).
     size_max_sample -- maximum sample size to apply analysis with whole sample. If the sample
                        is bigger are used random subsamples (default, 500).
     is_remove_outliers -- Remove or not univariate outliers (default, False).

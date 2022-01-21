@@ -205,15 +205,46 @@ def correlation_pearson(data1:np.array, data2:np.array, alpha:float = 0.05, verb
         # return
         return False 
     
-
+    
+## Test if two numerical variables are independents (Spearman's)
+def correlation_spearman(data1:np.array, data2:np.array, alpha:float = 0.05, verbose:bool = False)->bool:
+    """
+    Test if two numerical variables are independents (Spearman's).
+    data1, date2 -- 1D data to be tested.
+    alpha -- Significance level (default, 0.05).
+    verbose -- Display extra information (default, False).
+    return -- boolean according test result.
+    """
+    from scipy.stats import spearmanr
+    # calculate Pearson's correlation
+    corr, p = spearmanr(data1, data2)
+    # display
+    if verbose:
+        print('stat=%.3f, p=%.3f' % (stat, p))
+    # check result and return
+    if p > alpha:
+        # display
+        if verbose:
+            print('Probably independent')
+        # return
+        return True
+    else:
+        # display
+        if verbose:
+            print('Probably dependent')
+        # return
+        return False 
+    
 # Apply independence test for random subsamples (Pearson's)
-def correlation_pearson_sample(dfsample:pd.DataFrame, 
-                               col1:str, col2:str, 
-                               is_remove_outliers:bool = False, 
-                               alpha:float = 0.05, 
-                               verbose:bool = False): 
+def correlation_sample(correlation_function:'function',
+                        dfsample:pd.DataFrame, 
+                        col1:str, col2:str, 
+                        is_remove_outliers:bool = False, 
+                        alpha:float = 0.05, 
+                        verbose:bool = False): 
     """
     Apply independence test for random subsamples (Pearson's).
+    correlation_function -- correlation function to be used.
     df -- data sample to be analized.
     col1, col2 -- numerical variables to be analized.
     is_remove_outliers -- remove or not outliers (default, False)
@@ -232,7 +263,7 @@ def correlation_pearson_sample(dfsample:pd.DataFrame,
         data1 = remove_outliers_IQR(data1)
         data2 = remove_outliers_IQR(data2)
     # correlation test and return
-    return correlation_pearson(data1, data2, alpha = alpha, verbose = verbose)
+    return correlation_function(data1, data2, alpha = alpha, verbose = verbose)
 
 
 ## Test if two categorical variables are independents (Chi-Squared Test)
