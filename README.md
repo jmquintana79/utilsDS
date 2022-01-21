@@ -40,13 +40,15 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [EDA](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA) *[0]*
     - [Eda-tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-tools) *[3]*
     - [Eda-autoeda libraries](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-autoEDA_libraries) *[4]*
-    - [Eda-describe](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe) *[2]*
+    - [Eda-describe](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe) *[4]*
+        - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe/__pycache__) *[4]*
   - [Analysis missing values](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_missing_values) *[1]*
   - [Analysis regression](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_regression) *[1]*
   - [Analysis errors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_errors) *[1]*
   - [Analysis fourier](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_fourier) *[2]*
   - [Autoeda](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/autoEDA) *[0]*
   - [Analysis decision tree](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_decision_tree) *[1]*
+  - [Analysis non-linear correlation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_non-linear_correlation) *[1]*
   - [Analysis anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_anomalies) *[4]*
   - [Plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots) *[0]*
     - [Scatter plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/scatter_plots) *[1]*
@@ -71,4 +73,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [NLP](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/nlp) *[9]*
 - [Feature engineering](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering) *[0]*
   - [Selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/selection) *[1]*
-> Updated on 2022-01-07 17:15:47
+> Updated on 2022-01-22 00:31:21
