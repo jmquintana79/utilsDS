@@ -185,6 +185,7 @@ def correlation_pearson(data1:np.array,
                         verbose:bool = False)->bool:
     """
     Test if two numerical variables are independents (Pearson's).
+    
     data1, date2 -- 1D data to be tested.
     alpha -- Significance level (default, 0.05).
     return_corr -- If is True, return correlation value and his p-value (default, False).
@@ -196,7 +197,7 @@ def correlation_pearson(data1:np.array,
     corr, p = pearsonr(data1, data2)
     # display
     if verbose:
-        print('stat=%.3f, p=%.3f' % (stat, p))
+        print('corr=%.3f, p=%.3f' % (corr, p))
     # check result and return
     if p > alpha:
         # display
@@ -226,6 +227,7 @@ def correlation_spearman(data1:np.array,
                          verbose:bool = False)->bool:
     """
     Test if two numerical variables are independents (Spearman's).
+    
     data1, date2 -- 1D data to be tested.
     alpha -- Significance level (default, 0.05).
     return_corr -- If is True, return correlation value and his p-value (default, False).
@@ -237,7 +239,7 @@ def correlation_spearman(data1:np.array,
     corr, p = spearmanr(data1, data2)
     # display
     if verbose:
-        print('stat=%.3f, p=%.3f' % (stat, p))
+        print('corr=%.3f, p=%.3f' % (corr, p))
     # check result and return
     if p > alpha:
         # display
@@ -259,6 +261,118 @@ def correlation_spearman(data1:np.array,
             return False
 
         
+## Calculate Kendall’s tau, a correlation measure for ordinal data
+def correlation_kendalltau(data1:np.array, 
+                           data2:np.array, 
+                           alpha:float = 0.05, 
+                           return_corr:bool = False, 
+                           verbose:bool = False)->float:
+    """
+    Test if two numerical/ordinal variables are independents (Kendall’s tau).
+    
+    data1, date2 -- 1D data to be tested.
+    alpha -- Significance level (default, 0.05).
+    return_corr -- If is True, return correlation value and his p-value (default, False).
+    verbose -- Display extra information (default, False).
+    return -- boolean according test result.
+    """
+    from scipy.stats import kendalltau
+    # test
+    corr, p = kendalltau(data1, data2)
+    # visualize
+    if verbose:
+        print('corr=%.3f, p=%.5f' % (corr, p))
+    # check result and return
+    if p > alpha:
+        # display
+        if verbose:
+            print('Probably independent')
+        # return
+        if return_corr:
+            return corr, p
+        else:
+            return True
+    else:
+        # display
+        if verbose:
+            print('Probably dependent')
+        # return
+        if return_corr:
+            return corr, p
+        else:
+            return False
+
+## Linear correlation analysis to test independence for numerical / ordinal variables
+def analysis_linear_correlation(data1:np.array, 
+                                data2:np.array,
+                                alpha:float = .05, 
+                                return_corr:bool = True, 
+                                verbose:bool = False)->bool:
+    """
+    ## Linear correlation analysis to test independence for numerical / ordinal variables.
+    
+    data1, date2 -- 1D data to be tested.
+    alpha -- Significance level (default, 0.05).
+    return_corr -- If is True, return correlation value and his p-value (default, False).
+    verbose -- Display extra information (default, False).
+    return -- boolean according test result.
+    """
+
+    # get types
+    type1 = data1.dtype
+    type2 = data2.dtype
+    # get size
+    n = len(data1)
+
+    # ord - ord
+    if type1 == "int64" and type2 == "int64":
+        # number of categories
+        ncat1 = len(np.unique(data1))
+        ncat2 = len(np.unique(data2))
+        # analysis
+        if ncat1 >= 5 and ncat2 >= 5:
+            result = correlation_spearman(data1, data2, alpha = alpha, return_corr = return_corr, verbose = verbose)
+        else:
+            result = correlation_kendalltau(data1, data2, alpha = alpha, return_corr = return_corr, verbose = verbose)
+
+    # num - num
+    if type1 == "float64" and type2 == "float64":
+        # test if variables are gaussian
+        if n >= 5000:
+            is_normal1 = test_anderson(data1, alpha = alpha)
+            is_normal2 = test_anderson(data2, alpha = alpha)
+        else:
+            is_normal1 = test_shapiro(data1, alpha = alpha)
+            is_normal2 = test_shapiro(data2, alpha = alpha)
+        # analysis
+        if n >= 100:
+            result = correlation_pearson(data1, data2, alpha = alpha, return_corr = return_corr, verbose = verbose)
+        else:
+            if is_normal1 and is_normal2:
+                result = correlation_pearson(data1, data2, alpha = alpha, return_corr = return_corr, verbose = verbose)
+            else:
+                result = correlation_spearman(data1, data2, alpha = alpha, return_corr = return_corr, verbose = verbose)
+
+    # num - ord
+    if (type1 == "float64" and type2 == "int64") or (type1 == "int64" and type2 == "float64"):
+        # number of categories
+        if type1 == "int64":
+            ncat = len(np.unique(data1))
+        else:
+            ncat = len(np.unique(data2))
+        # analysis
+        if ncat < 5:
+            result = correlation_kendalltau(data1, data2, alpha = alpha, return_corr = return_corr, verbose = verbose)
+        else:
+            if n >= 100:
+                result = correlation_pearson(data1, data2, alpha = alpha, return_corr = return_corr, verbose = verbose)
+            else:
+                result = correlation_spearman(data1, data2, alpha = alpha, return_corr = return_corr, verbose = verbose)
+
+    # return
+    return result
+
+    
 ## Maximal Information Score to estimate non-linear correlation
 def correlation_mic(x:np.array, y:np.array)->float:
     """

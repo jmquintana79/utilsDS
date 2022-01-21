@@ -22,7 +22,9 @@ def info(data:pd.DataFrame, decimals:int = 2)->pd.DataFrame:
     # get names of categorical columns
     cols_cat = df.select_dtypes(include=['object', 'int64', 'category', 'bool', 'datetime64[ns]']).columns.values
     # get types information
-    dfinfo = pd.DataFrame({'variable':df.dtypes.index, 'dtype':df.dtypes.values}).set_index('variable')
+    dfinfo = pd.DataFrame({'variable':df.dtypes.index, 'types':df.dtypes.values}).set_index('variable')
+    # dtype to str
+    dfinfo['types'] = dfinfo['types'].astype(str)
     # estimate number of unique values for categorical variables
     dfinfo['unique'] = np.ones(len(dfinfo)) * np.nan
     for col in cols_cat:
@@ -39,7 +41,7 @@ def info(data:pd.DataFrame, decimals:int = 2)->pd.DataFrame:
         nrecords.append(len(df[col].dropna()))
     dfinfo['num_records'] = nrecords
     # return
-    return dfinfo.sort_values('unique', ascending = False)
+    return dfinfo.sort_values('types', ascending = True)
 
 
 ## describe function for numeric data
@@ -213,7 +215,7 @@ def describe_num_num(df:pd.DataFrame,
         # number of rows
         nrows = len(df)
         # if sample is too big
-        if nrows > size_max_sample:
+        if nrows > size_max_sample*10000000:
             # number of times to apply test in subsamples
             num_times = int(nrows / size_max_sample) + 10
             # most frequent result of independece test for random subsamples
@@ -237,28 +239,25 @@ def describe_num_num(df:pd.DataFrame,
                 data1 = remove_outliers_IQR(data1)
                 data2 = remove_outliers_IQR(data2)
             # independence test
-            is_independent_spearman = htest.correlation_spearman(data1, data2, alpha = alpha, return_corr = False, verbose = verbose)
-            # correlation pearson
-            corr_pearson = htest.correlation_pearson(data1, data2, alpha = alpha, return_corr = True, verbose = verbose)[0]     
-            # correlation spearman
-            corr_spearman = htest.correlation_spearman(data1, data2, alpha = alpha, return_corr = True, verbose = verbose)[0]
+            is_independent = htest.analysis_linear_correlation(data1, data2, alpha = alpha, return_corr = False, verbose = verbose)
+            # linear correlation
+            corr_linear, _ = htest.analysis_linear_correlation(data1, data2, alpha = alpha, return_corr = True, verbose = verbose)    
             # non linear correlation (Maximal Information Score)
             corr_mic = htest.correlation_mic(data1, data2)
         # append
         if only_dependent:
             if  not is_independent_spearman:
-                num_num.append([cnum[0], cnum[1], not is_independent_spearman, corr_pearson, corr_spearman, corr_mic])
+                num_num.append([cnum[0], cnum[1], not is_independent, corr_linear, corr_mic])
             else:
                 pass
         else:
-            num_num.append([cnum[0], cnum[1], not is_independent_spearman, corr_pearson, corr_spearman, corr_mic])
+            num_num.append([cnum[0], cnum[1], not is_independent, corr_linear, corr_mic])
     # store in df  
-    cols_num_num = ['variable1', 'variable2', 'depend_corr', 'corr_pearson', 'corr_spearman', 'corr_mic']
+    cols_num_num = ['variable1', 'variable2', 'depend_corr_linear', 'corr_linear', 'corr_non_linear']
     dfnn = pd.DataFrame(num_num, columns = cols_num_num)
-    # format
-    dfnn['corr_pearson'] = dfnn['corr_pearson'].values.round(decimals=2) 
-    dfnn['corr_spearman'] = dfnn['corr_spearman'].values.round(decimals=2) 
-    dfnn['corr_mic'] = dfnn['corr_mic'].values.round(decimals=2)
+    # format 
+    dfnn['corr_linear'] = dfnn['corr_linear'].values.round(decimals=2) 
+    dfnn['corr_non_linear'] = dfnn['corr_non_linear'].values.round(decimals=2)
     # return
     return dfnn
 
