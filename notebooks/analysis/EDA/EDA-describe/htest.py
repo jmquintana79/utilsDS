@@ -388,39 +388,6 @@ def correlation_mic(x:np.array, y:np.array)->float:
     return mine.mic()
 
 
-## Apply independence test for random subsamples (Pearson's)
-def correlation_sample(correlation_function:'function',
-                        dfsample:pd.DataFrame, 
-                        col1:str, col2:str, 
-                        is_remove_outliers:bool = False, 
-                        alpha:float = 0.05, 
-                        return_corr:bool = True, 
-                        verbose:bool = False): 
-    """
-    Apply independence test for random subsamples (Pearson's).
-    correlation_function -- correlation function to be used.
-    df -- data sample to be analized.
-    col1, col2 -- numerical variables to be analized.
-    is_remove_outliers -- remove or not outliers (default, False)
-    alpha -- Significance level (default, 0.05).
-    return_corr -- If is True, return correlation value and his p-value (default, False).
-    verbose -- Display extra information (default, False).
-    return -- boolean according test result.
-    """
-    # validate column names
-    assert col1 in dfsample.columns.tolist()
-    assert col2 in dfsample.columns.tolist()
-    # collect data
-    data1 = dfsample[col1].values.copy()
-    data2 = dfsample[col2].values.copy()
-    # remove or not outliers
-    if is_remove_outliers:
-        data1 = remove_outliers_IQR(data1)
-        data2 = remove_outliers_IQR(data2)
-    # correlation test and return
-    return correlation_function(data1, data2, alpha = alpha, return_corr = return_corr, verbose = verbose)
-
-
 ## Test if two categorical variables are independents (Chi-Squared Test)
 def chi_square(data1:np.array, data2:np.array, alpha:float = 0.05, verbose:bool = False)->bool:
     """

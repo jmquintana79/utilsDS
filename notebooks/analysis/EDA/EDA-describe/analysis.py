@@ -1,10 +1,9 @@
 import pandas as pd
 import numpy as np
 from scipy.stats import kurtosis, skew
-from tools import magnitude, most_frequent
+import tools
 import htest
 import itertools
-from tools import most_frequent
 
  
 ## get basic information of df variables
@@ -32,7 +31,7 @@ def info(data:pd.DataFrame, decimals:int = 2)->pd.DataFrame:
     # estimate order of magnitude for numerical variables
     dfinfo['magnitude'] = np.ones(len(dfinfo)) * np.nan
     for col in cols_num:
-        dfinfo.loc[col,'magnitude'] = most_frequent([magnitude(v) for v in df[col]])
+        dfinfo.loc[col,'magnitude'] = tools.most_frequent([tools.magnitude(v) for v in df[col]])
     # estimate percent of nan values
     dfinfo['%nan'] = (df.isnull().sum()*100 / len(df)).values.round(decimals=decimals)
     # estimate number of records without nan values
@@ -45,16 +44,21 @@ def info(data:pd.DataFrame, decimals:int = 2)->pd.DataFrame:
 
 
 ## describe function for numeric data
-def describe_numeric(df:pd.DataFrame, alpha:float = .05, decimals:int = 2)->pd.DataFrame:
+def describe_numeric(df:pd.DataFrame, alpha:float = .05, decimals:int = 2, is_remove_outliers:bool = False)->pd.DataFrame:
     """
     Describe tool for numeric data.
     df -- dataframe with data to be described.
     alpha -- significance level (default, 0.05).
     decimals -- precission to be returned (default, 2).
+    is_remove_outliers -- Removing univariate outliers or not (default, False).
     return -- describe df.
     """
     # get names of numeric columns
-    cols_num = df.select_dtypes(include=['float64']).columns.values
+    cols_num = df.select_dtypes(include=['float64', 'int64']).columns.values
+    # remove outliers
+    if is_remove_outliers:
+        for col in cols_num:
+            df[col] = tools.remove_outliers_IQR(df[col], verbose = verbose)       
     # copy data
     data = df[cols_num].copy()
     # describe
@@ -65,8 +69,6 @@ def describe_numeric(df:pd.DataFrame, alpha:float = .05, decimals:int = 2)->pd.D
     dfn['kurtosis'] = kurtosis(data[cols_num], nan_policy = 'omit')
     # skew
     dfn['skew'] = skew(data[cols_num], nan_policy = 'omit')
-    # order of magnitude
-    #dfn['magnitude'] = [most_frequent([magnitude(v) for v in data[c]]) for c in cols_num]
     # test if it is uniform
     dfn['uniform'] = [htest.test_uniform_num(data[c], alpha = alpha) for c in cols_num]
     # test if it is gaussian
@@ -188,56 +190,65 @@ def describe_datetime(df:pd.DataFrame, decimals:int = 2)->pd.DataFrame:
 ## Describe relationship between numerical - numerical variables
 def describe_num_num(df:pd.DataFrame, 
                      only_dependent:bool = False, 
-                     size_max_sample:int = 500, 
-                     is_remove_outliers:bool = False, 
+                     size_max_sample:int = None, 
+                     is_remove_outliers:bool = True, 
                      alpha:float = 0.05, 
                      verbose:bool = False)->pd.DataFrame:
     """
     Describe relationship between numerical - numerical variables.
     df -- data to be analized.
     only_dependent -- only display relationships with dependeces (default, False).
-    size_max_sample -- maximum sample size to apply analysis with whole sample. If the sample
-                       is bigger are used random subsamples (default, 500).
-    is_remove_outliers -- Remove or not univariate outliers (default, False).
+    size_max_sample -- maximum sample size to apply analysis with whole sample. If this value
+                       is not None are used random subsamples although it will not remove bivariate
+                       outliers (default, None).
+    is_remove_outliers -- Remove or not univariate outliers (default, True).
     alpha -- Significance level (default, 0.05).
     verbose -- Display extra information (default, False).
     return -- results in a table.
     """
     
     # get names of numeric columns
-    cols_num = df.select_dtypes(include=['float64']).columns.values
+    cols_num = df.select_dtypes(include=['float64', 'int64']).columns.values
+    # remove univariate outliers
+    if is_remove_outliers:
+        for col in cols_num:
+            df[col] = tools.remove_outliers_IQR(df[col], verbose = verbose)    
     # all combinations between numerical variables
     combs_num = list(itertools.combinations(cols_num,r=2))
     # initialize
     num_num = list()
     # loop of combinations
     for cnum in combs_num[:]:
+        # collect data
+        temp = df[[cnum[0], cnum[1]]].copy()
         # number of rows
-        nrows = len(df)
-        # if sample is too big
-        if nrows > size_max_sample*10000000:
+        nrows = len(temp)
+        # if it is selected analysis by subsamples
+        if not size_max_sample is None:
+
             # number of times to apply test in subsamples
             num_times = int(nrows / size_max_sample) + 10
-            # most frequent result of independece test for random subsamples
-            is_independent_spearman = most_frequent([htest.correlation_sample(htest.correlation_spearman, df.sample(size_max_sample), cnum[0], cnum[1], is_remove_outliers=is_remove_outliers, alpha = alpha, return_corr = False, verbose = verbose) for i in range(num_times)])
-            # most frequent result of pearson corr for random subsamples
-            corr_pearson = np.nanmean([htest.correlation_sample(htest.correlation_pearson, df.sample(size_max_sample), cnum[0], cnum[1], is_remove_outliers=is_remove_outliers, alpha = alpha, return_corr = True, verbose = verbose)[0] for i in range(num_times)])            
-            # most frequent result of spearman corr for random subsamples
-            corr_spearman = np.nanmean([htest.correlation_sample(htest.correlation_spearman, df.sample(size_max_sample), cnum[0], cnum[1], is_remove_outliers=is_remove_outliers, alpha = alpha, return_corr = True, verbose = verbose)[0] for i in range(num_times)])
-            # most frequent result of MIC corr for random subsamples
-            def launch_mic(df:pd.DataFrame, var1:str, var2:str, size_max_sample:int):
-                temp = df.sample(size_max_sample)
-                return htest.correlation_mic(temp[var1].values, temp[var2].values)
-            corr_mic = np.nanmean([launch_mic(df, cnum[0], cnum[1], size_max_sample) for i in range(num_times)])            
             
+            # most frequent result of independece test for random subsamples
+            fsample = lambda X: htest.analysis_linear_correlation(X[cnum[0]].values, X[cnum[1]].values, alpha = alpha, return_corr = False, verbose = verbose)
+            is_independent = tools.most_frequent([fsample(temp[[cnum[0], cnum[1]]].sample(size_max_sample).dropna()) for i in range(num_times)])
+            
+            # average of linear correlation results for random subsamples
+            fsample = lambda X: htest.analysis_linear_correlation(X[cnum[0]].values, X[cnum[1]].values, alpha = alpha, return_corr = True, verbose = verbose)
+            corr_linear = np.nanmean([fsample(temp[[cnum[0], cnum[1]]].sample(size_max_sample).dropna())[0] for i in range(num_times)])
+
+            # average of MIC corr for random subsamples            
+            fsample = lambda X: htest.correlation_mic(X[cnum[0]].values, X[cnum[1]].values)            
+            corr_mic = np.nanmean([fsample(temp[[cnum[0], cnum[1]]].sample(size_max_sample).dropna()) for i in range(num_times)])           
         else:
-            # collect data
-            data1 = df[cnum[0]].values.copy()
-            data2 = df[cnum[1]].values.copy()
-            # if remove outliers
+            # remove bivariate outliers
             if is_remove_outliers:
-                data1 = remove_outliers_IQR(data1)
-                data2 = remove_outliers_IQR(data2)
+                temp = tools.multivariate_outliers_detection(temp.dropna(), [cnum[0], cnum[1]], verbose = verbose)
+            # remove nan values
+            temp = temp.dropna()
+            # collect data
+            data1 = temp[cnum[0]].values
+            data2 = temp[cnum[1]].values
             # independence test
             is_independent = htest.analysis_linear_correlation(data1, data2, alpha = alpha, return_corr = False, verbose = verbose)
             # linear correlation
@@ -252,6 +263,8 @@ def describe_num_num(df:pd.DataFrame,
                 pass
         else:
             num_num.append([cnum[0], cnum[1], not is_independent, corr_linear, corr_mic])
+        # cleand
+        del temp
     # store in df  
     cols_num_num = ['variable1', 'variable2', 'depend_corr_linear', 'corr_linear', 'corr_non_linear']
     dfnn = pd.DataFrame(num_num, columns = cols_num_num)
@@ -272,6 +285,7 @@ def describe_cat_cat(df:pd.DataFrame,
     df -- data to be analized.
     only_dependent -- only display relationships with dependeces (default, False).
     alpha -- Significance level (default, 0.05).
+    is_remove_outliers -- Remove or not univariate outliers (default, True).
     verbose -- Display extra information (default, False).    
     return -- results in a table.
     """
@@ -302,6 +316,7 @@ def describe_cat_cat(df:pd.DataFrame,
 def describe_cat_num(df:pd.DataFrame, 
                      only_dependent:bool = False,
                      alpha:float = 0.05, 
+                     is_remove_outliers:bool = True, 
                      verbose:bool = False)->pd.DataFrame:
     """
     Describe relationship between categorical - numerical variables.
@@ -316,9 +331,14 @@ def describe_cat_num(df:pd.DataFrame,
     # remove categorical variables with only one class
     cols_cat = [c for c in cols_cat if len(df[c].unique()) > 1]
     # get names of numeric columns
-    cols_num = df.select_dtypes(include=['float64']).columns.values    
+    cols_num = df.select_dtypes(include=['float64', 'int64']).columns.values    
+    # remove outliers
+    if is_remove_outliers:
+        for col in cols_num:
+            df[col] = tools.remove_outliers_IQR(df[col], verbose = verbose)  
     # combinations between categorical and numerical variables
     combs_cat_num = [[col_cat, col_num] for col_num in cols_num for col_cat in cols_cat]
+    combs_cat_num = [[col_cat, col_num] for col_cat, col_num in combs_cat_num if col_cat != col_num]
     # initialize
     cat_num = list()
     # loop of combinations
@@ -348,27 +368,30 @@ def describe_cat_num(df:pd.DataFrame,
 ## Describe bivariate relationships
 def describe_bivariate(data:pd.DataFrame, 
                      only_dependent:bool = False, 
-                     size_max_sample:int = 500, 
-                     is_remove_outliers:bool = False,
+                     size_max_sample:int = None, 
+                     is_remove_outliers:bool = True,
                      alpha:float = 0.05, 
                      verbose:bool = False)->pd.DataFrame:                       
     """
     Describe bivariate relationships.
     df -- data to be analized.
     only_dependent -- only display relationships with dependeces (default, False).
-    size_max_sample -- maximum sample size to apply analysis with whole sample. If the sample
-                       is bigger are used random subsamples (default, 500).
-    is_remove_outliers -- Remove or not univariate outliers (default, False).
+    size_max_sample -- maximum sample size to apply analysis with whole sample. If this value
+                       is not None are used random subsamples although it will not remove bivariate
+                       outliers (default, None).
+    is_remove_outliers -- Remove or not univariate outliers (default, True).
     return -- results in a table.
     """ 
     # copy data
     df = data.copy()
     # relationship num - num
-    dfnn = describe_num_num(df, only_dependent = only_dependent, alpha = alpha, verbose = verbose)
+    dfnn = describe_num_num(df, only_dependent = only_dependent, size_max_sample = size_max_sample,
+                            is_remove_outliers = is_remove_outliers, alpha = alpha, verbose = verbose)                                                    
     # relationship cat - cat
     dfcc = describe_cat_cat(df, only_dependent = only_dependent, alpha = alpha, verbose = verbose)
     # relationship cat - num
-    dfcn = describe_cat_num(df, only_dependent = only_dependent, alpha = alpha, verbose = verbose)
+    dfcn = describe_cat_num(df, only_dependent = only_dependent, alpha = alpha, 
+                            is_remove_outliers = is_remove_outliers, verbose = verbose)
     # append results
     dfbiv = dfnn.copy()
     dfbiv = dfbiv.append(dfcc)
