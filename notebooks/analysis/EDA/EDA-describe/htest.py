@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 from minepy import MINE
-from tools import remove_outliers_IQR
 
 
 ## test if it is an array is a uniform distribution for numeric data
