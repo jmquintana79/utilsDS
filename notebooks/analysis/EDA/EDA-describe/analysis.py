@@ -31,7 +31,13 @@ def info(data:pd.DataFrame, decimals:int = 2)->pd.DataFrame:
     # estimate order of magnitude for numerical variables
     dfinfo['magnitude'] = np.ones(len(dfinfo)) * np.nan
     for col in cols_num:
-        dfinfo.loc[col,'magnitude'] = tools.most_frequent([tools.magnitude(v) for v in df[col]])
+        # estimate magnitudes for values different to NaN
+        magnitudes_values = [tools.magnitude(v) for v in data[col].dropna().values]
+        # estimate the most frequent magnitude
+        if len(magnitudes_values)>1:
+            dfinfo.loc[col,'magnitude'] = tools.most_frequent(magnitudes_values)
+        else:
+            dfinfo.loc[col,'magnitude'] = np.nan
     # estimate percent of nan values
     dfinfo['%nan'] = (df.isnull().sum()*100 / len(df)).values.round(decimals=decimals)
     # estimate number of records without nan values
