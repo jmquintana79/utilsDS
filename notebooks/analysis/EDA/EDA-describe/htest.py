@@ -18,10 +18,17 @@ def test_uniform_num(data:np.array, alpha:float = .05, verbose:bool = False)->bo
     # get extremes
     dismin=np.amin(data)
     dismax=np.amax(data)
-    # build an uniform distribution
-    T=uniform(dismin,dismax-dismin).rvs(data.shape[0])
-    # test if both have same distribution
-    stat, p = ks_2samp(data, T)
+    try:
+        # build an uniform distribution
+        T = uniform(dismin,dismax-dismin).rvs(data.shape[0])
+        # test if both have same distribution
+        stat, p = ks_2samp(data, T)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-Uniform num] It was not possible get a result.')
+        return np.nan
+            
     # display
     if verbose:
         print('stat=%.3f, p=%.3f' % (stat, p))
@@ -50,25 +57,31 @@ def test_uniform_cat(data:np.array, alpha:float = .05, verbose:bool = False)->bo
     return -- boolean according test result.
     """
     from scipy.stats import ks_2samp
-    # number of categories
-    cats = np.unique(data)
-    # resize if data is too large
-    if len(data)>1000 and len(cats)*1000 < len(data):
-        data = np.random.choice(data, size = len(cats)*1000)    
-    # create artificial data with uniform distribution
-    data_uniform = np.random.choice(cats, size = len(data), p = np.ones(len(cats)) / len(cats))
-    # cat to num of input data
-    temp = list()
-    for ii, ic in enumerate(cats):
-        temp += list(np.ones(len(data[data==ic])) * ii)
-    data_modif = np.array(temp)
-    # cat to num of artificial data
-    temp = list()
-    for ii, ic in enumerate(cats):
-        temp += list(np.ones(len(data_uniform[data_uniform==ic])) * ii)
-    data_uniform_modif = np.array(temp)
-    # test
-    stat, p = ks_2samp(data, data_uniform)
+    try:
+        # number of categories
+        cats = np.unique(data)
+        # resize if data is too large
+        if len(data)>1000 and len(cats)*1000 < len(data):
+            data = np.random.choice(data, size = len(cats)*1000)    
+        # create artificial data with uniform distribution
+        data_uniform = np.random.choice(cats, size = len(data), p = np.ones(len(cats)) / len(cats))
+        # cat to num of input data
+        temp = list()
+        for ii, ic in enumerate(cats):
+            temp += list(np.ones(len(data[data==ic])) * ii)
+        data_modif = np.array(temp)
+        # cat to num of artificial data
+        temp = list()
+        for ii, ic in enumerate(cats):
+            temp += list(np.ones(len(data_uniform[data_uniform==ic])) * ii)
+        data_uniform_modif = np.array(temp)
+        # test
+        stat, p = ks_2samp(data, data_uniform)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-Uniform cat] It was not possible get a result.')
+        return np.nan
     if verbose:
         print('stat=%.3f, p=%.3f' % (stat, p))
     if p > alpha:
@@ -93,8 +106,14 @@ def test_shapiro(data:np.array, alpha:float = .05, verbose:bool = False)->bool:
     from scipy.stats import shapiro
     # remove nan values
     data = data[~(np.isnan(data))]
-    # test
-    stat, p = shapiro(data)
+    try:
+        # test
+        stat, p = shapiro(data)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-Shapiro] It was not possible get a result.')
+        return np.nan        
     # display
     if verbose:
         print('stat=%.3f, p=%.3f' % (stat, p))
@@ -125,8 +144,14 @@ def test_anderson(data:np.array, alpha:float = .05, verbose:bool = False)->bool:
     from scipy.stats import normaltest
     # remove nan values
     data = data[~(np.isnan(data))]
-    # test
-    stat, p = normaltest(data)
+    try:
+        # test
+        stat, p = normaltest(data)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-Anderson] It was not possible get a result.')
+        return np.nan        
     # display
     if verbose:
         print('stat=%.3f, p=%.3f' % (stat, p))
@@ -157,10 +182,16 @@ def test_dip(data:np.array, alpha:float = 0.05, verbose:bool = False)->bool:
     """
     import unidip.dip as dip
     data = data[~(np.isnan(data))]
-    # sort data
-    data = np.msort(data)
-    # test
-    stat, p, _ = dip.diptst(data)
+    try:
+        # sort data
+        data = np.msort(data)
+        # test
+        stat, p, _ = dip.diptst(data)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-Unimodal] It was not possible get a result.')
+        return np.nan        
     if p is None:
         return np.nan
     # display
@@ -192,8 +223,17 @@ def correlation_pearson(data1:np.array,
     return -- boolean according test result.
     """
     from scipy.stats import pearsonr
-    # calculate Pearson's correlation
-    corr, p = pearsonr(data1, data2)
+    try:
+        # calculate Pearson's correlation
+        corr, p = pearsonr(data1, data2)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-Pearson] It was not possible get a result.')
+        if return_corr:
+            return np.nan, np.nan
+        else:
+            return np.nan    
     # display
     if verbose:
         print('corr=%.3f, p=%.3f' % (corr, p))
@@ -234,8 +274,17 @@ def correlation_spearman(data1:np.array,
     return -- boolean according test result.
     """
     from scipy.stats import spearmanr
-    # calculate Pearson's correlation
-    corr, p = spearmanr(data1, data2)
+    try:
+        # calculate Pearson's correlation
+        corr, p = spearmanr(data1, data2)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-Spearman] It was not possible get a result.')
+        if return_corr:
+            return np.nan, np.nan
+        else:
+            return np.nan        
     # display
     if verbose:
         print('corr=%.3f, p=%.3f' % (corr, p))
@@ -277,7 +326,16 @@ def correlation_kendalltau(data1:np.array,
     """
     from scipy.stats import kendalltau
     # test
-    corr, p = kendalltau(data1, data2)
+    try:
+        corr, p = kendalltau(data1, data2)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-Kendall Tau] It was not possible get a result.')
+        if return_corr:
+            return np.nan, np.nan
+        else:
+            return np.nan            
     # visualize
     if verbose:
         print('corr=%.3f, p=%.5f' % (corr, p))
@@ -382,9 +440,15 @@ def correlation_mic(x:np.array, y:np.array)->float:
     
     > DOC: https://minepy.readthedocs.io/en/latest/python.html
     """
-    mine = MINE(alpha=0.6, c=15, est="mic_approx")
-    mine.compute_score(x, y)
-    return mine.mic()
+    try:
+        mine = MINE(alpha=0.6, c=15, est="mic_approx")
+        mine.compute_score(x, y)
+        return mine.mic()
+    except:
+        # manage exception
+        if verbose:
+            print('[error-MIC] It was not possible get a result.')
+        return np.nan        
 
 
 ## Test if two categorical variables are independents (Chi-Squared Test)
@@ -397,10 +461,16 @@ def chi_square(data1:np.array, data2:np.array, alpha:float = 0.05, verbose:bool 
     return -- boolean according test result.
     """
     from scipy.stats import chi2_contingency
-    # contingence table
-    table = pd.crosstab(data1, data2, margins = False).values
-    # test
-    stat, p, dof, expected = chi2_contingency(table)
+    try:
+        # contingence table
+        table = pd.crosstab(data1, data2, margins = False).values
+        # test
+        stat, p, dof, expected = chi2_contingency(table)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-chi square] It was not possible get a result.')
+        return np.nan            
     # display
     if verbose:
         print('stat=%.3f, p=%.3f' % (stat, p))
@@ -422,8 +492,8 @@ def chi_square(data1:np.array, data2:np.array, alpha:float = 0.05, verbose:bool 
 ## ANOVA tests
 def ANOVA(*args, alpha:float = 0.05, verbose:bool = False)->bool:
     """
-    The one-way ANOVA tests the null hypothesis that two or more groups have the same 
-    population mean. The test is applied to samples from two or more groups, possibly 
+    The one-way ANOVA variance test (parametric) tests the null hypothesis that two or more groups 
+    have the same population mean. The test is applied to samples from two or more groups, possibly 
     with differing sizes.
     *args -- n groups of samples.
     alpha -- Significance level (default, 0.05).
@@ -431,8 +501,14 @@ def ANOVA(*args, alpha:float = 0.05, verbose:bool = False)->bool:
     return -- True / False, samples have same distribution.
     """
     from scipy.stats import f_oneway
-    # test
-    stat, p = f_oneway(*args)
+    try:
+        # test
+        stat, p = f_oneway(*args)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-ANOVA] It was not possible get a result.')
+        return np.nan           
     # display
     if verbose:
         print('Statistics=%.3f, p=%.3f' % (stat, p))
@@ -449,3 +525,85 @@ def ANOVA(*args, alpha:float = 0.05, verbose:bool = False)->bool:
             print(f'Different distributions (reject H0 with alpha = {alpha})')
         # return
         return False
+    
+    
+## Kruskal-Wallis tests
+def test_kruskal(*args, alpha:float = 0.05, verbose:bool = False)->bool:
+    """
+    The Kruskal-Wallis variance test (non-parametric) tests the null hypothesis that two or more groups 
+    have the same population mean. The test is applied to samples from two or more groups, possibly 
+    with differing sizes.
+    *args -- n groups of samples.
+    alpha -- Significance level (default, 0.05).
+    verbose -- Display extra information (default, False).
+    return -- True / False, samples have same distribution.
+    """
+    from scipy import stats
+    try:
+        # test
+        stat, p = stats.kruskal(*args)
+    except:
+        # manage exception
+        if verbose:
+            print('[error-Kruskal] It was not possible get a result.')
+        return np.nan           
+    # display
+    if verbose:
+        print('Statistics=%.3f, p=%.3f' % (stat, p))
+    # interpret
+    if p > alpha:
+        # display
+        if verbose:
+            print(f'Same distributions (fail to reject H0 with alpha = {alpha})')
+        # return
+        return True
+    else:
+        # display
+        if verbose:
+            print(f'Different distributions (reject H0 with alpha = {alpha})')
+        # return
+        return False
+    
+    
+## Variance analysis: subsamples of num variable created by a cat variable are the same original sample
+def analysis_variance(data_cat:np.array, 
+                      data_num:np.array,
+                      alpha:float = .05, 
+                      verbose:bool = False)->bool:
+    """
+    ## Linear correlation analysis to test independence for numerical / ordinal variables.
+    
+    data_cat -- 1D categorical data to be tested. 
+    date_num -- 1D numerical data to be tested.
+    alpha -- Significance level (default, 0.05).
+    verbose -- Display extra information (default, False).
+    return -- boolean according test result.
+    """
+    # validate
+    assert len(data_cat) == len(data_num), "both data arrays must to have the same lenght."
+    # store in df and remove nan values
+    temp = pd.DataFrame({'vcat':data_cat, 'vnum':data_num}).dropna()
+    # validate
+    if len(temp) == 0:
+        return np.nan
+    # number of records
+    n = len(temp)
+    # test if numerical variable is gaussian
+    if n >= 5000:
+        is_normal = test_anderson(temp.vnum.values, alpha = alpha)
+    else:
+        is_normal = test_shapiro(temp.vnum.values, alpha = alpha)      
+    # collect groups data according categorical variable
+    groups = temp.groupby("vcat")["vnum"]
+    data_groups = [groups.get_group(c).values for c in temp.vcat.dropna().unique()]
+    # test if samples of numerical variable by categorical variable have same distribution
+    if n >= 50:
+        is_samples_same_distribution = ANOVA(*data_groups, alpha = alpha, verbose = verbose)
+    else:
+        if is_normal:
+            is_samples_same_distribution = ANOVA(*data_groups, alpha = alpha, verbose = verbose)
+        else:
+            is_samples_same_distribution = test_kruskal(*data_groups, alpha = alpha, verbose = verbose) 
+            
+    # return
+    return is_samples_same_distribution

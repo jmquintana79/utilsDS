@@ -351,11 +351,31 @@ def describe_cat_num(df:pd.DataFrame,
     for comb_cat_num in combs_cat_num[:]:
         # collect pairs of data and drop nan values
         temp = df[comb_cat_num].dropna()
+        
+        """
+        # number of records
+        n = len(temp)
+        # test if numerical variable is gaussian
+        if n >= 5000:
+            is_normal = htest.test_anderson(temp[comb_cat_num[1]].values, alpha = alpha)
+        else:
+            is_normal = htest.test_shapiro(temp[comb_cat_num[1]].values, alpha = alpha)      
         # collect groups data according categorical variable
         groups = temp.groupby(comb_cat_num[0])[comb_cat_num[1]]
         data_groups = [groups.get_group(c).values for c in temp[comb_cat_num[0]].dropna().unique()]
         # test if samples of numerical variable by categorical variable have same distribution
-        is_samples_same_distribution = htest.ANOVA(*data_groups, alpha = alpha, verbose = verbose)
+        if n >= 50:
+            is_samples_same_distribution = htest.ANOVA(*data_groups, alpha = alpha, verbose = verbose)
+        else:
+            if is_normal:
+                is_samples_same_distribution = htest.ANOVA(*data_groups, alpha = alpha, verbose = verbose)
+            else:
+                is_samples_same_distribution = htest.test_kruskal(*data_groups, alpha = alpha, verbose = verbose)
+        """
+        # variance analysis
+        is_samples_same_distribution = htest.analysis_variance(temp[comb_cat_num[0]].values,
+                                                               temp[comb_cat_num[1]].values,
+                                                               alpha = alpha, verbose = verbose)       
         # append
         if only_dependent:
             if  not is_samples_same_distribution:
@@ -365,7 +385,7 @@ def describe_cat_num(df:pd.DataFrame,
         else:
             cat_num.append([comb_cat_num[0], comb_cat_num[1], not is_samples_same_distribution])      
         # clean
-        del temp, groups, data_groups
+        del temp#, groups, data_groups
     # store in df and return 
     cols_cat_num = ['variable1', 'variable2', 'samples_same_dist_anova']
     return pd.DataFrame(cat_num, columns = cols_cat_num).sort_values(['variable1', 'variable2']).reset_index(drop=True)
