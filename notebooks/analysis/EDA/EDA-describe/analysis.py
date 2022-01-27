@@ -49,6 +49,32 @@ def info(data:pd.DataFrame, decimals:int = 2)->pd.DataFrame:
     return dfinfo.sort_values('types', ascending = True)
 
 
+## Missing values analysis
+def describe_missing(data:pd.DataFrame):
+    """
+    ## Missing values analysis.
+    data -- df to be analized.
+    return -- None.
+    """
+    # estimate number of missing values
+    ntotal_missing = data.isnull().sum().sum()
+    # validate
+    if ntotal_missing == 0:
+        print('There are not any missing values.')
+    else:
+        import matplotlib.pyplot as plt
+        import missingno as msno
+        # missing values graph
+        msno.matrix(data)
+        plt.show()
+        # counting non-missing values
+        msno.bar(data)
+        plt.show()
+        # correlation between missing values
+        msno.heatmap(data)
+        plt.show()
+    
+    
 ## describe function for numeric data
 def describe_numeric(df:pd.DataFrame, alpha:float = .05, decimals:int = 2, is_remove_outliers:bool = False)->pd.DataFrame:
     """
@@ -90,6 +116,7 @@ def describe_numeric(df:pd.DataFrame, alpha:float = .05, decimals:int = 2, is_re
         dfn[col] = dfn[col].values.round(decimals=decimals)
     # return
     return dfn
+
 
 ## describe function for categorical data
 def describe_categorical(df:pd.DataFrame, max_size_cats:int = 5, alpha:float = .05, decimals:int = 2)->pd.DataFrame:
@@ -351,27 +378,6 @@ def describe_cat_num(df:pd.DataFrame,
     for comb_cat_num in combs_cat_num[:]:
         # collect pairs of data and drop nan values
         temp = df[comb_cat_num].dropna()
-        
-        """
-        # number of records
-        n = len(temp)
-        # test if numerical variable is gaussian
-        if n >= 5000:
-            is_normal = htest.test_anderson(temp[comb_cat_num[1]].values, alpha = alpha)
-        else:
-            is_normal = htest.test_shapiro(temp[comb_cat_num[1]].values, alpha = alpha)      
-        # collect groups data according categorical variable
-        groups = temp.groupby(comb_cat_num[0])[comb_cat_num[1]]
-        data_groups = [groups.get_group(c).values for c in temp[comb_cat_num[0]].dropna().unique()]
-        # test if samples of numerical variable by categorical variable have same distribution
-        if n >= 50:
-            is_samples_same_distribution = htest.ANOVA(*data_groups, alpha = alpha, verbose = verbose)
-        else:
-            if is_normal:
-                is_samples_same_distribution = htest.ANOVA(*data_groups, alpha = alpha, verbose = verbose)
-            else:
-                is_samples_same_distribution = htest.test_kruskal(*data_groups, alpha = alpha, verbose = verbose)
-        """
         # variance analysis
         is_samples_same_distribution = htest.analysis_variance(temp[comb_cat_num[0]].values,
                                                                temp[comb_cat_num[1]].values,

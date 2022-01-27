@@ -169,7 +169,6 @@ def test_anderson(data:np.array, alpha:float = .05, verbose:bool = False)->bool:
         # return
         return False
             
-        
             
 ## test if is unimodal
 def test_dip(data:np.array, alpha:float = 0.05, verbose:bool = False)->bool:
@@ -359,6 +358,7 @@ def correlation_kendalltau(data1:np.array,
         else:
             return False
 
+        
 ## Linear correlation analysis to test independence for numerical / ordinal variables
 def analysis_linear_correlation(data1:np.array, 
                                 data2:np.array,

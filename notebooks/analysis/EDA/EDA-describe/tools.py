@@ -16,6 +16,7 @@ def magnitude(value:float)->int:
     except:
         return np.nan
 
+    
 ## estimate most frequent value in a list
 def most_frequent(List:list)->"element":
     """
