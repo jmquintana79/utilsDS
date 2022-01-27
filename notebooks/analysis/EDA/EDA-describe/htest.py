@@ -488,8 +488,35 @@ def chi_square(data1:np.array, data2:np.array, alpha:float = 0.05, verbose:bool 
         # return
         return False
     
+
+## Leneve test (test if samples have same variance = Homoscedasticity)
+def test_leneve(*args, alpha:float = 0.05, verbose:bool = False)->bool:
+    """
+    Leneve test (test if samples have same variance = Homoscedasticity).
+    *args -- n groups of samples.
+    alpha -- Significance level (default, 0.05).
+    verbose -- Display extra information (default, False).
+    return -- True / False, samples have same distribution.
+    """
+    from scipy.stats import levene
+    # test
+    stat, p = levene(*args)
+    # interpret
+    if p > alpha:
+        # display
+        if verbose:
+            print(f'Probably all samples with equal variances (fail to reject H0 with alpha = {alpha})')
+        # return
+        return True
+    else:
+        # display
+        if verbose:
+            print(f'Probably all samples with different variances (reject H0 with alpha = {alpha})')
+        # return
+        return False
     
-## ANOVA tests
+    
+## ANOVA test
 def ANOVA(*args, alpha:float = 0.05, verbose:bool = False)->bool:
     """
     The one-way ANOVA variance test (parametric) tests the null hypothesis that two or more groups 
@@ -527,7 +554,7 @@ def ANOVA(*args, alpha:float = 0.05, verbose:bool = False)->bool:
         return False
     
     
-## Kruskal-Wallis tests
+## Kruskal-Wallis test
 def test_kruskal(*args, alpha:float = 0.05, verbose:bool = False)->bool:
     """
     The Kruskal-Wallis variance test (non-parametric) tests the null hypothesis that two or more groups 
@@ -596,12 +623,21 @@ def analysis_variance(data_cat:np.array,
     # collect groups data according categorical variable
     groups = temp.groupby("vcat")["vnum"]
     data_groups = [groups.get_group(c).values for c in temp.vcat.dropna().unique()]
+    # test Homoscedasticity inter-groups
+    is_same_variance = test_leneve(*data_groups, alpha = alpha, verbose = verbose)
     # test if samples of numerical variable by categorical variable have same distribution
     if n >= 50:
-        is_samples_same_distribution = ANOVA(*data_groups, alpha = alpha, verbose = verbose)
+        if is_same_variance:
+            is_samples_same_distribution = ANOVA(*data_groups, alpha = alpha, verbose = verbose)
+        else:
+            is_samples_same_distribution = test_kruskal(*data_groups, alpha = alpha, verbose = verbose) 
+            
     else:
         if is_normal:
-            is_samples_same_distribution = ANOVA(*data_groups, alpha = alpha, verbose = verbose)
+            if is_same_variance:
+                is_samples_same_distribution = ANOVA(*data_groups, alpha = alpha, verbose = verbose)
+            else:
+                is_samples_same_distribution = test_kruskal(*data_groups, alpha = alpha, verbose = verbose) 
         else:
             is_samples_same_distribution = test_kruskal(*data_groups, alpha = alpha, verbose = verbose) 
             
