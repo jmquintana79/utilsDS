@@ -393,7 +393,7 @@ def describe_cat_num(df:pd.DataFrame,
         # clean
         del temp#, groups, data_groups
     # store in df and return 
-    cols_cat_num = ['variable1', 'variable2', 'samples_same_dist']
+    cols_cat_num = ['variable1', 'variable2', 'subsamples_diff_dist']
     return pd.DataFrame(cat_num, columns = cols_cat_num).sort_values(['variable1', 'variable2']).reset_index(drop=True)
 
 
