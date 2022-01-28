@@ -623,6 +623,9 @@ def analysis_variance(data_cat:np.array,
     # collect groups data according categorical variable
     groups = temp.groupby("vcat")["vnum"]
     data_groups = [groups.get_group(c).values for c in temp.vcat.dropna().unique()]
+    # validate number of groups
+    if len(data_groups) == 1:
+        return True
     # test Homoscedasticity inter-groups
     is_same_variance = test_leneve(*data_groups, alpha = alpha, verbose = verbose)
     # test if samples of numerical variable by categorical variable have same distribution
