@@ -27,11 +27,11 @@ def info(data:pd.DataFrame, decimals:int = 2)->pd.DataFrame:
     # other types of data in each column
     dfinfo['mixed_types'] = np.ones(len(dfinfo)) * np.nan
     for col in df.columns:
-        dfinfo.loc[col,'mixed_types'] = ','.join([str(x).replace('<class','').replace('>','') for x in df[col].dropna().apply(type).unique()])
+        dfinfo.loc[col,'mixed_types'] = ','.join([str(x).replace('<class','').replace('>','').replace("'","").lstrip().rstrip() for x in df[col].dropna().apply(type).unique()])
     # estimate number of unique values for categorical and numerical variables
     dfinfo['unique'] = np.ones(len(dfinfo)) * np.nan
     for col in df.columns:
-        dfinfo.loc[col,'unique'] = len(df[col].unique())
+        dfinfo.loc[col,'unique'] = len(df[col].dropna().unique())
     dfinfo['unique'] = dfinfo['unique'].astype(int)
     # estimate order of magnitude for numerical variables
     dfinfo['magnitude'] = np.ones(len(dfinfo)) * np.nan
@@ -172,6 +172,10 @@ def describe_categorical(df:pd.DataFrame, max_size_cats:int = 5, alpha:float = .
         values_temp.append([col] + list(np.append(c,v)))
     # add new information
     dfc = pd.concat([dfc, pd.DataFrame(values_temp, columns = col_temp).set_index('var')], axis = 1)
+    # percent of values to str
+    cols_per = [c for c in dfc.columns if "%value" in c]
+    for col in cols_per:
+        dfc[col] = dfc[col].astype(str)    
     # return
     return dfc    
 
