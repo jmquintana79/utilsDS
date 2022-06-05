@@ -61,7 +61,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Datasets](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets) *[5]*
 - [Similarity](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/similarity) *[1]*
 - [Learning semi supervised](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_semi_supervised) *[1]*
-- [Pipelines](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pipelines) *[1]*
+- [Pipelines](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pipelines) *[2]*
 - [Automl](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl) *[1]*
   - [Extended eda](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/Extended_EDA) *[0]*
   - [Automl 1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1) *[0]*
@@ -76,5 +76,6 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [NLP](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/nlp) *[9]*
 - [Feature engineering](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering) *[0]*
   - [Features selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/features_selection) *[2]*
+  - [Data engineering tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/data_engineering_tools) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
-> Updated on 2022-04-25 12:33:48
+> Updated on 2022-06-05 03:03:52
