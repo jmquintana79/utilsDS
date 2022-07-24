@@ -45,7 +45,6 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Eda-describe](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe) *[0]*
         - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe/__pycache__) *[4]*
   - [Analysis missing values](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_missing_values) *[1]*
-  - [Factor analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/factor_analysis) *[1]*
   - [Analysis regression](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_regression) *[2]*
   - [Analysis errors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_errors) *[1]*
   - [Analysis fourier](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_fourier) *[2]*
@@ -75,6 +74,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [1 baseline](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/1_Baseline) *[0]*
     - [5 default neuralnetwork](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/5_Default_NeuralNetwork) *[0]*
     - [4 default xgboost](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/4_Default_Xgboost) *[0]*
+- [Dimensionality reduction](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dimensionality_reduction) *[2]*
 - [Workflow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow) *[0]*
   - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments) *[1]*
     - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments/experiments) *[0]*
@@ -85,4 +85,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Best practices for classification](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/best_practices_for_classification) *[1]*
   - [Data engineering tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/data_engineering_tools) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
-> Updated on 2022-07-23 22:52:32
+> Updated on 2022-07-25 00:41:08
