@@ -37,7 +37,6 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Multimodal distribution analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/multimodal_distribution_analysis) *[1]*
   - [Impurity measurements](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements) *[2]*
     - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements/__pycache__) *[1]*
-- [Cross validation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/cross_validation) *[2]*
 - [Analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis) *[0]*
   - [EDA](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA) *[0]*
     - [Eda-tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-tools) *[3]*
@@ -75,6 +74,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [1 baseline](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/1_Baseline) *[0]*
     - [5 default neuralnetwork](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/5_Default_NeuralNetwork) *[0]*
     - [4 default xgboost](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/4_Default_Xgboost) *[0]*
+- [Resampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/resampling) *[3]*
 - [Workflow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow) *[0]*
   - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments) *[1]*
     - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments/experiments) *[0]*
@@ -85,4 +85,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Best practices for classification](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/best_practices_for_classification) *[1]*
   - [Data engineering tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/data_engineering_tools) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
-> Updated on 2022-07-25 22:43:56
+> Updated on 2022-08-03 21:44:05
