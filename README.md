@@ -81,8 +81,8 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Pipelines](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/pipelines) *[2]*
 - [NLP](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/nlp) *[9]*
 - [Feature engineering](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering) *[0]*
-  - [Features selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/features_selection) *[2]*
+  - [Features selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/features_selection) *[3]*
   - [Best practices for classification](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/best_practices_for_classification) *[1]*
   - [Data engineering tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/data_engineering_tools) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
-> Updated on 2022-08-03 21:44:05
+> Updated on 2022-08-10 19:45:24
