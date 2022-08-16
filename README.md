@@ -44,6 +44,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Eda-describe](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe) *[0]*
         - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe/__pycache__) *[4]*
   - [Analysis missing values](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_missing_values) *[1]*
+  - [Analysis dpi](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_dpi) *[1]*
   - [Factor analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/factor_analysis) *[2]*
   - [Analysis regression](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_regression) *[2]*
   - [Analysis errors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_errors) *[1]*
@@ -56,7 +57,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Scatter plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/scatter_plots) *[1]*
     - [Hist kde](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/hist_KDE) *[1]*
     - [Pie chart](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/pie_chart) *[1]*
-    - [Distribution](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/distribution) *[3]*
+    - [Distribution](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/distribution) *[4]*
     - [Bar plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/bar_plots) *[1]*
 - [Pandas accelerators](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pandas_accelerators) *[1]*
 - [Datasets](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets) *[5]*
@@ -85,4 +86,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Best practices for classification](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/best_practices_for_classification) *[1]*
   - [Data engineering tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/data_engineering_tools) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
-> Updated on 2022-08-10 19:45:24
+> Updated on 2022-08-16 13:51:18
