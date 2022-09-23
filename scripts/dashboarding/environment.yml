@@ -1,0 +1,10 @@
+name: dashboard
+dependencies:
+  - python=3.6
+  - jupyterlab
+  - pandas
+  - scipy
+  - matplotlib
+  - pip
+  - pip:
+    - streamlit
