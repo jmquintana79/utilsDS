@@ -62,6 +62,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Pie chart](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/pie_chart) *[1]*
     - [Distribution](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/distribution) *[4]*
     - [Bar plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/bar_plots) *[1]*
+- [Synthetic data](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/synthetic_data) *[2]*
 - [Pandas accelerators](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pandas_accelerators) *[1]*
 - [Datasets](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets) *[5]*
 - [Similarity](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/similarity) *[1]*
@@ -89,4 +90,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Best practices for classification](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/best_practices_for_classification) *[1]*
   - [Data engineering tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/data_engineering_tools) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
-> Updated on 2022-09-23 14:11:40
+> Updated on 2022-09-27 17:49:38
