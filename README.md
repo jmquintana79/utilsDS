@@ -36,7 +36,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Probability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/probability) *[2]*
   - [Sampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/sampling) *[4]*
     - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/sampling/__pycache__) *[1]*
-  - [Hypotesis testing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/hypotesis_testing) *[3]*
+  - [Hypotesis testing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/hypotesis_testing) *[4]*
   - [Multimodal distribution analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/multimodal_distribution_analysis) *[1]*
   - [Impurity measurements](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements) *[2]*
     - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements/__pycache__) *[1]*
@@ -90,4 +90,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Best practices for classification](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/best_practices_for_classification) *[1]*
   - [Data engineering tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/data_engineering_tools) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
-> Updated on 2022-09-27 17:49:38
+> Updated on 2022-09-28 23:01:55
