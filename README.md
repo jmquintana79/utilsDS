@@ -52,7 +52,6 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Analysis regression](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_regression) *[2]*
   - [Analysis errors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_errors) *[1]*
   - [Analysis fourier](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_fourier) *[2]*
-  - [Autoeda](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/autoEDA) *[0]*
   - [Analysis decision tree](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_decision_tree) *[1]*
   - [Analysis non-linear correlation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_non-linear_correlation) *[1]*
   - [Analysis anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_anomalies) *[4]*
@@ -66,6 +65,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Pandas accelerators](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pandas_accelerators) *[1]*
 - [Datasets](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets) *[5]*
 - [Similarity](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/similarity) *[1]*
+- [Sampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/sampling) *[3]*
 - [Learning semi supervised](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_semi_supervised) *[1]*
 - [Learning supervised](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_supervised) *[2]*
 - [Automl](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl) *[1]*
@@ -79,7 +79,6 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [1 baseline](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/1_Baseline) *[0]*
     - [5 default neuralnetwork](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/5_Default_NeuralNetwork) *[0]*
     - [4 default xgboost](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/4_Default_Xgboost) *[0]*
-- [Resampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/resampling) *[3]*
 - [Workflow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow) *[0]*
   - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments) *[1]*
     - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments/experiments) *[0]*
@@ -90,4 +89,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Features selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/features_selection) *[5]*
   - [Best practices for classification](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/best_practices_for_classification) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
-> Updated on 2022-11-09 00:15:32
+> Updated on 2022-11-15 21:49:17
