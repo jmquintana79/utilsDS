@@ -79,6 +79,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [1 baseline](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/1_Baseline) *[0]*
     - [5 default neuralnetwork](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/5_Default_NeuralNetwork) *[0]*
     - [4 default xgboost](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/4_Default_Xgboost) *[0]*
+- [Model interpretability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/model_interpretability) *[2]*
 - [Workflow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow) *[0]*
   - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments) *[1]*
     - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments/experiments) *[0]*
@@ -90,4 +91,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Best practices for classification](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/best_practices_for_classification) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
-> Updated on 2022-11-26 18:27:28
+> Updated on 2022-12-15 22:42:54
