@@ -37,7 +37,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Sampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/sampling) *[4]*
     - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/sampling/__pycache__) *[1]*
   - [Hypotesis testing](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/hypotesis_testing) *[4]*
-  - [Multimodal distribution analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/multimodal_distribution_analysis) *[1]*
+  - [Multimodal distribution analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/multimodal_distribution_analysis) *[2]*
   - [Impurity measurements](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements) *[2]*
     - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements/__pycache__) *[1]*
 - [Analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis) *[0]*
@@ -53,7 +53,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Analysis errors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_errors) *[1]*
   - [Analysis fourier](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_fourier) *[2]*
   - [Analysis decision tree](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_decision_tree) *[1]*
-  - [Analysis non-linear correlation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_non-linear_correlation) *[1]*
+  - [Analysis non-linear correlation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_non-linear_correlation) *[3]*
   - [Analysis anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_anomalies) *[4]*
   - [Plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots) *[0]*
     - [Scatter plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/scatter_plots) *[1]*
@@ -91,4 +91,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Best practices for classification](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/best_practices_for_classification) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
-> Updated on 2022-12-15 22:42:54
+> Updated on 2023-01-07 01:11:54
