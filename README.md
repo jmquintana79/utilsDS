@@ -41,6 +41,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Impurity measurements](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements) *[2]*
     - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements/__pycache__) *[1]*
 - [Analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis) *[0]*
+  - [Density estimation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/density_estimation) *[1]*
   - [EDA](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA) *[0]*
     - [Eda-tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-tools) *[3]*
     - [Eda-autoeda libraries](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-autoEDA_libraries) *[4]*
@@ -52,9 +53,13 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Analysis regression](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_regression) *[2]*
   - [Analysis errors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_errors) *[1]*
   - [Analysis fourier](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_fourier) *[2]*
+  - [Analysis clustering](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_clustering) *[2]*
+    - [Src](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_clustering/src) *[2]*
+        - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_clustering/src/__pycache__) *[2]*
   - [Analysis decision tree](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_decision_tree) *[1]*
   - [Analysis non-linear correlation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_non-linear_correlation) *[3]*
   - [Analysis anomalies](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_anomalies) *[4]*
+  - [Analysis data quality](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_data_quality) *[1]*
   - [Plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots) *[0]*
     - [Scatter plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/scatter_plots) *[1]*
     - [Hist kde](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/hist_KDE) *[1]*
@@ -67,7 +72,10 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Similarity](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/similarity) *[1]*
 - [Sampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/sampling) *[3]*
 - [Learning semi supervised](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_semi_supervised) *[1]*
-- [Learning supervised](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_supervised) *[2]*
+- [Learning supervised](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_supervised) *[0]*
+  - [Lib pycaret](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_supervised/lib_pycaret) *[1]*
+  - [Lib lightgbm](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_supervised/lib_lightgbm) *[1]*
+  - [Interpretability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_supervised/interpretability) *[1]*
 - [Automl](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl) *[1]*
   - [Extended eda](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/Extended_EDA) *[0]*
   - [Automl 1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1) *[0]*
@@ -79,7 +87,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [1 baseline](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/1_Baseline) *[0]*
     - [5 default neuralnetwork](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/5_Default_NeuralNetwork) *[0]*
     - [4 default xgboost](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/4_Default_Xgboost) *[0]*
-- [Model interpretability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/model_interpretability) *[2]*
+- [Model interpretability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/model_interpretability) *[4]*
 - [Workflow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow) *[0]*
   - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments) *[1]*
     - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments/experiments) *[0]*
@@ -89,6 +97,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Missing values imputation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/missing_values_imputation) *[1]*
   - [Features selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/features_selection) *[5]*
   - [Best practices for classification](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/best_practices_for_classification) *[1]*
+  - [Auto data preparation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/auto_data_preparation) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
-> Updated on 2023-01-07 01:11:54
+> Updated on 2023-07-06 18:48:20
