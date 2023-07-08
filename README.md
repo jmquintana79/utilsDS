@@ -100,4 +100,5 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Auto data preparation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/auto_data_preparation) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
-> Updated on 2023-07-06 18:48:20
+- [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
+> Updated on 2023-07-08 18:30:04
