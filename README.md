@@ -44,9 +44,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Density estimation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/density_estimation) *[1]*
   - [EDA](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA) *[0]*
     - [Eda-tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-tools) *[3]*
-    - [Eda-autoeda libraries](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-autoEDA_libraries) *[4]*
-    - [Eda-describe](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe) *[0]*
-        - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-describe/__pycache__) *[4]*
+    - [Eda-autoeda libraries](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-autoEDA_libraries) *[6]*
   - [Analysis missing values](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_missing_values) *[1]*
   - [Analysis dpi](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_dpi) *[1]*
   - [Factor analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/factor_analysis) *[2]*
@@ -101,4 +99,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2023-07-08 18:30:04
+> Updated on 2023-07-12 18:46:07
