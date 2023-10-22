@@ -1,0 +1,34 @@
+import os
+
+# config file
+configfile: "config.yaml"
+
+# general variables
+hello_world = "hello world"
+folder_input = config['base']['folder_input']
+l_files = os.listdir(folder_input)
+
+
+## say hello
+rule say_hello:
+    shell: "echo {hello_world}"
+
+## say hello with python
+rule say_hello_py:
+    run:
+        print(f"this python: {hello_world}")
+
+## list in folder
+rule list_folder:
+    shell: "ls {folder_input}"
+
+
+## list in folder
+rule list_inputs:
+    input: [os.path.join(folder_input, file) for file in l_files]
+    shell: "echo {input}"
+
+
+## display python
+rule display_py:
+    shell: "python run.py 'hola mundo'"
