@@ -1,5 +1,6 @@
 # custom ignore items
 *.DS_Store
+.snakemake
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

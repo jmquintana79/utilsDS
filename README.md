@@ -40,11 +40,17 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Multimodal distribution analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/multimodal_distribution_analysis) *[2]*
   - [Impurity measurements](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements) *[2]*
     - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements/__pycache__) *[1]*
+- [Data types](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_types) *[1]*
+  - [Pandas accelerators](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_types/pandas_accelerators) *[1]*
+- [Pycaret](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pycaret) *[0]*
+  - [Anomaly detection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pycaret/anomaly_detection) *[1]*
+  - [Supervised learning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pycaret/supervised_learning) *[1]*
+- [Timeseries](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/timeseries) *[1]*
 - [Analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis) *[0]*
   - [Density estimation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/density_estimation) *[1]*
   - [EDA](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA) *[0]*
     - [Eda-tools](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-tools) *[3]*
-    - [Eda-autoeda libraries](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-autoEDA_libraries) *[6]*
+    - [Eda-autoeda libraries](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA/EDA-autoEDA_libraries) *[7]*
   - [Analysis missing values](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_missing_values) *[1]*
   - [Analysis dpi](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/analysis_dpi) *[1]*
   - [Factor analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/factor_analysis) *[2]*
@@ -62,16 +68,43 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Scatter plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/scatter_plots) *[1]*
     - [Hist kde](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/hist_KDE) *[1]*
     - [Pie chart](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/pie_chart) *[1]*
-    - [Distribution](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/distribution) *[4]*
+    - [My final plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/my_final_plots) *[6]*
     - [Bar plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/bar_plots) *[1]*
 - [Synthetic data](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/synthetic_data) *[2]*
-- [Pandas accelerators](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pandas_accelerators) *[1]*
+- [Mlops](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS) *[2]*
+  - [Workflow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow) *[0]*
+    - [Snakemake](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake) *[0]*
+        - [Paralel](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel) *[1]*
+                - [.snakemake](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel/.snakemake) *[0]*
+                                - [Locks](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel/.snakemake/locks) *[0]*
+                                - [Conda](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel/.snakemake/conda) *[0]*
+                                - [Incomplete](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel/.snakemake/incomplete) *[0]*
+                                - [Shadow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel/.snakemake/shadow) *[0]*
+                                - [Conda-archive](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel/.snakemake/conda-archive) *[0]*
+                                - [Singularity](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel/.snakemake/singularity) *[0]*
+                                - [Log](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel/.snakemake/log) *[0]*
+                                - [Metadata](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel/.snakemake/metadata) *[0]*
+                                - [Auxiliary](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel/.snakemake/auxiliary) *[0]*
+        - [Introduction](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction) *[1]*
+                - [.snakemake](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/.snakemake) *[0]*
+                                - [Locks](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/.snakemake/locks) *[0]*
+                                - [Conda](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/.snakemake/conda) *[0]*
+                                - [Incomplete](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/.snakemake/incomplete) *[0]*
+                                - [Shadow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/.snakemake/shadow) *[0]*
+                                - [Conda-archive](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/.snakemake/conda-archive) *[0]*
+                                - [Singularity](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/.snakemake/singularity) *[0]*
+                                - [Log](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/.snakemake/log) *[0]*
+                                - [Metadata](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/.snakemake/metadata) *[0]*
+                                - [Auxiliary](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/.snakemake/auxiliary) *[0]*
+                - [Data](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/introduction/data) *[0]*
+    - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/experiments) *[1]*
+        - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/experiments/experiments) *[0]*
+    - [Pipelines](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/pipelines) *[2]*
 - [Datasets](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets) *[5]*
 - [Similarity](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/similarity) *[1]*
 - [Sampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/sampling) *[3]*
 - [Learning semi supervised](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_semi_supervised) *[1]*
 - [Learning supervised](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_supervised) *[0]*
-  - [Lib pycaret](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_supervised/lib_pycaret) *[1]*
   - [Lib lightgbm](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_supervised/lib_lightgbm) *[1]*
   - [Interpretability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_supervised/interpretability) *[1]*
 - [Automl](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl) *[1]*
@@ -86,10 +119,6 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [5 default neuralnetwork](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/5_Default_NeuralNetwork) *[0]*
     - [4 default xgboost](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/4_Default_Xgboost) *[0]*
 - [Model interpretability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/model_interpretability) *[4]*
-- [Workflow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow) *[0]*
-  - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments) *[1]*
-    - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/experiments/experiments) *[0]*
-  - [Pipelines](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/workflow/pipelines) *[2]*
 - [NLP](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/nlp) *[9]*
 - [Feature engineering](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering) *[0]*
   - [Missing values imputation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/missing_values_imputation) *[1]*
@@ -98,5 +127,6 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Auto data preparation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/auto_data_preparation) *[1]*
 - [Algorithms selection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection) *[2]*
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
+- [Data cleaning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_cleaning) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2023-07-12 18:46:07
+> Updated on 2023-11-13 21:07:14

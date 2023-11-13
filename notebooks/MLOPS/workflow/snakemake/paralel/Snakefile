@@ -1,0 +1,14 @@
+
+## globals
+PLANTS = ["plantA", "plantB"]
+
+## rules
+rule all:
+   input: expand('{plant}.done', plant=PLANTS)
+
+rule sleep:
+    message: "Sleep rule"
+    input: "run.py"
+    output: touch("{plant}.done")
+    shell: "python {input} {wildcards.plant}"
+
