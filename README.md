@@ -100,6 +100,9 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/experiments) *[1]*
         - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/experiments/experiments) *[0]*
     - [Pipelines](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/pipelines) *[2]*
+  - [Documentation generators](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/documentation_generators) *[0]*
+    - [Library pdoc](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/documentation_generators/library_pdoc) *[1]*
+        - [Html](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/documentation_generators/library_pdoc/html) *[0]*
 - [Datasets](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets) *[5]*
 - [Similarity](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/similarity) *[1]*
 - [Sampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/sampling) *[3]*
@@ -129,4 +132,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
 - [Data cleaning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_cleaning) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2023-11-13 21:07:14
+> Updated on 2023-11-15 19:48:25
