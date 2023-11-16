@@ -30,7 +30,12 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Outliers](https://github.com/jmquintana79/utilsDS/blob/master/scripts/preprocessing/outliers) *[3]*
 - [Data](https://github.com/jmquintana79/utilsDS/blob/master/scripts/data) *[2]*
 ### [Cheatsheets](https://github.com/jmquintana79/utilsDS/blob/master/cheatsheets)
+- [Statistics](https://github.com/jmquintana79/utilsDS/blob/master/cheatsheets/statistics) *[0]*
+- [Mathematics miscelaneous](https://github.com/jmquintana79/utilsDS/blob/master/cheatsheets/mathematics_miscelaneous) *[0]*
+- [Agile](https://github.com/jmquintana79/utilsDS/blob/master/cheatsheets/agile) *[1]*
 - [Programming](https://github.com/jmquintana79/utilsDS/blob/master/cheatsheets/programming) *[0]*
+- [Ds project management](https://github.com/jmquintana79/utilsDS/blob/master/cheatsheets/ds_project_management) *[0]*
+- [Plots](https://github.com/jmquintana79/utilsDS/blob/master/cheatsheets/plots) *[0]*
 ### [Notebooks](https://github.com/jmquintana79/utilsDS/blob/master/notebooks)
 - [Statistics](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics) *[0]*
   - [Probability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/probability) *[2]*
@@ -132,4 +137,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
 - [Data cleaning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_cleaning) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2023-11-15 19:48:25
+> Updated on 2023-11-16 14:49:32
