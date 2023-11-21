@@ -77,6 +77,22 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Bar plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/bar_plots) *[1]*
 - [Synthetic data](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/synthetic_data) *[2]*
 - [Mlops](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS) *[2]*
+  - [Pyarrow dataset](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset) *[1]*
+    - [Data](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data) *[0]*
+        - [Sample dataset](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/sample_dataset) *[0]*
+        - [Parquet dataset partitioned](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_partitioned) *[0]*
+                - [Part=a](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_partitioned/part=a) *[0]*
+                - [Part=b](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_partitioned/part=b) *[0]*
+                - [Part=c](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_partitioned/part=c) *[0]*
+        - [Parquet dataset 2](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_2) *[0]*
+        - [Parquet dataset 3](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_3) *[0]*
+                - [Folder 2](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_3/folder_2) *[0]*
+                - [Folder 1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_3/folder_1) *[0]*
+        - [Parquet dataset 4](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_4) *[0]*
+        - [Partitioned dataset](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/partitioned_dataset) *[0]*
+                - [C=1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/partitioned_dataset/c=1) *[0]*
+                - [C=2](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/partitioned_dataset/c=2) *[0]*
+        - [Parquet dataset 1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_1) *[0]*
   - [Workflow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow) *[0]*
     - [Snakemake](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake) *[0]*
         - [Paralel](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel) *[1]*
@@ -137,4 +153,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
 - [Data cleaning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_cleaning) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2023-11-16 14:52:04
+> Updated on 2023-11-21 23:38:41
