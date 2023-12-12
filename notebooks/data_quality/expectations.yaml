@@ -1,0 +1,35 @@
+'sepal length (cm)':
+    type: float
+    mandatory_column: True
+    range_count_rows: [150, 150]
+    range_values: [0,10]
+    maximum_percent_null: 0
+    mandatory_unique_values: False
+'sepal width (cm)':
+    type: float 
+    mandatory_column: True
+    range_count_rows: [150, 150]
+    range_values: [0,10]
+    maximum_percent_null: 0
+    mandatory_unique_values: False
+'petal length (cm)':
+    type: float
+    mandatory_column: True
+    range_count_rows: [150, 150]
+    range_values: [0,10]
+    maximum_percent_null: 0
+    mandatory_unique_values: False
+'petal width (cm)': 
+    type: float
+    mandatory_column: True
+    range_count_rows: [150, 150]
+    range_values: [0,10]
+    maximum_percent_null: 0
+    mandatory_unique_values: False
+'target':
+    type: str
+    mandatory_column: True
+    range_count_rows: [150, 150]
+    possible_values: ['setosa', 'versicolor', 'virginica']
+    maximum_percent_null: 0
+    mandatory_unique_values: False
