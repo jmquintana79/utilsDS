@@ -75,6 +75,8 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Pie chart](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/pie_chart) *[1]*
     - [My final plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/my_final_plots) *[6]*
     - [Bar plots](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/plots/bar_plots) *[1]*
+- [Data quality](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_quality) *[4]*
+  - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_quality/__pycache__) *[1]*
 - [Synthetic data](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/synthetic_data) *[2]*
 - [Mlops](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS) *[2]*
   - [Pyarrow dataset](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset) *[1]*
@@ -153,4 +155,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
 - [Data cleaning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_cleaning) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2023-11-21 23:38:41
+> Updated on 2023-12-12 23:22:45
