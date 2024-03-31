@@ -45,6 +45,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Multimodal distribution analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/multimodal_distribution_analysis) *[2]*
   - [Impurity measurements](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements) *[2]*
     - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements/__pycache__) *[1]*
+- [Anomaly detection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/anomaly_detection) *[1]*
 - [Data types](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_types) *[1]*
   - [Pandas accelerators](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_types/pandas_accelerators) *[1]*
 - [Pycaret](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pycaret) *[0]*
@@ -155,4 +156,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
 - [Data cleaning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_cleaning) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2023-12-12 23:22:45
+> Updated on 2024-03-31 22:39:46
