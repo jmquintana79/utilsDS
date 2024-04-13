@@ -1,0 +1,9 @@
+name: bigdata
+dependencies:
+  - python==3.9.0
+  - jupyter
+  - pip
+  - pip:
+    - vaex
+    - pyarrow
+
