@@ -1,0 +1,14 @@
+name: dashboard
+dependencies:
+  - python=3.9
+  - jupyter
+  - pandas
+  - scipy
+  - matplotlib
+  - pip
+  - pip:
+    #- streamlit
+    - panel 
+    - watchfiles
+    - hvplot
+    - jupyter_bokeh
