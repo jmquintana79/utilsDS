@@ -12,3 +12,4 @@ dependencies:
     - watchfiles
     - hvplot
     - jupyter_bokeh
+    - holoviews
