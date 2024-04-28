@@ -13,3 +13,4 @@ dependencies:
     - hvplot
     - jupyter_bokeh
     - holoviews
+    - shapely
