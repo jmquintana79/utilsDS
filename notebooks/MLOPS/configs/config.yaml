@@ -1,0 +1,8 @@
+# config.yaml
+data: data1 
+variables: 
+  drop_features: ['iid', 'id', 'idg', 'wave']
+  categorical_vars: ['undergra', 'zipcode']
+folders:
+  input: 'folder/input'
+  output: 'folder/output'
