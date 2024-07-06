@@ -36,6 +36,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Programming](https://github.com/jmquintana79/utilsDS/blob/master/cheatsheets/programming) *[0]*
 - [Ds project management](https://github.com/jmquintana79/utilsDS/blob/master/cheatsheets/ds_project_management) *[0]*
 - [Plots](https://github.com/jmquintana79/utilsDS/blob/master/cheatsheets/plots) *[0]*
+### [Data](https://github.com/jmquintana79/utilsDS/blob/master/data)
 ### [Notebooks](https://github.com/jmquintana79/utilsDS/blob/master/notebooks)
 - [Statistics](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics) *[0]*
   - [Probability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/probability) *[2]*
@@ -46,8 +47,6 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Impurity measurements](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements) *[2]*
     - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/statistics/impurity_measurements/__pycache__) *[1]*
 - [Anomaly detection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/anomaly_detection) *[1]*
-- [Data types](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_types) *[1]*
-  - [Pandas accelerators](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_types/pandas_accelerators) *[1]*
 - [Pycaret](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pycaret) *[0]*
   - [Anomaly detection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pycaret/anomaly_detection) *[1]*
   - [Supervised learning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pycaret/supervised_learning) *[1]*
@@ -79,7 +78,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Data quality](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_quality) *[4]*
   - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_quality/__pycache__) *[1]*
 - [Synthetic data](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/synthetic_data) *[2]*
-- [Mlops](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS) *[2]*
+- [Mlops](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS) *[3]*
   - [Pyarrow dataset](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset) *[1]*
     - [Data](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data) *[0]*
         - [Sample dataset](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/sample_dataset) *[0]*
@@ -124,9 +123,14 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/experiments) *[1]*
         - [Experiments](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/experiments/experiments) *[0]*
     - [Pipelines](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/pipelines) *[2]*
+  - [Configs](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/configs) *[2]*
+    - [Conf](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/configs/conf) *[0]*
+        - [Environment](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/configs/conf/environment) *[0]*
+        - [Experiment](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/configs/conf/experiment) *[0]*
   - [Documentation generators](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/documentation_generators) *[0]*
     - [Library pdoc](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/documentation_generators/library_pdoc) *[1]*
         - [Html](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/documentation_generators/library_pdoc/html) *[0]*
+  - [Bigdata](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/bigdata) *[1]*
 - [Datasets](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets) *[5]*
 - [Similarity](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/similarity) *[1]*
 - [Sampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/sampling) *[3]*
@@ -146,6 +150,12 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
     - [5 default neuralnetwork](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/5_Default_NeuralNetwork) *[0]*
     - [4 default xgboost](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/automl/AutoML_1/4_Default_Xgboost) *[0]*
 - [Model interpretability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/model_interpretability) *[4]*
+- [Dashboards](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards) *[0]*
+  - [Panel](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards/panel) *[0]*
+    - [2-power curve app v2](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards/panel/2-power_curve_app_v2) *[1]*
+    - [3-nested selectors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards/panel/3-nested_selectors) *[1]*
+    - [0-first app](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards/panel/0-first_app) *[1]*
+    - [1-power curve app v1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards/panel/1-power_curve_app_v1) *[1]*
 - [NLP](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/nlp) *[9]*
 - [Feature engineering](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering) *[0]*
   - [Missing values imputation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/feature_engineering/missing_values_imputation) *[1]*
@@ -156,4 +166,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
 - [Data cleaning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_cleaning) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2024-03-31 22:39:46
+> Updated on 2024-07-06 23:17:42
