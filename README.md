@@ -50,7 +50,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Pycaret](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pycaret) *[0]*
   - [Anomaly detection](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pycaret/anomaly_detection) *[1]*
   - [Supervised learning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/pycaret/supervised_learning) *[1]*
-- [Timeseries](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/timeseries) *[1]*
+- [Timeseries](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/timeseries) *[2]*
 - [Analysis](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis) *[0]*
   - [Density estimation](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/density_estimation) *[1]*
   - [EDA](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/analysis/EDA) *[0]*
@@ -152,6 +152,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Model interpretability](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/model_interpretability) *[4]*
 - [Dashboards](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards) *[0]*
   - [Panel](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards/panel) *[0]*
+    - [4-dashboard to html](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards/panel/4-dashboard_to_html) *[1]*
     - [2-power curve app v2](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards/panel/2-power_curve_app_v2) *[1]*
     - [3-nested selectors](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards/panel/3-nested_selectors) *[1]*
     - [0-first app](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/dashboards/panel/0-first_app) *[1]*
@@ -166,4 +167,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Multiple algorithms evaluation with lazypredict](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/algorithms_selection/multiple_algorithms_evaluation_with_lazypredict) *[2]*
 - [Data cleaning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_cleaning) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2024-07-06 23:17:42
+> Updated on 2024-08-13 18:56:22
