@@ -95,6 +95,7 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
                 - [C=1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/partitioned_dataset/c=1) *[0]*
                 - [C=2](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/partitioned_dataset/c=2) *[0]*
         - [Parquet dataset 1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_1) *[0]*
+  - [Make task](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/make_task) *[3]*
   - [Workflow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow) *[0]*
     - [Snakemake](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake) *[0]*
         - [Paralel](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel) *[1]*
@@ -168,4 +169,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Learning un supervised](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_un_supervised) *[2]*
 - [Data cleaning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_cleaning) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2024-08-31 20:18:02
+> Updated on 2024-09-22 15:36:11
