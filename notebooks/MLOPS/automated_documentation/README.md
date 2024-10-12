@@ -1,6 +1,6 @@
 # Automated Documentation
 
-## interrogate
+## interrogate (ESSENTIAL)
 
 - https://interrogate.readthedocs.io/en/latest/index.html
 - It will check and warn you if you have failed to write docstrings for your code.
@@ -12,7 +12,7 @@
 `> interrogate -vv {path}`
 
 
-## pydocstyle (no lo veo tan necesario)
+## pydocstyle (NO SO NECESSARY)
 
 - https://pypi.org/project/pydocstyle/
 - It is a static analysis tool for checking compliance with Python docstring conventions.
@@ -20,7 +20,7 @@
 `> pydocstyle {path}`
 
 
-## pdoc3
+## pdoc3 (ESSENTIAL)
 
 - https://pdoc3.github.io/pdoc/
 - Generador de documentacion automatica muy muy util. 
