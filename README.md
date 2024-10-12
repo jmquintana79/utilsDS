@@ -96,6 +96,8 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
                 - [C=2](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/partitioned_dataset/c=2) *[0]*
         - [Parquet dataset 1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/pyarrow_dataset/data/parquet_dataset_1) *[0]*
   - [Automated code style](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/automated_code_style) *[1]*
+    - [.ruff cache](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/automated_code_style/.ruff_cache) *[0]*
+        - [0.6.9](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/automated_code_style/.ruff_cache/0.6.9) *[0]*
     - [.mypy cache](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/automated_code_style/.mypy_cache) *[0]*
         - [3.9](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/automated_code_style/.mypy_cache/3.9) *[0]*
                 - [ typeshed](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/automated_code_style/.mypy_cache/3.9/_typeshed) *[0]*
@@ -115,7 +117,6 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
                 - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/automated_documentation/src/module2/__pycache__) *[2]*
         - [Module1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/automated_documentation/src/module1) *[2]*
                 - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/automated_documentation/src/module1/__pycache__) *[2]*
-  - [Make task](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/make_task) *[3]*
   - [Workflow](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow) *[0]*
     - [Snakemake](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake) *[0]*
         - [Paralel](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/workflow/snakemake/paralel) *[1]*
@@ -151,7 +152,20 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
   - [Documentation generators](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/documentation_generators) *[0]*
     - [Library pdoc](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/documentation_generators/library_pdoc) *[1]*
         - [Html](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/documentation_generators/library_pdoc/html) *[0]*
+  - [Make task with invoke](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/make_task_with_invoke) *[3]*
   - [Bigdata](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/bigdata) *[1]*
+  - [Testing with pytest](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest) *[0]*
+    - [.pytest cache](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/.pytest_cache) *[0]*
+        - [V](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/.pytest_cache/v) *[0]*
+                - [Cache](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/.pytest_cache/v/cache) *[0]*
+    - [Tests](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/tests) *[1]*
+        - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/tests/__pycache__) *[1]*
+        - [Module1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/tests/module1) *[3]*
+                - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/tests/module1/__pycache__) *[3]*
+    - [Src](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/src) *[1]*
+        - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/src/__pycache__) *[1]*
+        - [Module1](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/src/module1) *[3]*
+                - [  pycache  ](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/MLOPS/testing_with_pytest/src/module1/__pycache__) *[5]*
 - [Datasets](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/datasets) *[5]*
 - [Similarity](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/similarity) *[1]*
 - [Sampling](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/sampling) *[3]*
@@ -189,4 +203,4 @@ This repository is a compendium of notebooks and scripts to be used in my daily 
 - [Learning un supervised](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/learning_un_supervised) *[2]*
 - [Data cleaning](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/data_cleaning) *[2]*
 - [Information theory](https://github.com/jmquintana79/utilsDS/blob/master/notebooks/information_theory) *[1]*
-> Updated on 2024-10-12 13:56:37
+> Updated on 2024-10-12 21:06:37
