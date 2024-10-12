@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2024-10-12 01:06:55
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2024-10-12 13:52:45
+# @Last Modified time: 2024-10-12 17:14:00
 """
 Ejemplo de prueba para la automatizacion del code styling.
 """
