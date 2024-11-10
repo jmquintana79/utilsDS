@@ -2,7 +2,7 @@
 # @Author: Juan Quintana
 # @Date:   2024-11-09 15:48:02
 # @Last Modified by:   Juan Quintana
-# @Last Modified time: 2024-11-09 19:24:19
+# @Last Modified time: 2024-11-10 00:04:52
 """
 panel serve app.py --autoreload
 """
@@ -88,12 +88,15 @@ bound_plot_3 = pn.bind(
     get_scatter, date_range = date_range_slider
 )
 
-content = pn.Column(date_range_slider, bound_plot_3, bound_plot_1, bound_plot_2)
+#content = pn.Column(date_range_slider, bound_plot_3, bound_plot_1, bound_plot_2)
 
 template = pn.template.MaterialTemplate(    
     site="Panel",
     title="Prueba App",
     main=[date_range_slider, bound_plot_3, bound_plot_1, bound_plot_2],
 )
-template.show()
+
+#template.show()
+template.save("test.html", resources=INLINE) # pip install panel==1.3.8
+
 
